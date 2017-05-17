@@ -8,8 +8,8 @@ https://api.planet.com/data/v1
 
 ### Tutorials:
 
-* Introduction to the Planet Data API using Python
-* Introduction to the Planet CLI
+* [Introduction to the Planet Data API using Python](planet_data_api_introduction.ipynb)
+* [Introduction to the Planet CLI](planet_cli_introduction.ipynb)
 
 
 
