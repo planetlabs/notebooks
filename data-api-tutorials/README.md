@@ -1,6 +1,6 @@
-## Using Python to explore Planet's imagery
+## Using Python to access Planet's imagery
 
-Want to get started exploring Planet's imagery archive? These [Jupyter Notebooks](https://jupyter.org/) will walk you through using Python to interact with our Data API at [https://api.planet.com/data/v1](https://api.planet.com/data/v1).
+Hello and welcome! These notebooks are designed for users (like you!) who want to programmatically access Planet's imagery archive. We'll walk you through using Python to search, filter, and downland images via Planet's [Data API](https://api.planet.com/data/v1). If you'd like to start with a visual exploration of our stunning imagery, you can browse [Planet Explorer](https://www.planet.com/explorer/) first, then circle back to these API-based guides. 
 
 ### Choose your own adventure:
 
@@ -11,3 +11,5 @@ Want to get started exploring Planet's imagery archive? These [Jupyter Notebooks
 
 * [Planet API Reference](https://www.planet.com/docs/reference/)
 * [Common Workflows for the Data API](https://www.planet.com/docs/reference/data-api/common-workflows/)
+
+*Planeteers [Orestis Herodotou](https://github.com/digitaltopo) and [Benjamin Trigona-Harany](https://github.com/bosth) originally wrote these tutorials for Planet's [Impact Partners](https://www.planet.com/markets/impact/) and other developer partners.*
