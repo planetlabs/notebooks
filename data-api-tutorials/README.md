@@ -8,7 +8,8 @@ The first notebook uses the Python `requests` library and a few lines of helper 
 * [Introduction to the Planet CLI](planet_cli_introduction.ipynb)
 
 ### Read the docs
+* [Python Client for Planet API](https://planetlabs.github.io/planet-client-python/index.html)
 * [Planet API Reference](https://www.planet.com/docs/reference/)
 * [Common Workflows for the Data API](https://www.planet.com/docs/reference/data-api/common-workflows/)
 
-*Planeteers [Orestis Herodotou](https://github.com/digitaltopo) and [Benjamin Trigona-Harany](https://github.com/bosth) originally wrote these tutorials for Planet's [Impact Partners](https://www.planet.com/markets/impact/) and other developer partners.*
+*Planeteer [Benjamin Trigona-Harany](https://github.com/bosth) originally wrote these tutorials for Planet's developer partners. [Orestis Herodotou](https://github.com/digitaltopo) modified them for Planet's [Impact Partner](https://www.planet.com/markets/impact/) program.*
