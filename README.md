@@ -4,11 +4,11 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 
 ### Developer tools
 * [Introduction to Planet's Data API](https://github.com/planetlabs/notebooks/blob/master/data-api-tutorials/planet_data_api_introduction.ipynb)
-* [Using Planet's Python Client](https://github.com/planetlabs/notebooks/blob/master/data-api-tutorials/planet_cli_introduction.pynb)
+* [Using Planet's Python Client](https://github.com/planetlabs/notebooks/blob/master/data-api-tutorials/planet_cli_introduction.ipynb)
 
 ### Data processing
-* [Creating a composite image from multiple PlanetScope scenes](https://github.com/planetlabs/notebooks/blob/master/mosaicing/basic_compositing_demo.pynb)
-* [Calculating a vegetation index from 4-band satellite imagery](https://github.com/planetlabs/notebooks/blob/master/ndvi/ndvi_planetscope.pynb)
+* [Creating a composite image from multiple PlanetScope scenes](https://github.com/planetlabs/notebooks/blob/master/mosaicing/basic_compositing_demo.ipynb)
+* [Calculating a vegetation index from 4-band satellite imagery](https://github.com/planetlabs/notebooks/blob/master/ndvi/ndvi_planetscope.ipynb)
 
 ### Other notebooks from Planeteers
 * [Python examples for remote sensing](https://github.com/kscottz/PythonFromSpace)
