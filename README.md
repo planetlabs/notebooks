@@ -3,12 +3,12 @@
 In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source (APLv2) guides are designed to help our users explore Planet's data archive, start using our APIs and tools, and learn more about extracting information from Planet's massive archive of high-cadence satellite imagery.
 
 ### Developer tools
-* [Introduction to Planet's Data API](/data-api-tutorials/planet_data_api_introduction.pynb)
-* [Using Planet's Python Client](/data-api-tutorials/planet_cli_introduction.pynb)
+* [Introduction to Planet's Data API](https://github.com/planetlabs/notebooks/blob/master/data-api-tutorials/planet_data_api_introduction.ipynb)
+* [Using Planet's Python Client](https://github.com/planetlabs/notebooks/blob/master/data-api-tutorials/planet_cli_introduction.pynb)
 
 ### Data processing
-* [Creating a composite image from multiple PlanetScope scenes](/mosaicing/basic_compositing_demo.pynb)
-* [Calculating a vegetation index from 4-band satellite imagery](/ndvi/ndvi_planetscope.pynb)
+* [Creating a composite image from multiple PlanetScope scenes](https://github.com/planetlabs/notebooks/blob/master/mosaicing/basic_compositing_demo.pynb)
+* [Calculating a vegetation index from 4-band satellite imagery](https://github.com/planetlabs/notebooks/blob/master/ndvi/ndvi_planetscope.pynb)
 
 ### Other notebooks from Planeteers
 * [Python examples for remote sensing](https://github.com/kscottz/PythonFromSpace)
