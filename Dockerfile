@@ -73,11 +73,11 @@ RUN ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2.7 && \
         pygdal==2.1.3.3 \
         geojsonio
 
-# Add pip3.5 shortcut and install Python3 packages
-RUN pip3.5 install --upgrade pip && \
-    pip3.5 install matplotlib && \
-    pip3.5 install scikit-image && \
-    pip3.5 install \
+# Add pip shortcut and install Python3 packages
+RUN pip install --upgrade pip && \
+    pip install matplotlib && \
+    pip install scikit-image && \
+    pip install \
         pyproj \
         ipywidgets \
         ipyleaflet \
