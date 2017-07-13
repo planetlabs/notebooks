@@ -16,7 +16,8 @@ RUN conda install --yes --name python2 -c conda-forge \
     rasterio \
     shapely \
     fiona \
-    pyproj && \
+    pyproj \
+    opencv && \
     conda clean -tipsy
 
 RUN pip2 install --upgrade pip && \
