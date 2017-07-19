@@ -1,26 +1,25 @@
 ## Planet Interactive Guides
 
-In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source (APLv2) guides are designed to help our users explore Planet's data archive, start using our APIs and tools, and learn more about extracting information from Planet's massive archive of high-cadence satellite imagery. We intend for these guides to be task-oriented, and we hope they will inspire you to do and build interesting things with Planet data. 
+In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source (APLv2) guides are designed to help you explore Planet data, work with our APIs and tools, and learn how to extract information from our massive archive of high-cadence satellite imagery. We hope these guides will inspire you to ask interesting questions of Planet data. Need help? Find a bug? Please [file an issue](https://github.com/planetlabs/notebooks/issues/new) and we'll get back to you.
 
 ### The basics: search, activate, download	
-* [Using Python to explore the Planet Data API](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_data_api_introduction.ipynb)
-* [Using the Planet Python Client to search, activate, and download imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_cli_introduction.ipynb)
+* [Explore the Planet Data API with Python](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_data_api_introduction.ipynb)
+* [Search, activate, and download imagery with the Planet Python Client](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_cli_introduction.ipynb)
+* [Planet API reference](https://www.planet.com/docs/reference/)
 
-### Process
-* [Clipping imagery to an area of interest](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/clip_and_ship_introduction.ipynb)
-* [Compositing multiple PlanetScope scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/mosaicing/basic_compositing_demo.ipynb)
-* [Calculating a vegetation index from 4-band satellite imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ndvi/ndvi_planetscope.ipynb)
-* [Converting PlanetScope imagery from radiance to reflectance](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/toar/toar_planetscope.ipynb)
+### Process Planet data
+* [Clip imagery to an area of interest](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/clip_and_ship_introduction.ipynb)
+* [Create a mosaic from multiple PlanetScope scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/mosaicing/basic_compositing_demo.ipynb)
+* [Calculate a vegetation index from 4-band satellite imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ndvi/ndvi_planetscope.ipynb)
+* [Convert PlanetScope metadata from radiance to reflectance](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/toar/toar_planetscope.ipynb)
 
-### Analyze and visualize 
-
+### Analyze and visualize Planet data
 * [Detect, count, and visualize ships in Planet imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ship-detector/01_ship_detector.ipynb)
 * [Python examples for remote sensing](https://github.com/kscottz/PythonFromSpace)
 
-
 Soon we hope to add notebooks from the researchers, technologists, geographers, and entrepreneurs who are already using Planet data to ask interesting and innovative questions about our changing Earth. If you're working with our imagery and have a notebook (or just an idea for a notebook) that you'd like to share, please [file an issue](https://github.com/planetlabs/notebooks/issues) and let us know.
 
-## Installing and using these notebooks
+## Install and use these notebooks
 
 ### System Prerequisites
 * [Docker](https://store.docker.com/search?type=edition&offering=community)
@@ -33,7 +32,7 @@ git clone git@github.com:planetlabs/notebooks.git
 cd notebooks
 ```
 
-## Running Planet Notebooks in Docker
+## Run Planet Notebooks in Docker
 Planet Notebooks relies on a complex stack of technologies that are not always easy to install and properly 
 configure. To ease this complexity we provide a docker container for running the notebook on docker compatible 
 systems. To install docker on your system please see docker's [documentation](https://docs.docker.com/engine/installation/)
