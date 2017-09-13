@@ -10,6 +10,7 @@ RUN apt-get update -y && \
         make \
         curl \
         libgeos-dev \
+        libproj-dev \
         git \
         ssh \
         libffi-dev \
