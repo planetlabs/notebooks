@@ -42,7 +42,7 @@ for your operating system.
 First you must build the docker image. Note, this only has to be done the first time you use it. After checking out the
 this repository, you run:
 ```bash
-cd dockerfile
+cd planet-notebook-docker
 docker build --rm -t planet-notebooks .
 cd ..
 ```
