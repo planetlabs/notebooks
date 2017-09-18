@@ -26,8 +26,7 @@ RUN apt-get update -y && \
         python-seaborn \
         python-concurrent.futures \
         cython \
-        python-scikits-learn \
-        python-scikits.statsmodels \
+        python-scikit-learn \
         python-skimage-lib \
         pkg-config
 
