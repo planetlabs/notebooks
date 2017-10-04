@@ -1,12 +1,7 @@
 # Crop Segmentation and Classification
 
-In this notebook project, we demonstrate and compare techniques for segmentation and classification of crops using Planet imagery. A metric will be established to quantify accuracy of crop classification and will be used to compare technique results.
+In these notebooks, we demonstrate segmentation and classification of crops using Planet imagery. 
 
-The notebooks, in order of operations, are:
-1. [Identify Datasets](datasets-identify.ipynb): Identify and store ground truth data, area of interest, and Planet scene.
-1. [Prepare Datasets](datasets-prepare.ipynb): Crop ground truth data and image to aoi.
-2. [KNN Segmentation](segment-knn.ipynb): Segment image into crop/non-crop regions. 
+In [KNN Segmentation](segment-knn.ipynb) a Planet scene is segmented into crop/non-crop regions. The input data and result are georegistered vector features. This notebook contains functionality for converting between vector and raster features, as well as KNN Classification. The data used in KNN Segmentation is prepared in [Identify Datasets](datasets-identify.ipynb), in which the ground truth data, area of interest, and Planet scene are identified and stored, and [Prepare Datasets](datasets-prepare.ipynb), in which the ground truth and image are cropped to the area of interest.
 
-## Usage Notes
-
-This notebook project was developed in a Docker container. This [Dockerfile](Dockerfile) was used to build the image. Alternatively, anaconda environments can be used, to install the dependencies and build the environments using [`root.yml`](root.yml) and [`python2.yml`](python2.yml) (see Dockerfile for an example).
+In [Crop Type Classification: CART](classify-cart.ipynb), pixels in a Planet Orthotile are classified as corn, soybean, or neither. This notebook contains functionality for visualizing and processing a UDM into a mask, preparing classification features from the image bands (including NDVI) and training a CART Classifier.

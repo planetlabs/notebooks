@@ -1,7 +1,0 @@
-name: root
-channels:
-- conda-forge
-- defaults
-dependencies:
-- ipyleaflet=0.3.0
-prefix: /opt/conda

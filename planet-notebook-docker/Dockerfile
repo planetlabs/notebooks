@@ -72,7 +72,8 @@ RUN ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2.7 && \
         tqdm \
         planet \
         pygdal==2.1.3.3 \
-        geojsonio
+        geojsonio \
+        scikit-learn
 
 # Add pip shortcut and install Python3 packages
 RUN pip install --upgrade pip && \
