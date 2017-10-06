@@ -1,114 +1,31 @@
-FROM jupyter/minimal-notebook
+# pin to latest image on Oct 6, 2017
+FROM jupyter/minimal-notebook:e1677043235c
 
-# Install the packages
-USER root
-RUN apt-get update -y && \
-    apt-get upgrade -y && \
-    apt-get install -y \
-        gcc \
-        g++ \
-        make \
-        curl \
-        libgeos-dev \
-        libproj-dev \
-        git \
-        ssh \
-        libffi-dev \
-        libssl-dev \
-        python-pip \
-        python-cffi \
-        python-lxml \
-        python-pil \
-        python-numpy \
-        python-scipy \
-        python-pandas \
-        python-matplotlib \
-        python-seaborn \
-        python-concurrent.futures \
-        cython \
-        python-scikits-learn \
-        python-scikits.statsmodels \
-        python-skimage-lib \
-        pkg-config
-
-# Install GDAL from source
-RUN curl -O http://download.osgeo.org/gdal/2.1.3/gdal-2.1.3.tar.gz && \
-    tar -xzf gdal-2.1.3.tar.gz
-
-WORKDIR gdal-2.1.3
-
-RUN ./configure && \
-    make -j$(nproc) && \
-    make install && \
-    ldconfig
-
-WORKDIR ../
-
-RUN rm -rf gdal-2.1.3.tar.gz && \
-    rm -rf gdal-2.1.3
-
-WORKDIR work
-
-# Create Python2 environment
 USER $NB_USER
-RUN conda create --yes -p $CONDA_DIR/envs/python2 python=2.7
 
-# Add pip2.7 shortcut and install Python2 packages
-RUN ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2.7 && \
-    pip install --upgrade pip && \
-    pip2.7 install \
-        setuptools \
-        matplotlib \
-        scikit-image && \
-    pip2.7 install \
-        ipykernel \
-        pyproj \
-        ipywidgets \
-        ipyleaflet \
-        numpy \
-        shapely \
-        --no-binary :all: rasterio \
-        geopandas \
-        tqdm \
-        planet \
-        pygdal==2.1.3.3 \
-        geojsonio \
-        scikit-learn
+# gdal is the basis of all GIS libraries, so is installed first
+# conda takes care of installing gdal C and python libraries
+RUN conda install -y -c conda-forge gdal=2.1.3
 
-# Add pip shortcut and install Python3 packages
+# Install and enable Jupyter extentions
 RUN pip install --upgrade pip && \
-    pip install matplotlib && \
-    pip install scikit-image && \
-    pip install \
-        pyproj \
-        ipywidgets \
-        ipyleaflet \
-        numpy \
-        shapely \
-        --no-binary :all: rasterio \
-        geopandas \
-        tqdm \
-        planet \
-        pygdal==2.1.3.3 \
-        geojsonio
-
-# Activate Python2 kernel globally and upon kernel launch.
-USER root
-RUN pip install kernda --no-cache && \
-    $CONDA_DIR/envs/python2/bin/python -m ipykernel install && \
-    kernda -o -y /usr/local/share/jupyter/kernels/python2/kernel.json && \
-    pip uninstall kernda -y
-
-# Enable Jupyter extentions
-USER $NB_USER
-RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
+    pip install ipywidgets==7.0.1 ipyleaflet==0.4.0 && \
+    jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter nbextension enable --py --sys-prefix ipyleaflet
 
-USER root
-RUN apt-get remove --yes g++ gcc ssh git make curl && \
-    conda clean --yes --all && \
-    apt-get clean autoclean && \
-    apt-get autoremove -y && \
-    rm -rf /var/lib/{apt,dpkg,cache,log}/
+# Install additional packages
+# install numpy first as it is a prerequirement for rasterio
+RUN pip install --upgrade pip && \
+    pip install numpy==1.13.1 && \
+    pip install \
+        geojsonio \
+        geopandas \
+        opencv-python==3.3.0.10 \
+        planet \
+        pyproj==1.9.5.1 \
+        rasterio==1.0a9 \
+        scikit-image \
+        scikit-learn==0.19.0 \
+        shapely==1.6.1 \
+        tqdm
 
-USER $NB_USER
