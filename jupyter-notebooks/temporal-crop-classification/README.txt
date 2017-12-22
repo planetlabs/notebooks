@@ -20,4 +20,4 @@ geojsons -- contains example geojsons
 
 6.) Now that your data is ready, you can run the classifiers! Go to the 'classifiers/' directory. You will find code for multiclass logistic regression ('softmax_sklearn.py'), support vector machines ('svms_sklearn.py'), a simple neural network ('NN_keras.py'), and a simple Convolutional neural network ('CNN_keras.py'). Make sure that you have the ability to use both scikit learn and keras on the computer you are using. You may need to tune the parameters in each of the classification methods.
 
-
+A report ('Rustowicz_report.pdf') and poster ('Rustowicz_poster.pdf') for the project are in this repo. A presentation given at Planet can be found here: https://docs.google.com/presentation/d/1T1Z9oj8tk-oCuTmWsDfmd2UGVbT9TlrncC2Mm6dd_O0/edit?usp=sharing
