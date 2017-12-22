@@ -6,9 +6,10 @@ import rasterio
 import subprocess
 import matplotlib.image as mpimg
 
+CDL_fname = 'CDL_files/CDL_Kings_2016_06031/CDL_2016_06031_clip_01.tif'
 aoi_file = 'geojson_ROIs/kings_01_sub.geojson'
-cdl_files = ['CDL_files/CDL_Kings_2016_06031/CDL_2016_06031_clip_01.tif']
 
+cdl_files = [CDL_fname]
 clip_names = [os.path.abspath(cdl[:-4]+"_clip"+".tif") for cdl in cdl_files]
 full_cdl_files = [os.path.abspath("./"+cdl) for cdl in cdl_files]
 

@@ -1,4 +1,5 @@
-# Implementation of a CNN using Keras
+# Implementation of a CNN using Keras. Tuning of hyperparameters may be needed for 
+# best performance
 
 import numpy as np
 import pdb
@@ -57,19 +58,19 @@ def evaluate_loaded_model(loaded_model, X_test, y_test):
     print('%s: %.2f%%' % (loaded_model.metrics_names[1], score[1]*100))
 
 def create_model(num_classes):
-    # Define the model with the Keras Sequential modeling framework
+    # Define the model with the Keras Sequential modeling framework. Number of input features and output classes
+    # must be changed depending on what dataset you are working with
     model = Sequential()
-   
-    #model.add(Conv1D(32, kernel_size=5, strides=1, activation='relu', input_shape=(105,1)))
-    model.add(Conv1D(8, kernel_size=3, strides=1, activation='relu', input_shape=(5,1)))
-    #model.add(MaxPooling1D(pool_size=2, strides=2))
-    #model.add(Conv1D(64, 5, activation='relu'))
-    model.add(Conv1D(16, 3, activation='relu'))
-    #model.add(MaxPooling1D(pool_size=2))
-    model.add(Flatten())
-    #model.add(Dense(1000, activation='relu'))
-    model.add(Dense(200, activation='relu'))
-    model.add(Dense(num_classes, activation='softmax'))
+    #model.add(Conv1D(32, kernel_size=5, strides=1, activation='relu', input_shape=(105,1)))  # multi-temporal
+    model.add(Conv1D(8, kernel_size=3, strides=1, activation='relu', input_shape=(5,1))) # mono-temporal
+    #model.add(MaxPooling1D(pool_size=2, strides=2)) # multi-temporal
+    #model.add(Conv1D(64, 5, activation='relu')) # multi-temporal
+    model.add(Conv1D(16, 3, activation='relu')) # mono-temporal
+    #model.add(MaxPooling1D(pool_size=2)) # multi-temporal
+    model.add(Flatten()) # both
+    #model.add(Dense(1000, activation='relu')) # multi-temporal
+    model.add(Dense(200, activation='relu')) # mono-temporal
+    model.add(Dense(num_classes, activation='softmax')) # both
     
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
     return model
@@ -130,6 +131,7 @@ def main():
     print("Saved model to disk")
 
 def main_eval():
+    # Used to evaluate the CNN if the model is already saved (only inference, no training)
     json_fname = 'model_10epoch_kings04.json'
     h5_fname = 'model_10epoch_kings04.h5'
 
@@ -162,13 +164,12 @@ def main_eval():
     
     class_names = ['cotton', 'safflower', 'tomatoes', 'wintwheat', 'durwheat', 'idle']
     #class_names = ['wintwht/corn', 'alfalfa', 'almonds', 'pistachios', 'idle', 'corn', 'walnuts', 'cotton', 'wintwheat']
-    plt.figure() #figsize=(8.5,7))
-    #plt.figure()
+    plt.figure()
     plot_confusion_matrix(cnf_matrix, classes=class_names, normalize=True, title='Scene #1 Multi-Temporal Confusion Matrix')
-    #plt.show()
+    plt.show()
     matplotlib.rcParams.update({'font.size': 40})
-    plt.savefig('Scene1_confmat_TESTBLOCK.png')
+    #plt.savefig('Scene1_confmat_TESTBLOCK.png')
 
 if __name__ == '__main__':
-    #main()
-    main_eval()
+    main()
+    #main_eval()

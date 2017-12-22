@@ -1,5 +1,5 @@
 # This script uses the Sequential model within Keras to implement 
-# a simple one-hidden-layeer neural network 
+# a simple one-hidden-layer neural network. Tune parameters for best performance. 
 
 from keras.models import Sequential
 from keras.layers import Dense
@@ -13,11 +13,6 @@ import numpy as np
 import pdb
 
 np.random.seed(10) # for reproducability
-
-def one_hot(y, num_classes):
-    onehot = np.zeros((y.shape[0], num_classes))
-    onehot[np.arange(y.shape[0]), y] = 1
-    return onehot
 
 def load_data():
     # Load train, validation, and test data
@@ -40,11 +35,16 @@ def load_data():
 def create_model(units, activation, loss, optimizer, metrics, reg, dropout_rate, weight_constraint):
     # Define model as a sequence of layers; Dense models are fully-connected models
     model = Sequential()
+    # Mono-temporal has 5 features (1 timestamp x 5 spectral bands)
     model.add(Dense(units=units, input_dim=5, activation=activation, kernel_regularizer=regularizers.l2(reg), kernel_constraint=maxnorm(weight_constraint)))
+    # Scene 1 has 75 features (15 timestamps x 5 spectral bands)
     #model.add(Dense(units=units, input_dim=75, activation=activation, kernel_regularizer=regularizers.l2(reg), kernel_constraint=maxnorm(weight_constraint)))
+    # Scene 2 has 105 features (21 timestamps x 5 spectral bands)
     #model.add(Dense(units=units, input_dim=105, activation=activation, kernel_regularizer=regularizers.l2(reg), kernel_constraint=maxnorm(weight_constraint)))
     model.add(Dropout(dropout_rate))
+    # Scene 1 has 6 output classes
     #model.add(Dense(6, activation='softmax'))
+    # Scene 2 has 9 output classes
     model.add(Dense(9, activation='softmax'))
     model.compile(optimizer, loss, metrics)
     return model
@@ -68,8 +68,6 @@ def predict(model, X, y, X_dev, y_dev, X_test, y_test):
     pred_y = model.predict(X)
     pred_y_dev = model.predict(X_dev)
     pred_y_test = model.predict(X_test)
-    
-    #print(predictions)
     return pred_y, pred_y_dev, pred_y_test
 
 def main():
@@ -85,16 +83,6 @@ def main():
                 print('epoch: %s' % (epoch))
                 model.fit(X, y, batch, epoch)
                 scores, val_scores, test_score = evaluate_model(model, X, y, X_dev, y_dev, X_test, y_test)
-    
-    #pred_y, pred_y_dev, pred_y_test = predict(model, X, y, X_dev, y_dev, X_test, y_test)
-
-    # Summarize results
-    #print('Best: %f using %s' % (grid_result.best_score_, grid_result.best_params_))
-    #means = grid_result.cv_results_['mean_test_score']
-    #stds = grid_result.cv_results_['std_test_score']
-    #params = grid_result.cv_results_['params']
-    #for mean, stdev, param in zip(means, stds, params):
-    #    print('%f (%f) with %r' % (mean, stdev, param))
 
 if __name__ == '__main__':
     main()
