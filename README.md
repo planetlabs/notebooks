@@ -5,7 +5,7 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 ### The basics: search, activate, download	
 * [Explore the Planet Data API with Python](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_data_api_introduction.ipynb)
 * [Search, activate, and download imagery with the Planet Python Client](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_cli_introduction.ipynb)
-* [Planet API reference](https://www.planet.com/docs/reference/)
+* [Planet API reference](https://docs.planet.com/v1/reference)
 
 ### Process Planet data
 * [Create a mosaic from multiple PlanetScope scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/mosaicing/basic_compositing_demo.ipynb)
