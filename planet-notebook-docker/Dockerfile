@@ -112,3 +112,5 @@ RUN apt-get remove --yes g++ gcc ssh git make curl && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 USER $NB_USER
+
+RUN pip install pytest
