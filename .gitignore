@@ -73,6 +73,9 @@ target/
 # pyenv
 .python-version
 
+# pytest
+.pytest_cache/
+
 # celery beat schedule file
 celerybeat-schedule
 

@@ -1,17 +1,21 @@
+"""
+Run each notebook in the jupyter-notebooks directory.
+
+Notebooks are run using nbconvert.
+
+pytest runs each test as a unit test.
+"""
 import os
 import subprocess
+import tempfile
 
-# import nbformat
-# from nbconvert.preprocessors import ExecutePreprocessor
 import pytest
 
+NOTEBOOK_EXT = '.ipynb'
 ROOT_DIR = '.'
 
 
 def find_notebooks(root_dir):
-    print(os.listdir(root_dir))
-    notebook_ext = '.ipynb'
-
     notebooks = []
     for (dirpath, dirnames, filenames) in os.walk(root_dir):
         # look for 'norun' file, if present, do not look for notebooks in this dir
@@ -28,11 +32,9 @@ def find_notebooks(root_dir):
 
         for name in filenames:
             ext = os.path.splitext(name)[1]
-            if ext == notebook_ext:
+            if ext == NOTEBOOK_EXT:
                 # convert to string so test displays the path
                 notebook_name = str(os.path.join(dirpath, name))
-                print(notebook_name)
-                print(type(notebook_name))
                 notebooks.append(notebook_name)
 
     return notebooks
@@ -40,7 +42,8 @@ def find_notebooks(root_dir):
 
 @pytest.mark.parametrize("notebook", find_notebooks(ROOT_DIR))
 def test_run_notebooks(notebook):
-    args = ["jupyter", "nbconvert", "--to", "notebook", "--execute",
-            "--ExecutePreprocessor.timeout=600",
-            notebook]
-    subprocess.check_call(args)
+    with tempfile.NamedTemporaryFile(suffix=NOTEBOOK_EXT) as tmp_nb:
+        args = ["jupyter", "nbconvert", "--to", "notebook", "--execute",
+                "--ExecutePreprocessor.timeout=600",
+                notebook, "--output", tmp_nb.name]
+        subprocess.check_call(args)
