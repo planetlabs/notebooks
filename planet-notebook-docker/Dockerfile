@@ -55,7 +55,7 @@ RUN conda create --yes -p $CONDA_DIR/envs/python2 python=2.7
 
 # Add pip2.7 shortcut and install Python2 packages
 RUN ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2.7 && \
-    pip install --upgrade pip && \
+    pip2.7 install --upgrade pip && \
     pip2.7 install \
         setuptools \
         matplotlib \
@@ -67,13 +67,15 @@ RUN ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2.7 && \
         ipyleaflet \
         numpy \
         shapely \
-        --no-binary :all: rasterio \
+        --no-binary :all: rasterio==1.0a9 \
         geopandas \
         tqdm \
         planet \
         pygdal==2.1.3.3 \
         geojsonio \
-        scikit-learn
+        scikit-learn && \
+     pip2.7 install \
+        opencv-python==3.3.0.10
 
 # Add pip shortcut and install Python3 packages
 RUN pip install --upgrade pip && \
@@ -85,12 +87,14 @@ RUN pip install --upgrade pip && \
         ipyleaflet \
         numpy \
         shapely \
-        --no-binary :all: rasterio \
+        --no-binary :all: rasterio==1.0a9 \
         geopandas \
         tqdm \
         planet \
         pygdal==2.1.3.3 \
-        geojsonio
+        geojsonio && \
+    pip install \
+        opencv-python==3.3.0.10
 
 # Activate Python2 kernel globally and upon kernel launch.
 USER root
