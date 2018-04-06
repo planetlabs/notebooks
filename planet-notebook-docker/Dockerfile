@@ -49,7 +49,7 @@ RUN rm -rf gdal-2.1.3.tar.gz && \
 
 WORKDIR work
 
-# Create Python2 environment
+# # Create Python2 environment
 USER $NB_USER
 RUN conda create --yes -p $CONDA_DIR/envs/python2 python=2.7
 
@@ -61,40 +61,39 @@ RUN ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2.7 && \
         matplotlib \
         scikit-image && \
     pip2.7 install \
-        ipykernel \
-        pyproj \
-        ipywidgets \
-        ipyleaflet \
-        numpy \
-        shapely \
-        --no-binary :all: rasterio==1.0a9 \
+        geojsonio \
         geopandas \
-        tqdm \
+        ipykernel \
+        ipyleaflet \
+        ipywidgets \
+        numpy \
+        opencv-python==3.3.0.10 \
         planet \
         pygdal==2.1.3.3 \
-        geojsonio \
-        scikit-learn && \
-     pip2.7 install \
-        opencv-python==3.3.0.10
+        pyproj \
+        shapely \
+        scikit-learn \
+        tqdm && \
+     pip2.7 install --no-binary :all: rasterio==1.0a9
 
 # Add pip shortcut and install Python3 packages
+# rasterio requires no-binary, put in separate install cmd
 RUN pip install --upgrade pip && \
-    pip install matplotlib && \
-    pip install scikit-image && \
+    pip install matplotlib \
+        scikit-image && \
     pip install \
-        pyproj \
-        ipywidgets \
-        ipyleaflet \
-        numpy \
-        shapely \
-        --no-binary :all: rasterio==1.0a9 \
+        geojson \
         geopandas \
-        tqdm \
+        ipyleaflet \
+        ipywidgets \
+        numpy \
+        opencv-python==3.3.0.10 \
         planet \
         pygdal==2.1.3.3 \
-        geojsonio && \
-    pip install \
-        opencv-python==3.3.0.10
+        pyproj \
+        shapely \
+        tqdm && \
+    pip install --no-binary :all: rasterio==1.0a9
 
 # Activate Python2 kernel globally and upon kernel launch.
 USER root
@@ -109,6 +108,27 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter nbextension enable --py --sys-prefix ipyleaflet
 
 USER root
+
+RUN apt-get update && apt-get install -y \
+    libsqlite3-dev zlib1g-dev # for tippecanoe
+
+# Install label maker (depends on tippecanoe)
+
+# install tippecanoe
+# deps: libsqlite3-dev zlib1g-dev git
+RUN git clone https://github.com/mapbox/tippecanoe.git
+WORKDIR ./tippecanoe
+RUN make && make install
+WORKDIR ..
+
+RUN apt-get update && apt-get install -y libcurl4-openssl-dev
+
+USER $NB_USER
+RUN pip install --upgrade pip && \
+ pip install label-maker
+
+USER root
+
 RUN apt-get remove --yes g++ gcc ssh git make curl && \
     conda clean --yes --all && \
     apt-get clean autoclean && \
