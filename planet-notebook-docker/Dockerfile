@@ -89,5 +89,10 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
 USER root
 RUN rm -rf /var/lib/{apt,dpkg,cache,log}/
 
+# fix certs for rasterio
+# https://stackoverflow.com/a/30154802/2344416
+RUN mkdir -p /etc/pki/tls/certs
+RUN cp /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
+
 WORKDIR work
 USER $NB_USER
