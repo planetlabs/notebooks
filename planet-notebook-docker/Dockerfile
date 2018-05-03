@@ -1,99 +1,77 @@
 FROM jupyter/minimal-notebook
 
-# Install the packages
-USER root
-RUN apt-get update -y && \
-    apt-get upgrade -y && \
-    apt-get install -y \
-        gcc \
-        g++ \
-        make \
-        curl \
-        libgeos-dev \
-        libproj-dev \
-        git \
-        ssh \
-        libffi-dev \
-        libssl-dev \
-        python-pip \
-        python-cffi \
-        python-lxml \
-        python-pil \
-        python-numpy \
-        python-scipy \
-        python-pandas \
-        python-matplotlib \
-        python-seaborn \
-        python-concurrent.futures \
-        cython \
-        python-scikits-learn \
-        python-scikits.statsmodels \
-        python-skimage-lib \
-        pkg-config
-
-# Install GDAL from source
-RUN curl -O http://download.osgeo.org/gdal/2.1.3/gdal-2.1.3.tar.gz && \
-    tar -xzf gdal-2.1.3.tar.gz
-
-WORKDIR gdal-2.1.3
-
-RUN ./configure && \
-    make -j$(nproc) && \
-    make install && \
-    ldconfig
-
-WORKDIR ../
-
-RUN rm -rf gdal-2.1.3.tar.gz && \
-    rm -rf gdal-2.1.3
-
-WORKDIR work
-
-# # Create Python2 environment
-USER $NB_USER
+# Create Python2 environment
 RUN conda create --yes -p $CONDA_DIR/envs/python2 python=2.7
+
+# Install GDAL
+# We use conda because it is the only way to get gdal working properly with ipython
+# Installing from a precompiled binary (e.g. using ubuntugis) results in a
+# mismatchedsqlite3 version between build and runtime.
+# Downloading and building results in the gdal vsicurl driver not working
+# (not sure why)
+RUN conda install -y -c conda-forge gdal=2.1.3
+RUN conda install -y --name python2 -c conda-forge gdal=2.1.3
 
 # Add pip2.7 shortcut and install Python2 packages
 RUN ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2.7 && \
     pip2.7 install --upgrade pip && \
-    pip2.7 install \
-        setuptools \
-        matplotlib \
-        scikit-image && \
+    pip2.7 install numpy>=1.13.1 && \
     pip2.7 install \
         geojsonio \
         geopandas \
         ipykernel \
         ipyleaflet \
         ipywidgets \
+        matplotlib \
         numpy \
         opencv-python==3.3.0.10 \
         planet \
         pygdal==2.1.3.3 \
         pyproj \
+        rasterio==1.0a12 \
+        setuptools \
+        scikit-image \
         shapely \
         scikit-learn \
-        tqdm && \
-     pip2.7 install --no-binary :all: rasterio==1.0a9
+        tqdm
+
+# Install tippecanoe (required for label-maker)
+USER root
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    libsqlite3-dev \
+    zlib1g-dev 
+
+RUN git clone https://github.com/mapbox/tippecanoe.git
+WORKDIR tippecanoe
+RUN make && make install
+WORKDIR ..
+
+
+# Install dependencies for pycurl, a dependency of label-maker
+RUN apt-get update && apt-get install -y libcurl4-openssl-dev
 
 # Add pip shortcut and install Python3 packages
-# rasterio requires no-binary, put in separate install cmd
+USER $NB_USER
 RUN pip install --upgrade pip && \
-    pip install matplotlib \
-        scikit-image && \
+    pip install numpy>=1.13.1 && \
     pip install \
         geojson \
         geopandas \
         ipyleaflet \
         ipywidgets \
+        label-maker==0.3.1 \
+        matplotlib \
         numpy \
         opencv-python==3.3.0.10 \
         planet \
         pygdal==2.1.3.3 \
         pyproj \
+        rasterio==1.0a12 \
+        scikit-image \
         shapely \
-        tqdm && \
-    pip install --no-binary :all: rasterio==1.0a9
+        tqdm
 
 # Activate Python2 kernel globally and upon kernel launch.
 USER root
@@ -107,32 +85,9 @@ USER $NB_USER
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter nbextension enable --py --sys-prefix ipyleaflet
 
+# Clean up
 USER root
+RUN rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-RUN apt-get update && apt-get install -y \
-    libsqlite3-dev zlib1g-dev # for tippecanoe
-
-# Install label maker (depends on tippecanoe)
-
-# install tippecanoe
-# deps: libsqlite3-dev zlib1g-dev git
-RUN git clone https://github.com/mapbox/tippecanoe.git
-WORKDIR ./tippecanoe
-RUN make && make install
-WORKDIR ..
-
-RUN apt-get update && apt-get install -y libcurl4-openssl-dev
-
-USER $NB_USER
-RUN pip install --upgrade pip && \
- pip install label-maker
-
-USER root
-
-RUN apt-get remove --yes g++ gcc ssh git make curl && \
-    conda clean --yes --all && \
-    apt-get clean autoclean && \
-    apt-get autoremove -y && \
-    rm -rf /var/lib/{apt,dpkg,cache,log}/
-
+WORKDIR work
 USER $NB_USER
