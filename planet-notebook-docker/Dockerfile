@@ -1,4 +1,5 @@
-FROM jupyter/minimal-notebook
+FROM jupyter/minimal-notebook:2c80cf3537ca
+# c88678a1c7c9
 
 # Create Python2 environment
 RUN conda create --yes -p $CONDA_DIR/envs/python2 python=2.7
@@ -74,7 +75,7 @@ RUN pip install --upgrade pip && \
         tqdm
 
 # Hotfix: downgrade Conda to avoid Kernda bug
-RUN conda install -y conda=4.3 
+# RUN conda install -y conda=4.3 
 
 # Activate Python2 kernel globally and upon kernel launch.
 USER root
