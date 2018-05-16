@@ -74,9 +74,6 @@ RUN pip install --upgrade pip && \
         shapely \
         tqdm
 
-# Hotfix: downgrade Conda to avoid Kernda bug
-# RUN conda install -y conda=4.3 
-
 # Activate Python2 kernel globally and upon kernel launch.
 USER root
 RUN pip install kernda --no-cache && \
