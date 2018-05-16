@@ -1,4 +1,5 @@
-FROM jupyter/minimal-notebook
+FROM jupyter/minimal-notebook:2c80cf3537ca
+# c88678a1c7c9
 
 # Create Python2 environment
 RUN conda create --yes -p $CONDA_DIR/envs/python2 python=2.7
