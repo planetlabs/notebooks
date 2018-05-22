@@ -31,7 +31,7 @@ Soon we hope to add notebooks from the researchers, technologists, geographers, 
 
 ### Clone the repo:
 ```bash
-git clone git@github.com:planetlabs/notebooks.git
+git clone https://github.com/planetlabs/notebooks.git
 cd notebooks
 ```
 
