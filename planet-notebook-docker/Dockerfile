@@ -27,7 +27,7 @@ RUN ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2.7 && \
         numpy \
         opencv-python==3.3.0.10 \
         planet \
-        pygdal==2.3.1 \
+        pygdal==2.3.1.4 \
         pyproj \
         rasterio==1.0a12 \
         setuptools \
@@ -67,7 +67,7 @@ RUN pip install --upgrade pip && \
         numpy \
         opencv-python==3.3.0.10 \
         planet \
-        pygdal==2.1.3.3 \
+        pygdal==2.3.1.4 \
         pyproj \
         rasterio==1.0a12 \
         scikit-image \
