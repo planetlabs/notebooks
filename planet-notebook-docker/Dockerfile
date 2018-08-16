@@ -10,8 +10,8 @@ RUN conda create --yes -p $CONDA_DIR/envs/python2 python=2.7
 # mismatchedsqlite3 version between build and runtime.
 # Downloading and building results in the gdal vsicurl driver not working
 # (not sure why)
-RUN conda install -y -c conda-forge gdal=2.1.3
-RUN conda install -y --name python2 -c conda-forge gdal=2.1.3
+RUN conda install -y -c conda-forge libgdal=2.3.1
+RUN conda install -y --name python2 -c conda-forge libgdal=2.3.1
 
 # Add pip2.7 shortcut and install Python2 packages
 RUN ln -s $CONDA_DIR/envs/python2/bin/pip $CONDA_DIR/bin/pip2.7 && \
