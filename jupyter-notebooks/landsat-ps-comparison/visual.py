@@ -16,9 +16,15 @@ def show(axis, bands, alpha=True):
 
     Alters axis in place.
     """
-    assert len(bands) in [1, 3]
 
-    bands = [b for b in bands.copy()]  # turn into list
+    # Single band (2d array)
+    if bands.ndim == 2:
+        bands = [bands]
+    elif len(bands) == 3:
+        bands = [b for b in bands.copy()]  # turn into list
+    else:
+        raise ValueError("Can only plot 1 or 3 band arrays, not an array with shape: {}".format(bands.shape))
+
     bands = _scale_bands(bands)
 
     if alpha and len(bands) == 3:
