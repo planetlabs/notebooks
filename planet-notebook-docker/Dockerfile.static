@@ -1,0 +1,27 @@
+FROM python:3.4-jessie
+
+# # install pelican-ipynb dependencies
+# # https://github.com/danielfrg/pelican-ipynb
+# RUN pip install --upgrade pip && \
+#     pip install \
+#         pelican>=3.5 \
+#         jupyter>=1.0 \
+#         ipython>=4.0 \
+#         nbconvert>=4.0 
+
+
+RUN mkdir -p /opt/site
+WORKDIR /opt/site
+
+# install pelican-ipynb
+RUN mkdir plugins
+RUN git clone git://github.com/danielfrg/pelican-ipynb.git plugins/ipynb
+
+RUN pip install --upgrade pip && \
+    pip install -r plugins/ipynb/requirements.txt
+
+RUN mkdir content
+
+COPY pelicanconf.py .
+
+CMD /bin/bash
