@@ -1,0 +1,16 @@
+geojson
+geojsonio
+geopandas
+ipyleaflet
+ipywidgets
+matplotlib 
+numpy==1.14.*
+opencv-python==3.3.0.10
+planet
+# pygdal==2.3.1.4
+pyproj
+rasterio==1.0a12
+scikit-image
+scikit-learn
+shapely
+tqdm
