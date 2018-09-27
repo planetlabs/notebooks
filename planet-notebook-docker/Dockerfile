@@ -23,5 +23,10 @@ USER root
 RUN mkdir -p /etc/pki/tls/certs
 RUN cp /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
 
+# fix ncurses install
+# ref: https://github.com/conda-forge/gdal-feedstock/issues/226
+USER root
+RUN conda install -y -c conda-forge ncurses
+
 WORKDIR work
 USER $NB_USER

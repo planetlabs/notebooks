@@ -4,10 +4,9 @@ geopandas
 ipyleaflet
 ipywidgets
 matplotlib 
-numpy==1.14.*
+numpy==1.14.* # pinned because numpy 15.0 throws runtime warning 
 opencv-python==3.3.0.10
 planet
-# pygdal==2.3.1.4
 pyproj
 rasterio==1.0a12
 scikit-image
