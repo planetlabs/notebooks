@@ -13,3 +13,4 @@ scikit-image
 scikit-learn
 shapely
 tqdm
+folium
