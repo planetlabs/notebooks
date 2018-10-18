@@ -19,8 +19,6 @@ def find_notebooks(root_dir):
     print('finding notebooks...')
     notebooks = []
     for (dirpath, dirnames, filenames) in os.walk(root_dir):
-        print('{}'.format(dirpath))
-
         # look for 'norun' file, if present, do not look for notebooks in this dir
         if 'norun' in filenames:
             # do not look into subdirectories, modify in-place for walk()
