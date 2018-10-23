@@ -5,9 +5,7 @@ Notebooks are run using nbconvert.
 
 pytest runs each test as a unit test.
 """
-import os
 import subprocess
-import logging
 import tempfile
 
 import pytest
