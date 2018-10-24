@@ -42,14 +42,6 @@ def find_notebooks(root_dir):
     notebooks = []
 
     for (dirpath, dirnames, filenames) in os.walk(root_dir):
-        # look for 'norun' file, if present, do not look for notebooks in this dir
-        if 'norun' in filenames:
-            # do not look into subdirectories, modify in-place for walk()
-            dirnames[:] = []
-
-            # clear filenames
-            filenames = []
-
         # modify in place to filter subdirectories in walk()
         # https://stackoverflow.com/questions/19859840/excluding-directories-in-os-walk
         dirnames[:] = [n for n in dirnames if n not in SKIP_DIRECTORIES]

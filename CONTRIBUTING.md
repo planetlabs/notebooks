@@ -9,12 +9,17 @@ directory within the docker container, run:
 ```
 $> pytest tests/test_notebooks.py
 ```
+
+or, optionally, run only notebooks in a subdirectory using
+```
+$> pytest tests/test_notebooks.py --path <subdirectory>
+```
+
 ## Automated Running and Skipping
 
 To enable validation of the Docker image, every notebook should run successfully
 when run from the command line. For notebooks where that just is not possible, 
-the notebooks can be excluded from automated running by adding a file named
-`norun` to the notebook directory. Note that this results in the entire directory
-of notebooks being skipped. Excluding a notebook from automated running
+the notebooks can be excluded from automated running by adding its path to 
+`tests/skip_notebooks`. Excluding a notebook from automated running
 means that it is excluded from Docker Image validation. **If a notebook is
 skipped, it will not be guaranteed to be supported by the Docker image.**
