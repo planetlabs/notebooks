@@ -59,4 +59,4 @@ def test_run_notebooks(notebook_path, do_skip):
                 "--ExecutePreprocessor.timeout=600",
                 notebook_path, "--output", tmp_nb.name]
         print(' '.join(args))
-        # subprocess.check_call(args)
+        subprocess.check_call(args)
