@@ -6,7 +6,7 @@
 # is being skipped
 
 in-class-exercises/   # Do not successfully run automatically
-data-api-tutorials/   # Take a long time to run 
+# data-api-tutorials/   # Take a long time to run 
 label-data/           # Require custom docker image to run
 crop-classification/segment-knn-tuning.ipynb  # does not run successfully automatically
 crop-classification/datasets-prepare-cdl.ipynb # does not run successfully automatically
