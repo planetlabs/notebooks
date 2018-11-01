@@ -13,15 +13,30 @@ def pytest_addoption(parser):
     parser.addoption("--path", action="store",
                      default=ROOT_DIR,
                      help="root directory of notebooks to test")
+    parser.addoption("--notebooks",
+                     default=None,
+                     nargs='*',
+                     help="notebook(s) to run. overrides --path command.")
+    parser.addoption("--no-skip", action="store_true",
+                     default=False,
+                     help="avoid skipping notebooks")
 
 
 def pytest_generate_tests(metafunc):
     '''Generate a test for every notebook found within the root directory.'''
     option_path = metafunc.config.option.path
-    if 'notebook_path' in metafunc.fixturenames and option_path is not None:
-        root_path = normalize_path(option_path)
-        notebook_paths = find_notebooks(root_path)
-        metafunc.parametrize('notebook_path', notebook_paths)
+    notebooks = metafunc.config.option.notebooks
+    do_skip = not metafunc.config.option.no_skip
+
+    if 'notebook_path' in metafunc.fixturenames:
+        if notebooks:
+            notebook_paths = notebooks
+        else:
+            root_path = normalize_path(option_path)
+            notebook_paths = find_notebooks(root_path)
+
+        metafunc.parametrize(['notebook_path', 'do_skip'],
+                             zip(notebook_paths, [do_skip] * len(notebook_paths)))
 
 
 def normalize_path(path):
