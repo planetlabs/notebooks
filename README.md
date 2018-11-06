@@ -54,9 +54,9 @@ This will build and install the Docker image on your system, making it available
 time (between 10 and 20 minutes) depending on your network connection.
 
 ### Run the container
-To run the container (after building it), add your Planet API key below and issue the following command:
+To run the container (after building it), add your Planet API key below and issue the following command from the git repository root directory:
 ```bash
-docker run -it --rm -p 8888:8888 -v $PWD/jupyter-notebooks:/home/jovyan/work -e PL_API_KEY='[YOUR-API-KEY]' planet-notebooks
+docker run -it --rm -p 8888:8888 -v $PWD:/home/jovyan/work -e PL_API_KEY='[YOUR-API-KEY]' planet-notebooks
 ```
 
 This does several things:  
@@ -64,9 +64,10 @@ This does several things:
 1. Maps the docker container's ```8888``` port to your system's ```8888``` port.  This makes the 
 container available to your host systems web browser.
 
-1. Maps a host system path ```$PWD\jupyter-notebooks``` to the docker containers working 
-directory.  This ensures that the notebooks you create, edit, and save are available on your host system,
-and are not *destroyed* when the you exit the container.
+1. Maps a host system path ```$PWD``` to the docker containers working  directory.
+This ensures that the notebooks you create, edit, and save are available on your host system under the
+`jupyter-notebooks` sub-directory and are not *destroyed* when the you exit the container.
+This also allows for running tests in the `tests` sub-directory.
 
 1. Starts in an interactive terminal and is accessible through http://localhost:8888.
 
