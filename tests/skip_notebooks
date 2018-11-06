@@ -1,0 +1,13 @@
+# Paths for notebooks to skip during tests
+# Paths are given relative to the jupyter_notebooks directory
+# If a directory is specified, all notebooks in that directory
+# or subdirectory are skipped
+# It is good practice to provide a comment indicating why notebook(s)
+# is being skipped
+
+in-class-exercises/   # Do not successfully run automatically
+# data-api-tutorials/   # Take a long time to run 
+label-data/           # Require custom docker image to run
+crop-classification/segment-knn-tuning.ipynb  # does not run successfully automatically
+crop-classification/datasets-prepare-cdl.ipynb # does not run successfully automatically
+
