@@ -1,5 +1,10 @@
 # Contributing to Notebooks
 
+## Notebook Naming
+
+Notebooks cannot have spaces in the paths. Use underscores instead. This is
+because pytest does not like spaces in command line arguments.
+
 ## Docker Image Validation
 
 The docker image must be able to run all notebooks. Whenever a change is made to
