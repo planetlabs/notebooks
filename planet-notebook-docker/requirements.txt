@@ -2,6 +2,7 @@ geojson
 geojsonio
 geopandas
 ipyleaflet
+ipynb
 ipywidgets
 matplotlib 
 numpy==1.14.* # pinned because numpy 15.0 throws runtime warning 
