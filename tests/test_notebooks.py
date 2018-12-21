@@ -49,9 +49,9 @@ def get_skipped_paths():
     return lines 
 
 
-def test_run_notebooks(notebook_path):
+def test_run_notebooks(notebook_path, do_skip):
     '''Test that the notebook runs successfully'''
-    if is_skipped_path(notebook_path):
+    if is_skipped_path(notebook_path) and do_skip:
         pytest.skip('Notebook skipped as specified in {}'.format(SKIP_FILE))
 
     with tempfile.NamedTemporaryFile(suffix=NOTEBOOK_EXT) as tmp_nb:
