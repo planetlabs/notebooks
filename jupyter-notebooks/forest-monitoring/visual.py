@@ -2,16 +2,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_image(masked_bands, title=None, figsize=(10, 10)):
+def plot_image(masked_bands, do_scale=True, title=None, figsize=(10, 10)):
     fig = plt.figure(figsize=figsize)
     ax = fig.add_subplot(1, 1, 1)
-    show(ax, masked_bands)
+    show(ax, masked_bands, do_scale=do_scale)
     if title:
         ax.set_title(title)
     ax.set_axis_off()
 
 
-def show(axis, bands, alpha=True):
+def show(axis, bands, do_scale=True, alpha=True):
     """Show bands as image with option of converting mask to alpha.
 
     Alters axis in place.
@@ -26,7 +26,8 @@ def show(axis, bands, alpha=True):
         pass
 
     bands = [b for b in bands.copy()]  # turn into list
-    bands = _scale_bands(bands)
+    bands = _scale_bands(bands, percentile=True)
+
 
     if alpha and len(bands) == 3 and mask is not None:
         bands.append(_mask_to_alpha(mask))
@@ -43,13 +44,18 @@ def _mask_bands(bands, mask):
     return [np.ma.array(b, mask) for b in bands]
 
 
-def _scale_bands(bands):
+def _scale_bands(bands, percentile=True):
     def _percentile(bands, percentile):
         all_pixels = np.concatenate([b.compressed() for b in bands])
         return np.percentile(all_pixels, percentile)
 
-    old_min = _percentile(bands, 2)
-    old_max = _percentile(bands, 98)
+    if percentile:
+        old_min = _percentile(bands, 2)
+        old_max = _percentile(bands, 98)
+    else:
+        old_min = 0
+        old_max = 2 ** 12 - 1
+
     new_min = 0
     new_max = 1
 
