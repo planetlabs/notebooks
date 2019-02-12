@@ -1,27 +1,44 @@
 import os
-from pathlib import Path
+from pathlib import Path, PurePath
 
 import pytest
 
 NOTEBOOK_EXT = '.ipynb'
 ROOT_DIR = 'jupyter-notebooks'
 
-# do not look for notebooks in .ipynb_checkpoints dir
-SKIP_DIRECTORIES = ['.ipynb_checkpoints']
+# do not run notebooks in these directories or sub-directories
+SKIP_DIRECTORIES = set(['.ipynb_checkpoints'])
 
 def pytest_addoption(parser):
     parser.addoption("--path", action="store",
                      default=ROOT_DIR,
                      help="root directory of notebooks to test")
+    parser.addoption("--notebooks",
+                     default=None,
+                     nargs='*',
+                     help="notebook(s) to run. overrides --path command.")
+    parser.addoption("--no-skip", action="store_true",
+                     default=False,
+                     help="avoid skipping notebooks")
 
 
 def pytest_generate_tests(metafunc):
     '''Generate a test for every notebook found within the root directory.'''
     option_path = metafunc.config.option.path
-    if 'notebook_path' in metafunc.fixturenames and option_path is not None:
-        root_path = normalize_path(option_path)
-        notebook_paths = find_notebooks(root_path)
-        metafunc.parametrize('notebook_path', notebook_paths)
+    notebooks = metafunc.config.option.notebooks
+    do_skip = not metafunc.config.option.no_skip
+
+    if 'notebook_path' in metafunc.fixturenames:
+        if notebooks:
+            notebook_paths = [Path(n) for n in notebooks]
+        else:
+            root_path = normalize_path(option_path)
+            notebook_paths = get_all_paths(root_path)
+
+        notebook_paths = valid_notebooks(notebook_paths)
+        metafunc.parametrize(['notebook_path', 'do_skip'],
+                             zip([str(p) for p in notebook_paths],
+                                 [do_skip] * len(notebook_paths)))
 
 
 def normalize_path(path):
@@ -33,24 +50,29 @@ def normalize_path(path):
     return os.path.join(*path_parts)
 
 
-def find_notebooks(root_dir):
-    '''Find all of the notebooks within the root directory.
+def get_all_paths(root_dir):
+    paths = []
+    for path, _, files in os.walk(root_dir):
+        for name in files:
+            paths.append(PurePath(path, name))
+    return paths  
 
-    Skip notebooks and subdirectories of any directory with 'norun' file
-    '''
-    print('finding notebooks in {}...'.format(root_dir))
-    notebooks = []
 
-    for (dirpath, dirnames, filenames) in os.walk(root_dir):
-        # modify in place to filter subdirectories in walk()
-        # https://stackoverflow.com/questions/19859840/excluding-directories-in-os-walk
-        dirnames[:] = [n for n in dirnames if n not in SKIP_DIRECTORIES]
+def valid_notebooks(paths):
+    '''Filters a list of paths to only include valid notebooks.
+    
+    Removes paths that include skip directories and paths that do not end
+    in notebook extension, .ipynb'''
+    valid_paths = [p for p in paths if not _in_skip_dir(p) and _is_notebook(p)]
+    print(' {} out of {} paths are valid'.format(len(valid_paths), len(paths)))
+    return valid_paths
 
-        for name in filenames:
-            ext = os.path.splitext(name)[1]
-            if ext == NOTEBOOK_EXT:
-                # convert to string so test displays the path
-                notebook_name = str(os.path.join(dirpath, name))
-                notebooks.append(notebook_name)
-    print('found {} notebooks'.format(len(notebooks)))
-    return notebooks
+
+def _in_skip_dir(path):
+    '''path is a Path object'''
+    return len(SKIP_DIRECTORIES.intersection(path.parts)) > 0
+
+
+def _is_notebook(path):
+    '''path is a Path object'''
+    return path.suffix == NOTEBOOK_EXT
