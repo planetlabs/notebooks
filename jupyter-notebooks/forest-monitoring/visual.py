@@ -18,16 +18,18 @@ def show(axis, bands, do_scale=True, alpha=True):
     """
     assert len(bands) in [1, 3]
 
-    mask = None
     try:
         mask = bands[0].mask
+        assert mask.shape == bands[0].shape
     except AttributeError:
         # no mask
-        pass
+        mask = None
+    except AssertionError:
+        # mask not the same shape as band
+        mask = None
 
     bands = [b for b in bands.copy()]  # turn into list
     bands = _scale_bands(bands, percentile=True)
-
 
     if alpha and len(bands) == 3 and mask is not None:
         bands.append(_mask_to_alpha(mask))
