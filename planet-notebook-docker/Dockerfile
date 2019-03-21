@@ -6,7 +6,7 @@ FROM jupyter/minimal-notebook:2c80cf3537ca
 # mismatchedsqlite3 version between build and runtime.
 # Downloading and building results in the gdal vsicurl driver not working
 # (not sure why)
-RUN conda install -y -c conda-forge gdal=2.3.1
+RUN conda install -y -c conda-forge gdal=2.4.0
 
 # Add pip shortcut and install Python3 packages
 COPY requirements.txt .
