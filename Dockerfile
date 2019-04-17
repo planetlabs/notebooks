@@ -11,6 +11,7 @@ ENV HOME /home/${NB_USER}
 
 # Make sure the contents of our repo are in ${HOME}
 COPY . ${HOME}
+COPY .
 
 # Configure and Install stuff as root
 USER root
@@ -54,5 +55,4 @@ RUN conda install -y -c conda-forge ncurses
 # https://github.com/jupyter/notebook/issues/3946#issuecomment-423035232
 RUN conda install notebook==5.6.0
 
-WORKDIR work
 USER $NB_USER
