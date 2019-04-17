@@ -1,5 +1,6 @@
 geojson
 geojsonio
+pandas
 geopandas
 ipyleaflet
 ipywidgets
@@ -14,10 +15,10 @@ scikit-image
 scikit-learn
 shapely
 tqdm
-holoviews
-geoviews
-pandas
 requests
 fiona
 bokeh
 descartes
+holoviews
+geoviews
+hvplot
