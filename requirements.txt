@@ -23,6 +23,5 @@ requests
 fiona
 bokeh
 descartes
-gdal
 scipy
 hvplot
