@@ -42,12 +42,10 @@ systems. To install docker on your system please see docker's [documentation](ht
 for your operating system.
 
 ### Build the Docker image
-First you must build the docker image. Note, this only has to be done the first time you use it. After checking out the
+First you must build the docker image. This image is based on the [jupyter/minimal-notebook](https://hub.docker.com/r/jupyter/minimal-notebook/) image and additional tips on running the jupyter notebook can be found in the documentation for that image. Note, this only has to be done the first time you use it. After checking out the
 this repository, you run:
 ```bash
-cd planet-notebook-docker
 docker build --rm -t planet-notebooks .
-cd ..
 ```
 
 This will build and install the Docker image on your system, making it available to run. This may take some 
