@@ -21,5 +21,3 @@ requests
 fiona
 bokeh
 descartes
-pyviz
-pyct
