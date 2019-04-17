@@ -4,10 +4,11 @@ geopandas
 ipyleaflet
 ipywidgets
 matplotlib 
-numpy 
+numpy
 opencv-python
 planet
 pyproj
+pyshp
 pytest
 rasterio
 scikit-image
@@ -16,8 +17,12 @@ shapely
 tqdm
 holoviews
 geoviews
+geos
 pandas
 requests
 fiona
 bokeh
 descartes
+gdal
+scipy
+hvplot
