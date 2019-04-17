@@ -22,3 +22,4 @@ fiona
 bokeh
 descartes
 pyviz
+pyct
