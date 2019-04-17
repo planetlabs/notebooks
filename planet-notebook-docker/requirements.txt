@@ -1,5 +1,6 @@
 geojson
 geojsonio
+pandas
 geopandas
 ipyleaflet
 ipynb
@@ -22,3 +23,6 @@ requests
 fiona
 bokeh
 descartes
+holoviews
+geoviews
+hvplot
