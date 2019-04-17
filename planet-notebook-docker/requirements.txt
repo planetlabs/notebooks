@@ -15,3 +15,9 @@ scikit-image
 scikit-learn
 shapely
 tqdm
+holoviews
+geoviews
+pandas
+requests
+fiona
+bokeh
