@@ -26,3 +26,4 @@ descartes
 holoviews
 geoviews
 hvplot
+datashader
