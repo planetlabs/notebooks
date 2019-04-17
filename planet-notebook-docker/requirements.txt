@@ -21,3 +21,4 @@ pandas
 requests
 fiona
 bokeh
+descartes
