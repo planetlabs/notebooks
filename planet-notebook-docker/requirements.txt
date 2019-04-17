@@ -5,12 +5,12 @@ ipyleaflet
 ipynb
 ipywidgets
 matplotlib 
-numpy==1.14.* # pinned because numpy 15.0 throws runtime warning 
-opencv-python==3.3.0.10
+numpy 
+opencv-python
 planet
 pyproj
 pytest
-rasterio==1.0.9
+rasterio
 scikit-image
 scikit-learn
 shapely
