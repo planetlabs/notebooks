@@ -14,6 +14,7 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 * [Calculate a vegetation index from 4-band satellite imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ndvi/ndvi_planetscope.ipynb)
 * [Convert PlanetScope metadata from radiance to reflectance](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/toar/toar_planetscope.ipynb)
 * [Visualize and convert a UDM to a binary mask](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/udm/udm.ipynb)
+* [Work with the Usable Data Mask (UDM2)](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/udm2)
 
 ### Analyze and visualize Planet data
 * [Detect, count, and visualize ships in Planet imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ship-detector/01_ship_detector.ipynb)
