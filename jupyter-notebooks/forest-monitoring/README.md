@@ -18,6 +18,16 @@ of the AOI into forest and non-forest regions
 1. [drc_roads_temporal_analysis](drc_roads_temporal_analysis.ipnb): Identify
 change in the AOI (new roads being built) using temporal analysis. 
 
+The workflow above uses the Unusable Data Mask (UDM) to determine scene quality
+and filter out bad pixels. Since that workflow was implemented, the Usable
+Data Mask (UDM2) was released. This asset provides additional information on
+pixel usability. To assess the impact of UDM2 on forest/non-forest classification,
+the entire workflow has been implemented utilizing UDM2 in the following notebook:
+* [drc_roads_udm2](drc_roads_udm2.ipynb)
+
+Because UDM2 was just recently released, the notebook had to restrict it's search
+to recent imagery, resulting in less useful imagery being found.
+
 Additionally, the entire workflow has been implemented utilizing mosaics and
 is implemented in the following notebook:
 * [drc_roads_mosaic](drc_roads_mosaic.ipynb)
@@ -26,8 +36,10 @@ Change classification results for the PLOrthoTiles and mosaic data inputs are
 very promising. With some clean up, we could have a pretty cut and dry change
 classification. Classification of forest/non-forest regions was better with
 mosaics than PSOrthoTiles. This is likely due to haze in the PSOrthoTiles that
-isn't identified in the UDM. Mosaic pre-processing removes the inconsistencies
-due to haze and other factors.
+isn't identified in the UDM. Unfortunately, UDM2 did not pick up the haze in the
+few available images with UDM2, so classification quality was not improved.
+Mosaic pre-processing removes the inconsistencies due to haze and other factors,
+which did improve classification quality.
 
 
 ## Techniques Demonstrated
