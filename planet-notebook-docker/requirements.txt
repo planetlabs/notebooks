@@ -16,14 +16,11 @@ scikit-image
 scikit-learn
 shapely
 tqdm
-holoviews
 geoviews==1.6.2
 pandas
 requests
 fiona
 bokeh
 descartes
-holoviews
-geoviews
 hvplot
 datashader
