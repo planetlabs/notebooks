@@ -4,10 +4,17 @@
 
 In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source (APLv2) guides are designed to help you explore Planet data, work with our APIs and tools, and learn how to extract information from our massive archive of high-cadence satellite imagery. We hope these guides will inspire you to ask interesting questions of Planet data. Need help? Find a bug? Please [file an issue](https://github.com/planetlabs/notebooks/issues/new) and we'll get back to you.
 
-### The basics: search, activate, download	
+### The basics:
+
+#### Search, activate, download with the Data API	
 * [Explore the Planet Data API with Python](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_data_api_introduction.ipynb)
 * [Search, activate, and download imagery with the Planet Python Client](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_cli_introduction.ipynb)
-* [Planet API reference](https://docs.planet.com/v1/reference)
+* [Planet Data API reference](https://docs.planet.com/v1/reference)
+
+#### Ordering, delivery, and tools with the Orders API
+* [Ordering and Delivery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/orders/ordering_and_delivery.ipynb)
+* [Tools and Toolchains](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/orders/tools_and_toolchains.ipynb)
+* [Planet Orders API reference](https://developers.planet.com/docs/orders/)
 
 ### Process Planet data
 * [Create a mosaic from multiple PlanetScope scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/mosaicing/basic_compositing_demo.ipynb)
