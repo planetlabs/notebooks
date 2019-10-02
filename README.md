@@ -16,6 +16,10 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 * [Tools and Toolchains](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/orders/tools_and_toolchains.ipynb)
 * [Planet Orders API reference](https://developers.planet.com/docs/orders/)
 
+#### Feeds, Subscriptions, and Results with the Analytics API
+* [Getting Started, Feeds, and Subscriptions](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/1.%20Getting%20Started%20with%20the%20Planet%20Analytics%20API.ipynb)
+* [Analytic Feed Results](http://0.0.0.0:8888/notebooks/jupyter-notebooks/analytics/2.%20Analytic%20Feeds%20Results.ipynb)
+
 ### Process Planet data
 * [Create a mosaic from multiple PlanetScope scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/mosaicing/basic_compositing_demo.ipynb)
 * [Calculate a vegetation index from 4-band satellite imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ndvi/ndvi_planetscope.ipynb)
@@ -27,6 +31,10 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 * [Detect, count, and visualize ships in Planet imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ship-detector/01_ship_detector.ipynb)
 * [Python examples for remote sensing](https://github.com/kscottz/PythonFromSpace)
 * [Pixel-by-pixel comparison of PlanetScope and Landsat Scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/landsat-ps-comparison/landsat-ps-comparison.ipynb)
+* [Calculate Coverage for a Search Query](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/coverage/calculate_coverage.ipynb)
+* [Segment and Classify Crops](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/crop-classification)
+* [Identify Forest Degradation](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/forest-monitoring)
+* [Identify the Temporal Signature of Crops](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/temporal-analysis)
 
 Soon we hope to add notebooks from the researchers, technologists, geographers, and entrepreneurs who are already using Planet data to ask interesting and innovative questions about our changing Earth. If you're working with our imagery and have a notebook (or just an idea for a notebook) that you'd like to share, please [file an issue](https://github.com/planetlabs/notebooks/issues) and let us know.
 
