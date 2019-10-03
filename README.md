@@ -18,7 +18,7 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 
 #### Feeds, Subscriptions, and Results with the Analytics API
 * [Getting Started, Feeds, and Subscriptions](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/1.%20Getting%20Started%20with%20the%20Planet%20Analytics%20API.ipynb)
-* [Analytic Feed Results](http://0.0.0.0:8888/notebooks/jupyter-notebooks/analytics/2.%20Analytic%20Feeds%20Results.ipynb)
+* [Analytic Feed Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/2.%20Analytic%20Feeds%20Results.ipynb)
 
 ### Process Planet data
 * [Create a mosaic from multiple PlanetScope scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/mosaicing/basic_compositing_demo.ipynb)
