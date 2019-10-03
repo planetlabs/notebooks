@@ -15,7 +15,7 @@ in the following notebooks, in order:
 overlap AOI
 1. [drc_roads_classification](drc_roads_classification.ipynb): Classify an image
 of the AOI into forest and non-forest regions
-1. [drc_roads_temporal_analysis](drc_roads_temporal_analysis.ipnb): Identify
+1. [drc_roads_temporal_analysis](drc_roads_temporal_analysis.ipynb): Identify
 change in the AOI (new roads being built) using temporal analysis. 
 
 The workflow above uses the Unusable Data Mask (UDM) to determine scene quality
