@@ -16,7 +16,7 @@ scikit-image
 scikit-learn
 shapely
 tqdm
-geoviews==1.6.2
+geoviews
 pandas
 requests
 fiona
