@@ -61,13 +61,14 @@ for your operating system.
 First you must build the docker image. Note, this only has to be done the first time you use it. After checking out the
 this repository, you run:
 ```bash
-cd planet-notebook-docker
 docker build --rm -t planet-notebooks .
-cd ..
 ```
 
 This will build and install the Docker image on your system, making it available to run. This may take some 
 time (between 10 and 20 minutes) depending on your network connection.
+
+This image provides the dependencies for running jupyter notebooks in [planetlabs/notebooks](https://github.com/planetlabs/notebooks). It is based on the [jupyter/minimal-notebook](https://hub.docker.com/r/jupyter/minimal-notebook/) image and additional tips on running the jupyter notebook can be found in the documentation for that image.
+
 
 ### Run the container
 To run the container (after building it), add your Planet API key below and issue the following command from the git repository root directory:
