@@ -10,7 +10,7 @@ ENV USER ${NB_USER}
 ENV NB_UID ${NB_UID}
 ENV HOME /home/${NB_USER}
 # Make sure the contents of our repo are in ${HOME}
-COPY . ${HOME}
+COPY ./jupyter-notebooks/analytics ${HOME}
 
 # Configure and Install stuff as root
 USER root
