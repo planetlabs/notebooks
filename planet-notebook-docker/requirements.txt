@@ -1,3 +1,5 @@
+h3
+folium
 geojson
 geojsonio
 pandas

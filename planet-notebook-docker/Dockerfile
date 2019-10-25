@@ -6,6 +6,23 @@ FROM jupyter/minimal-notebook:2c80cf3537ca
 # mismatchedsqlite3 version between build and runtime.
 # Downloading and building results in the gdal vsicurl driver not working
 # (not sure why)
+
+# install apt packages as root
+USER root
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+      libtiff-dev \
+      libgeotiff-dev \
+      libgdal1-dev \
+	  git \
+	  cmake \
+	  build-essential \
+	  wget \
+      && rm -rf /var/lib/apt/lists/*
+
+
+USER $NB_USER
+
 RUN conda install -c conda-forge cartopy
 RUN conda install -y -c conda-forge gdal
 
