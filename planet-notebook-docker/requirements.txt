@@ -26,3 +26,9 @@ bokeh
 descartes
 hvplot
 datashader
+rtree
+area
+seaborn
+statsmodels
+rasterstats
+pysal

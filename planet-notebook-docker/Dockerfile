@@ -10,6 +10,7 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
 	  git \
 	  cmake \
 	  build-essential \
+	  python3-rtree \
 	  wget \
       && rm -rf /var/lib/apt/lists/*
 
