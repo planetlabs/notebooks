@@ -44,5 +44,10 @@ RUN pip install --upgrade pip && \
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter nbextension enable --py --sys-prefix ipyleaflet
 
+# Enabling codefolding extension 
+RUN pip install jupyter_contrib_nbextensions
+RUN jupyter contrib nbextension install --user
+RUN jupyter nbextension enable codefolding/main
+
 WORKDIR work
 USER $NB_USER

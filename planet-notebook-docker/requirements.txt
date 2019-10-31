@@ -32,3 +32,4 @@ seaborn
 statsmodels
 rasterstats
 pysal
+earthpy
