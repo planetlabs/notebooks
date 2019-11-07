@@ -1,5 +1,23 @@
 FROM jupyter/minimal-notebook:2c80cf3537ca
 
+# For binder to work, it needs to be able to lanunch jupyter notebook as a specified user.
+# User specs can be passed via docker build args as NB_UID/NB_USER
+# https://mybinder.readthedocs.io/en/latest/sample_repos.html
+# Create user with a home directory
+ARG NB_USER=jovyan
+ARG NB_UID=1000
+ENV USER ${NB_USER}
+ENV NB_UID ${NB_UID}
+ENV HOME /home/${NB_USER}
+# Make sure the contents of our repo are in ${HOME}
+COPY . ${HOME}
+
+# Configure and Install stuff as root
+USER root
+# This chown is required because Docker will by default set the owner to root, which would prevent users from editing files.
+RUN chown -R ${NB_UID} ${HOME}
+WORKDIR ${HOME}
+
 # Install GDAL
 # We use conda because it is the only way to get gdal working properly with ipython
 # Installing from a precompiled binary (e.g. using ubuntugis) results in a
@@ -12,7 +30,7 @@ RUN conda install -y -c conda-forge gdal
 # Add pip shortcut and install Python3 packages
 COPY requirements.txt .
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt 
+    pip install -r requirements.txt
 
 # Enable Jupyter extentions
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
@@ -29,5 +47,8 @@ RUN cp /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
 USER root
 RUN conda install -y -c conda-forge ncurses
 
-WORKDIR work
+# Fix notebook version to address traitlets issue
+# https://github.com/jupyter/notebook/issues/3946#issuecomment-423035232
+RUN conda install notebook==5.6.0
+
 USER $NB_USER
