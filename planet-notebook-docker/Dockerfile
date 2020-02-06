@@ -1,33 +1,17 @@
-FROM jupyter/minimal-notebook:2c80cf3537ca
+# 2020-01-24 build
+# https://github.com/jupyter/docker-stacks/wiki/minimal-notebook-414b5d749704
+FROM jupyter/minimal-notebook:414b5d749704
 
-# Install GDAL
-# We use conda because it is the only way to get gdal working properly with ipython
-# Installing from a precompiled binary (e.g. using ubuntugis) results in a
-# mismatchedsqlite3 version between build and runtime.
-# Downloading and building results in the gdal vsicurl driver not working
-# (not sure why)
-RUN conda install -c conda-forge cartopy
-RUN conda install -y -c conda-forge gdal
-
-# Add pip shortcut and install Python3 packages
-COPY requirements.txt .
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt 
+# install dependencies
+COPY requirements.txt /tmp/requirements.txt
+RUN conda install -y -c conda-forge --file /tmp/requirements.txt
 
 # Enable Jupyter extentions
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter nbextension enable --py --sys-prefix ipyleaflet
 
-# fix certs for rasterio
-# https://stackoverflow.com/a/30154802/2344416
-USER root
-RUN mkdir -p /etc/pki/tls/certs
-RUN cp /etc/ssl/certs/ca-certificates.crt /etc/pki/tls/certs/ca-bundle.crt
-
-# fix ncurses install
-# ref: https://github.com/conda-forge/gdal-feedstock/issues/226
-USER root
-RUN conda install -y -c conda-forge ncurses
+# Attempts to avoid having to hardcode this failed.
+# ref: https://github.com/planetlabs/notebooks/issues/101
+ENV PROJ_LIB=/opt/conda/share/proj
 
 WORKDIR work
-USER $NB_USER
