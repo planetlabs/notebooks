@@ -4,7 +4,11 @@ FROM jupyter/minimal-notebook:414b5d749704
 
 # install dependencies
 COPY requirements.txt /tmp/requirements.txt
-RUN conda install -y -c conda-forge --file /tmp/requirements.txt
+
+# without channel set to strict, a conflicting version of gdal
+# is sometimes installed from the default channel
+RUN conda config --set channel_priority strict && \
+    conda install -y -c conda-forge --file /tmp/requirements.txt
 
 # Enable Jupyter extentions
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
