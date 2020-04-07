@@ -20,6 +20,7 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 * [Inspecting Available Feeds](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/01_checking_available_feeds_and_subscriptions.ipynb)
 * [Getting Feed Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/02_fetching_feed_results.ipynb)
 * [Visualizing Raster Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/03_visualizing_raster_results.ipynb)
+* [Converting Raster Results to Vector Features](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics-snippets/README.md)
 
 ### Process Planet data
 * [Create a mosaic from multiple PlanetScope scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/mosaicing/basic_compositing_demo.ipynb)
