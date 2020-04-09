@@ -59,9 +59,18 @@ configure. To ease this complexity we provide a docker container for running the
 systems. To install docker on your system please see docker's [documentation](https://docs.docker.com/engine/installation/)
 for your operating system.
 
+### Download prebuilt Docker image (recommended)
+The Docker image for these notebooks is hosted in the [planetlabs/notebooks](https://hub.docker.com/r/planetlabs/notebooks)
+repo on DockerHub. To download and prepare the image for use, run:
+```bash
+docker pull planetlabs/notebooks
+docker tag planetlabs/notebooks planet-notebooks
+```
+
 ### Build the Docker image
-First you must build the docker image. Note, this only has to be done the first time you use it. After checking out the
-this repository, you run:
+Alternatively, you can build the docker image locally. Note, this only has to be done the first time you use it.
+After checking out this repository, you run:
+
 ```bash
 cd planet-notebook-docker
 docker build --rm -t planet-notebooks .
