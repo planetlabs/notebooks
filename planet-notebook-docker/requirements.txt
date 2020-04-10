@@ -1,18 +1,15 @@
+# changes here should be reflected in 
+#    ../development-notebooks/imports_test.ipynb
 # please keep this in alphabetical order
-bokeh
-cartopy
-datashader
-descartes
 fiona
 gdal
 geojson
 geojsonio
 geopandas
-geoviews
-hvplot
 ipyleaflet
 ipywidgets
 matplotlib 
+mercantile
 numpy 
 # for pip, use opencv-python
 opencv
