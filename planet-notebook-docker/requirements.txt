@@ -26,3 +26,4 @@ scikit-image
 scikit-learn
 shapely
 tqdm
+panel
