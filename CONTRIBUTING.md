@@ -1,16 +1,39 @@
 # Contributing to Notebooks
 
-## Notebook Naming
+# Notebooks
 
-Notebooks cannot have spaces in the paths. Use underscores instead. This is
+## Names
+
+Notebook filenames cannot have spaces. Use underscores instead. This is
 because pytest does not like spaces in command line arguments.
 
-## Docker Image Validation
+## Dependencies
 
-The docker image must be able to run all notebooks. Whenever a change is made to
-the docker image, it must be validated. This can be accomplished by automatically
-running all of the notebooks using the supplied test script. This is accomplished
-by running the notebook in interactive mode, achieved by adding `/bin/bash` to 
+When a new notebook has a dependency that is not yet supported by the Docker image,
+a new Docker image must be built. Additionally, add the new dependency to the 
+[imports_test notebook](development-notebooks/imports_test.ipynb).
+
+## Skipping Validation
+
+To enable validation of the Docker image, every notebook should run successfully
+when run from the command line. For notebooks where that just is not possible, 
+the notebooks can be excluded from automated running by adding its path to 
+[tests/skip_notebooks](tests/skip_notebooks). Excluding a notebook from automated running
+means that it is excluded from Docker Image validation. **If a notebook is
+skipped, it will not be guaranteed to be supported by the Docker image.**
+
+# Docker Image
+
+## Validation
+
+**Every time** the Docker image is changed, at the very least ensure that the 
+python packages still import without error by running the
+[imports_test notebook](development-notebooks/imports_test.ipynb).
+
+It is also strongly recommended that you ensure the Docker image can run all
+of the notebooks in the repository. This can be accomplished by automatically
+running all of the notebooks using the supplied test script. To run the test script,
+run the notebook in interactive mode, achieved by adding `/bin/bash` to 
 the container run command, e.g.
 ```bash
 docker run -it --rm -p 8888:8888 -v $PWD:/home/jovyan/work -e PL_API_KEY='[YOUR-API-KEY]' planet-notebooks /bin/bash
@@ -35,14 +58,10 @@ From the root directory within the docker container, run one of the following:
     $> pytest tests/test_notebooks.py --notebooks "$(grep -rl import <package> jupyter-notebooks/)"
    ```
 
-## Automated Running and Skipping
+## Skipping Notebooks
 
-To enable validation of the Docker image, every notebook should run successfully
-when run from the command line. For notebooks where that just is not possible, 
-the notebooks can be excluded from automated running by adding its path to 
-`tests/skip_notebooks`. Excluding a notebook from automated running
-means that it is excluded from Docker Image validation. **If a notebook is
-skipped, it will not be guaranteed to be supported by the Docker image.**
-
-Skipping of notebooks within `skip_notebooks` can be achieved with by adding the
-`--no-skip` option to the pytest command.
+Some notebooks are purposefully skipped in the validation process because they
+do not run successfully from the command line. These notebooks are specified in
+[tests/skip_notebooks](tests/skip_notebooks). Skipping of notebooks within
+`skip_notebooks` can be disabled by adding the `--no-skip` option to the pytest
+command.
