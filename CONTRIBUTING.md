@@ -24,7 +24,8 @@ These AOIs are also given in the
 to add your notebook to the list of notebooks using each AOI.
 
 If the AOI for a notebook cannot be satisfied by the the AOIs already in use
-in the repository, then add the AOI to the 
+in the repository, then email <devrel@planet.com> to request that the demo
+data coverage be expanded to include the new AOI. Once approved, add the AOI to the 
 [repository_aois notebook](dev/repository_aois.ipynb). Run that notebook
 through to the end to update [aois.geojson](dev/imports_test.ipynb).
 
