@@ -11,7 +11,24 @@ because pytest does not like spaces in command line arguments.
 
 When a new notebook has a dependency that is not yet supported by the Docker image,
 a new Docker image must be built. Additionally, add the new dependency to the 
-[imports_test notebook](development-notebooks/imports_test.ipynb).
+[imports_test notebook](dev/imports_test.ipynb).
+
+## Area of Interest
+
+The first choice of area of interest (AOI) for any notebook is an AOI that is 
+already used in this repository. The geojson description of these AOIs is given
+in [aois.geojson](dev/imports_test.ipynb) (it is easy to visualize these
+aois directly in GitHub or by copy/pasting into [geojson.io](geojson.io).
+These AOIs are also given in the 
+[repository_aois notebook](dev/repository_aois.ipynb). It is good practice
+to add your notebook to the list of notebooks using each AOI.
+
+If the AOI for a notebook cannot be satisfied by the the AOIs already in use
+in the repository, then email <devrel@planet.com> so that we can consider
+expanding our demo data coverage to include a new AOI. If the new AOI is included,
+add the AOI to the 
+[repository_aois notebook](dev/repository_aois.ipynb). Run that notebook
+through to the end to update [aois.geojson](dev/imports_test.ipynb).
 
 ## Skipping Validation
 
@@ -28,7 +45,7 @@ skipped, it will not be guaranteed to be supported by the Docker image.**
 
 **Every time** the Docker image is changed, at the very least ensure that the 
 python packages still import without error by running the
-[imports_test notebook](development-notebooks/imports_test.ipynb).
+[imports_test notebook](dev/imports_test.ipynb).
 
 It is also strongly recommended that you ensure the Docker image can run all
 of the notebooks in the repository. This can be accomplished by automatically
@@ -36,7 +53,10 @@ running all of the notebooks using the supplied test script. To run the test scr
 run the notebook in interactive mode, achieved by adding `/bin/bash` to 
 the container run command, e.g.
 ```bash
-docker run -it --rm -p 8888:8888 -v $PWD:/home/jovyan/work -e PL_API_KEY='[YOUR-API-KEY]' planet-notebooks /bin/bash
+docker run -it --rm -p 8888:8888 \
+    -v $PWD:/home/jovyan/work \
+    -e PL_API_KEY='[YOUR-API-KEY]' \
+    planet-notebooks /bin/bash
 ```
 
 From the root directory within the docker container, run one of the following:
