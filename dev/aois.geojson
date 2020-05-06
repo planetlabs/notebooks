@@ -22,7 +22,8 @@
             "properties": {
                 "name": "iowa_crops",
                 "used by": [
-                    "crop_classification/classify_cart_l8_ps"
+                    "crop_classification/classify_cart_l8_ps",
+                    "coverage/calculate_coverage_wgs84"
                 ]
             }
         },
