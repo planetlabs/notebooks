@@ -101,3 +101,8 @@ http://localhost:8888/?token=<UNIQUE-TOKEN>
 ```
 
 NOTE: This security token will change every time you start your Docker container.
+
+### Get to the EAP Change Detection Jupyter notebook
+
+To open the EAP Change Detection Jupyter notebook, go to this directory /jupyter-notebooks/analytics and openthe notebook entitled "3. Change Detection.ipynb"
+
