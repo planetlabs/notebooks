@@ -13,7 +13,16 @@ When a new notebook has a dependency that is not yet supported by the Docker ima
 a new Docker image must be built. Additionally, add the new dependency to the 
 [imports_test notebook](dev/imports_test.ipynb).
 
-## Area of Interest
+## Planet Feeds
+
+It is the intention of this notebook repository that a user be able to easily
+determine the permissions needed within the Planet ecosystem to be able to run
+all notebooks successfully. Therefore, we standardize and track the Planet feeds
+that are used across all notebooks within this repository. Right now, this applies
+to the Planet Data feed in the form of Areas of Interest and to the Planet 
+Analytics feed in the form of suscription IDs.
+
+### Data Feed - Area of Interest
 
 The first choice of area of interest (AOI) for any notebook is an AOI that is 
 already used in this repository. The geojson description of these AOIs is given
@@ -30,7 +39,23 @@ add the AOI to the
 [repository_aois notebook](dev/repository_aois.ipynb). Run that notebook
 through to the end to update [aois.geojson](dev/imports_test.ipynb).
 
-## Skipping Validation
+### Analytics Feed - Subscription ID
+
+The fist choice of Analytics Feed subscription id for any notebooks is a 
+subscription ID that is already used in this repository. The subscription IDs
+used in this repository are maintained in the
+[analygics_feeds notebook](analytics_feeds.ipynb). This notebook also helpfully
+pulls the feed information from these subscription IDs. It is good practice
+to add your notebook to the list of notebooks using each subscription ID.
+
+Currently, subscription IDs are not being tracked in any demo permissions program.
+However, this may change in the future. If the subscription ID for a notebook
+cannot be satisfied by the subscription IDs already in the repository, add
+the subscription ID to the notebook and email <devrel@planet.com> to notify us
+of the change. (**NOTE**: this is likely to change to a request when demo 
+permissions for the analytics feed are established).
+
+## Notebook Validation
 
 To enable validation of the Docker image, every notebook should run successfully
 when run from the command line. For notebooks where that just is not possible, 
