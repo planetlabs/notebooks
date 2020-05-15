@@ -5,6 +5,14 @@ FROM jupyter/minimal-notebook:414b5d749704
 # install dependencies
 COPY requirements.txt /tmp/requirements.txt
 
+# Required for opencv
+# https://github.com/conda-forge/pygridgen-feedstock/issues/10#issuecomment-365914605
+USER root
+RUN apt-get update && apt-get install -yq --no-install-recommends \
+    libgl1-mesa-glx \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+USER $NB_UID
+
 # without channel set to strict, a conflicting version of gdal
 # is sometimes installed from the default channel
 RUN conda config --set channel_priority strict && \
