@@ -16,7 +16,7 @@ xformatter = DatetimeTickFormatter(months='%b %Y')
 def jpp(data):
     print(json.dumps(data, indent=4))
 
-def get_and_display_subscription_bounds(subscription_id, pl_api_key, sif_env='sif-live'):
+def get_subscription_bounds(subscription_id, pl_api_key, sif_env='sif-live'):
     # Setup basic auth session
     BASIC_AUTH = (pl_api_key, '')
     session = requests.Session()
@@ -31,15 +31,17 @@ def get_and_display_subscription_bounds(subscription_id, pl_api_key, sif_env='si
     )
     # Convert geometry to a Geopandas DataFrame
     subscription_geometry = subs_get_resp.json()['geometry']
-    subscription_gdf = gpd.GeoDataFrame.from_file(json.dumps(subs_get_resp.json()))
+    return subscription_geometry
 
-    # Visualize Geometry with KeplerGL
-    subscription_map = KeplerGl(height=500)
-    subscription_map.add_data(data=subscription_gdf, name=f'Wuhu Ships Subscription {subscription_id}')
-    return subscription_map
+    # subscription_gdf = gpd.GeoDataFrame.from_file(json.dumps(subs_get_resp.json()))
+
+    # # Visualize Geometry with KeplerGL
+    # subscription_map = KeplerGl(height=500)
+    # subscription_map.add_data(data=subscription_gdf, name=f'Wuhu Ships Subscription {subscription_id}')
+    # return subscription_map
 
 def get_stats_geometry_from_widget_selection(subscription_widget, indexed_stats_df, pl_api_key):
-    description = subscription_widget.value
+    description = subscription_widget
     selection = indexed_stats_df.query('Description == @description')
 
     subscription_id = selection['Subscription ID'].iloc[0]
@@ -51,8 +53,8 @@ def get_stats_geometry_from_widget_selection(subscription_widget, indexed_stats_
     else:
         sif_env = 'sif-next'
         
-    subscription_map = get_and_display_subscription_bounds(subscription_id, pl_api_key, sif_env=sif_env)
-    return subscription_map
+    subscription_geom = get_subscription_bounds(subscription_id, pl_api_key, sif_env=sif_env)
+    return subscription_geom
 
 def get_report_data(report_url, pl_api_key):
     # Setup Basic Auth
@@ -109,7 +111,7 @@ def cloud_normalize_results_df(report_df):
     
 
 def get_report_data_from_widget_selection(subscription_widget, indexed_stats_df, pl_api_key):
-    description = subscription_widget.value
+    description = subscription_widget
     selection = indexed_stats_df.query('Description == @description')
 
     subscription_id = selection['Subscription ID'].iloc[0]
@@ -132,7 +134,7 @@ def get_report_data_from_widget_selection(subscription_widget, indexed_stats_df,
     return report_df
 
 def vizualize_report_data_from_widget_selection(subscription_widget, indexed_stats_df, pl_api_key):
-    description = subscription_widget.value
+    description = subscription_widget
     selection = indexed_stats_df.query('Description == @description')
     object_class = selection['Object type/class'].iloc[0]
 
