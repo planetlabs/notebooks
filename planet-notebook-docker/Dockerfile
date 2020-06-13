@@ -18,6 +18,10 @@ USER $NB_UID
 RUN conda config --set channel_priority strict && \
     conda install -y -c conda-forge --file /tmp/requirements.txt
 
+# install the following libraries w/ pip to support analytics/user-guide nb's
+# build fails when these dependencies are added to requirements/ installed with conda
+RUN pip install descartes holoviews geoviews xarray datashader
+
 # Enable Jupyter extentions
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter nbextension enable --py --sys-prefix ipyleaflet
