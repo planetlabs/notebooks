@@ -20,7 +20,8 @@ RUN conda config --set channel_priority strict && \
 
 # install the following libraries w/ pip to support analytics/user-guide nb's
 # build fails when these dependencies are added to requirements/ installed with conda
-RUN pip install descartes holoviews geoviews xarray datashader
+# python -m pip as per https://github.com/pypa/pip/issues/5599
+RUN python -m pip install descartes holoviews geoviews xarray datashader
 
 # Enable Jupyter extentions
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
