@@ -7,22 +7,28 @@
 Notebook filenames cannot have spaces. Use underscores instead. This is
 because pytest does not like spaces in command line arguments.
 
+## Style
+
+For maximum portability, accessibility, and ease of use, Notebooks in this
+repository should not use a custom style or theme. 
+
+
 ## Dependencies
 
 When a new notebook has a dependency that is not yet supported by the Docker image,
 a new Docker image must be built. Additionally, add the new dependency to the 
 [imports_test notebook](dev/imports_test.ipynb).
 
-## Planet Feeds
+## Planet Data
 
 It is the intention of this notebook repository that a user be able to easily
 determine the permissions needed within the Planet ecosystem to be able to run
-all notebooks successfully. Therefore, we standardize and track the Planet feeds
+all notebooks successfully. Therefore, we standardize and track Planet data 
 that are used across all notebooks within this repository. Right now, this applies
-to the Planet Data feed in the form of Areas of Interest and to the Planet 
-Analytics feed in the form of suscription IDs.
+to Planet Imagery in the form of Areas of Interest and to Planet 
+Analytic Feeds in the form of suscription IDs.
 
-### Data Feed - Area of Interest
+### Imagery - Area of Interest
 
 The first choice of area of interest (AOI) for any notebook is an AOI that is 
 already used in this repository. The geojson description of these AOIs is given
