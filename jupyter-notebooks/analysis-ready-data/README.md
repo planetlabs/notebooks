@@ -3,7 +3,9 @@
 The tutorials in this directory cover how to use the orders api to create Analysis Ready Data. These tutorials cover two use cases:
 1. *As a software engineer at an ag-tech company, I'd like to be able to order Planet imagery programmatically in a way that enables the data scientist at my organization to create time-series algorithms (e.g. monitoring ndvi curves over time) without further data cleaning and processing.*
 
-2. **NOTE: This may be outdated, update** *The second use case we will cover is: As a tropical forest monitoring analyst, I'd like to create an imagery pipeline that delivers analysis-ready imagery over a [LARGE] protected area so I can create simple change detection (ndvi_xdate - ndvi_ydate) analyses. I'd like to do minimal custom (non-Planet) data processing to get the imagery in a format that supports a change-detection analysis because my technical skills are limited.*
+2. *As an agriculture customer, I'd like to create an imagery pipeline that provides for trialing different fungicides by ordering Planet imagery within a single field (AOI), cutting the imagery into multiple field blocks (grid within AOI), and comparing values across blocks in two ways. First, comparison is performed by extracting median, mean, variance NDVI values for each day (using random point sampling) in each block. Second, comparison is performed by random point selection in each block.*
 
-The first notebook, [ARD Best Practices and Use Case 1](ard_best_practices_and_use_case_1.ipynb), provides an introduction to Analysis Ready Data and the orders api, provides best practices for using the orders api, and runs through the first use case. The second notebook covers the second use case.
-
+The notebooks are meant to be worked through in sequence:
+1. [Analysis Ready Data Tutorial Part 1: Introduction and Best Practices](ard_1_intro_and_best_practices.ipynb), provides an introduction to Analysis Ready Data and the Orders and Data APIs and provides best practices for using the APIs to prepare Analysis Ready Data.
+1. [Analysis Ready Data Tutorial Part 2: Use Case 1](ard_2_use_case_1.ipynb) runs through the first use case, preparing an NDVI time stack. This part includes a second notebook, [Analysis Ready Data Tutorial Part 2: Use Case 1 - Visualize Images](ard_2_use_case_1_visualize_images.ipynb), for visualizing the NDVI imagery.
+1. [Analysis Ready Data Tutorial Part 3: Use Case 2](ard_3_use_case_2.ipynb) runs through the second use case, preparing a gridded NDVI time stack of a field and performing comparisons across the grid blocks.
