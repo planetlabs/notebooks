@@ -1,25 +1,27 @@
 # changes here should be reflected in 
 #    ../development-notebooks/imports_test.ipynb
 # please keep this in alphabetical order
-fiona
-gdal
-geojson
-geojsonio
-geopandas
-ipyleaflet
-ipywidgets
-matplotlib 
-mercantile
-numpy 
+descartes=1.1.0=py_4
+fiona=1.8.13=py37h0492a4a_1
+gdal=3.0.4=py37h4b180d9_4
+geojson=2.5.0=py_0
+geojsonio=0.0.3=py_0
+geopandas=0.7.0=py_1
+geoviews=1.8.1=py_0
+ipyleaflet=0.13.0=pyh9f0ad1d_0
+ipywidgets=7.5.1=py_0
+matplotlib=3.2.1=0
+mercantile=1.1.4=pyh9f0ad1d_0
+numpy=1.18.4=py37h8960a57_0
 # for pip, use opencv-python
-opencv
-pandas
-planet
-pyproj
-pytest
-rasterio
-requests
-scikit-image
-scikit-learn
-shapely
-tqdm
+opencv=4.2.0=py37_5
+pandas=1.0.4=py37h0da4684_0
+planet=1.4.6=py37hc8dfbb8_0
+pyproj=2.6.1.post1=py37h34dd122_0
+pytest=5.4.3=py37hc8dfbb8_0
+rasterio=1.1.4=py37h0492a4a_0
+requests=2.23.0=pyh8c360ce_2
+scikit-image=0.17.2=py37h0da4684_0
+scikit-learn=0.23.1=py37h8a51577_0
+shapely=1.7.0=py37hc88ce51_3
+tqdm=4.46.0=pyh9f0ad1d_0
