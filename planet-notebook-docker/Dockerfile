@@ -18,6 +18,12 @@ USER $NB_UID
 RUN conda config --set channel_priority strict && \
     conda install -y -c conda-forge --file /tmp/requirements.txt
 
+# install the following libraries w/ pip to support analytics/user-guide nb's
+# build fails due to long conda solves when these dependencies are added to requirements.txt
+# see https://github.com/planetlabs/notebooks/issues/135 for more details
+# python -m pip as per https://github.com/pypa/pip/issues/5599
+RUN python -m pip install descartes geoviews
+
 # Enable Jupyter extentions
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter nbextension enable --py --sys-prefix ipyleaflet
