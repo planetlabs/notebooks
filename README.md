@@ -34,12 +34,13 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 
 * Analytics quickstart:
     1. [Summarizing Feeds and Subscriptions](notebooks/jupyter-notebooks/analytics/quickstart/01_checking_available_feeds_and_subscriptions.ipynb)
-    1. [Getting Analytic Feed Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/02_fetching_feed_results.ipynb)
-    1. [Visualizing Raster Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/03_visualizing_raster_results.ipynb)
+    2. [Getting Analytic Feed Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/02_fetching_feed_results.ipynb)
+    3. [Visualizing Raster Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/03_visualizing_raster_results.ipynb)
 * Analytics user guide:
-    1. [Getting Started with Planet Analytics API](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/1.%20Getting%20Started%20with%20the%20Planet%20Analytics%20API.ipynb)
-    1. [Planet Analytic Feeds Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/2.%20Analytic%20Feeds%20Results.ipynb)
-    1. [Change Detection](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/3.%20Change%20Detection.ipynb)
+    1. [Getting Started with Planet Analytics API](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/01_getting_started_with_the_planet_analytics_api.ipynb)
+    2. [Planet Analytic Feeds Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/02_analytic_feeds_results.ipynb)
+    3. [Change Detection](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/03_change_detection.ipynb)
+    5. [Summary Statistics - Ships and Clouds](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/05_summary_statistics_ships_and_clouds.ipynb)
 * Other analytics notebooks:
     * [Detect, count, and visualize ships in Planet imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ship-detector/01_ship_detector.ipynb)
     * [Python examples for remote sensing](https://github.com/kscottz/PythonFromSpace)
