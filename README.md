@@ -41,8 +41,6 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
     1. [Planet Analytic Feeds Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/2.%20Analytic%20Feeds%20Results.ipynb)
 * Other analytics notebooks:
     * [Detect, count, and visualize ships in Planet imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ship-detector/01_ship_detector.ipynb)
-    * [Getting Started with the Planet Analytics API](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/analytics/1.%20Getting%20Started%20with%20the%20Planet%20Analytics%20API.ipynb)
-    * [Analytic Feeds Results](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/analytics/2.%20Analytic%20Feeds%20Results.ipynb)
     * [Python examples for remote sensing](https://github.com/kscottz/PythonFromSpace)
     * [Pixel-by-pixel comparison of PlanetScope and Landsat Scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/landsat-ps-comparison/landsat-ps-comparison.ipynb)
     * [Calculate Coverage for a Search Query](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/coverage/calculate_coverage.ipynb)
@@ -83,7 +81,7 @@ docker tag planetlabs/notebooks planet-notebooks
 
 If you get errors while running the Docker commands above, you might have to add `sudo` at the beginning, such as `sudo docker pull planetlabs/notebooks`.
 
-If you want to re-build the Docker image yourself (not recommended), this is documented below in the "Appendix: Build the Docker image" section.
+If you want to re-build the Docker image yourself, this is documented below in the "Appendix: Build the Docker image" section.
 
 ### Run the container
 To run the container (after building or downloading it), add your Planet API key below and issue the following command from the git repository root directory:
@@ -123,7 +121,7 @@ NOTE: This security token will change every time you start your Docker container
 
 ### Appendix: Build the Docker image
 
-This documents how to build the docker image yourself, rather than using the recommended step of downloading pre-built Docker images.
+This documents how to build the docker image yourself, rather than using the recommended step of downloading pre-built Docker images. This is useful if you are a developer adding dependencies or a new Jupyter notebook to this repo, for example.
 
 First you must build the docker image. Note, this only has to be done the first time you use it. After checking out the
 repository, you run:
