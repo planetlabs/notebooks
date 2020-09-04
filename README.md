@@ -39,6 +39,7 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 * Analytics user guide:
     1. [Getting Started with Planet Analytics API](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/1.%20Getting%20Started%20with%20the%20Planet%20Analytics%20API.ipynb)
     1. [Planet Analytic Feeds Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/2.%20Analytic%20Feeds%20Results.ipynb)
+    1. [Change Detection](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/3.%20Change%20Detection.ipynb)
 * Other analytics notebooks:
     * [Detect, count, and visualize ships in Planet imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ship-detector/01_ship_detector.ipynb)
     * [Python examples for remote sensing](https://github.com/kscottz/PythonFromSpace)
