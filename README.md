@@ -33,7 +33,7 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 ### Analyze and visualize Planet data
 
 * Analytics quickstart:
-    1. [Summarizing Feeds and Subscriptions](notebooks/jupyter-notebooks/analytics/quickstart/01_checking_available_feeds_and_subscriptions.ipynb)
+    1. [Summarizing Feeds and Subscriptions](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/01_checking_available_feeds_and_subscriptions.ipynb)
     2. [Getting Analytic Feed Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/02_fetching_feed_results.ipynb)
     3. [Visualizing Raster Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/03_visualizing_raster_results.ipynb)
 * Analytics user guide:
