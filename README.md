@@ -40,9 +40,11 @@ The Docker image for these notebooks is hosted in the [planetlabs/notebooks](htt
 cd notebooks
 docker pull planetlabs/notebooks
 docker tag planetlabs/notebooks planet-notebooks
-```
 
-If you get errors while running the Docker commands above, you might have to add `sudo` at the beginning, such as `sudo docker pull planetlabs/notebooks`.
+# If you get errors running the above, you might have to add sudo to the beginning:
+#sudo docker pull planetlabs/notebooks
+#sudo docker tag planetlabs/notebooks planet-notebooks
+```
 
 If you want to re-build the Docker image yourself, this is documented below in the "Appendix: Build the Docker image" section.
 
@@ -51,6 +53,9 @@ To run the container (after building or downloading it), add your Planet API key
 
 ```bash
 docker run -it --rm -p 8888:8888 -v $PWD:/home/jovyan/work -e PL_API_KEY='[YOUR-API-KEY]' planet-notebooks
+
+# If you get a permissions error running the above, you should add sudo to the front:
+# sudo docker run -it --rm -p 8888:8888 -v $PWD:/home/jovyan/work -e PL_API_KEY='[YOUR-API-KEY]' planet-notebooks
 ```
 
 This does several things:  
