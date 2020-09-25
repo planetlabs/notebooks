@@ -11,11 +11,21 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 * [Planet Account](https://www.planet.com/explorer/?signup=1)
 * [Planet API Key](https://www.planet.com/account/)
 
-### Clone the repo:
+### Clone or update repo:
+
+If you've never cloned the Planet notebooks repo, run the following:
+
 ```bash
 git clone https://github.com/planetlabs/notebooks.git
 cd notebooks
 ```
+
+If you have previously cloned the Planet notebooks repo in the past, make sure to update to pull any changes locally that might have happened since you last interacted with the Planet notebooks:
+
+```bash
+cd notebooks
+git pull
+``` 
 
 ## Run Planet Notebooks in Docker
 Planet Notebooks rely on a complex stack of technologies that are not always easy to install and properly 
