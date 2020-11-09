@@ -11,6 +11,8 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 * [Planet Account](https://www.planet.com/explorer/?signup=1)
 * [Planet API Key](https://www.planet.com/account/)
 
+NOTE: After installing Docker, Windows users should install WSL2 Backend when prompted.
+
 ### Clone or update repo:
 
 If you've never cloned the Planet notebooks repo, run the following:
@@ -56,6 +58,8 @@ docker run -it --rm -p 8888:8888 -v $PWD:/home/jovyan/work -e PL_API_KEY='[YOUR-
 
 # If you get a permissions error running the above, you should add sudo to the front:
 # sudo docker run -it --rm -p 8888:8888 -v $PWD:/home/jovyan/work -e PL_API_KEY='[YOUR-API-KEY]' planet-notebooks
+# Windows users run: winpty docker run -it --rm -p 8888:8888 -v "/$PWD":/home/joyvan/work -e PL_API_KEY='[YOUR-API-KEY]' planet-notebooks
+
 ```
 
 This does several things:  
