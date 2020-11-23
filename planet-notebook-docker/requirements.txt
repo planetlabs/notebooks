@@ -8,9 +8,9 @@ geojsonio
 geopandas
 ipyleaflet
 ipywidgets
-matplotlib 
+matplotlib
 mercantile
-numpy 
+numpy
 # for pip, use opencv-python
 opencv
 pandas
