@@ -38,7 +38,7 @@ Authentication with Planet's API Key can be achieved by using a valid Planet API
 You can export your API Key as an environment variable on your system:
 
 ```bash
-export PL_API_KEY="YOU-API-KEY"
+export PL_API_KEY="YOUR-API-KEY"
 ```
 
 If you wish to have your API Key be persistent (forever stored as ```PL_API_KEY```), then you may enter this ```export``` command in your ```~/.bashrc``` or ```~/.zshrc``` file. If you are using our Docker environment, as is defined below, it will already be set.
