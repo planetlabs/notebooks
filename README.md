@@ -121,6 +121,7 @@ NOTE: This security token will change every time you start your Docker container
 #### Search, activate, download with the Data API   
 * [Explore the Planet Data API with Python](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_data_api_introduction.ipynb)
 * [Search, activate, and download imagery with the Planet Python Client](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_cli_introduction.ipynb)
+* [Search & Download Quickstart Guide](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/search_and_download_quickstart.ipynb)
 * [Planet Data API reference](https://developers.planet.com/docs/apis/data/)
 
 #### Ordering, delivery, and tools with the Orders API
