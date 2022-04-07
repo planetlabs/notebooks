@@ -117,6 +117,7 @@ http://localhost:8888/?token=<UNIQUE-TOKEN>
 NOTE: This security token will change every time you start your Docker container.
 
 ### Available notebooks
+#### NOTE: PSScene3Band and PSScene4Band item type and assets will be deprecated by January 2023. These item types will not be available for new customers provisioned after March 1, 2022. We recommend all customers who are interested in medium resolution imagery use the [PSScene item type](https://developers.planet.com/docs/data/psscene/) as soon as possible.
 
 #### Search, activate, download with the Data API   
 * [Explore the Planet Data API with Python](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_data_api_introduction.ipynb)
