@@ -158,6 +158,7 @@ NOTE: This security token will change every time you start your Docker container
     * [Identify the Temporal Signature of Crops](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/temporal-analysis)
     * [Converting Raster Results to Vector Features](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics-snippets/README.md)
     * [Creating a Heatmap of Vector Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/change_detection_heatmap.ipynb)
+    * [Introduction to Cloud Native Geospatial Tools]([https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/change_detection_heatmap.ipynb](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/cloud-native-geospatial))
 
 Soon we hope to add notebooks from the researchers, technologists, geographers, and entrepreneurs who are already using Planet data to ask interesting and innovative questions about our changing Earth. If you're working with our imagery and have a notebook (or just an idea for a notebook) that you'd like to share, please [file an issue](https://github.com/planetlabs/notebooks/issues) and let us know.
 
