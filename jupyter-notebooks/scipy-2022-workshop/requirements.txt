@@ -1,5 +1,0 @@
-rasterio
-numpy
-cv2
-matplotlib
-scipy
