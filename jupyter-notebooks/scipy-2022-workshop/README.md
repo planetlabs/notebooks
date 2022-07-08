@@ -23,6 +23,6 @@ cd jupyter-notebooks/scipy-2022-workshop/
 
 **Prerequisites**
 - Install: [rasterio](https://pypi.org/project/rasterio) library
-- Download data: [20170831_172754_101c_3B_AnalyticMS.tif](https://storage.googleapis.com/pdd-stac/disasters/hurricane-harvey/0831/20170831_172754_101c_3B_AnalyticMS.tif) & [20170831_172754_101c_3b_Visual.tif](https://storage.googleapis.com/pdd-stac/disasters/hurricane-harvey/0831/20170831_172754_101c_3b_Visual.tif)
+- Download data: [20170831_172754_101c_3B_AnalyticMS.tif](https://storage.googleapis.com/pdd-stac/disasters/hurricane-harvey/0831/20170831_172754_101c_3B_AnalyticMS.tif) & [20170831_172754_101c_3b_Visual.tif](https://storage.googleapis.com/pdd-stac/disasters/hurricane-harvey/0831/20170831_172754_101c_3b_Visual.tif) & [Tutorial Data](https://hello.planet.com/data/s/Y2wFKNFNTwHxot8)
 
 You may need to move the data from your download directory to the `content` directory, or else modify file paths within the Notebooks as needed.
