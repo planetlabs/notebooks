@@ -6,7 +6,7 @@ Follow the set up instructions below to run the Jupyter Notebooks for this works
 
 ### Option 1: (recommended) Run in Google Colab
 
-Interact directly with this repo's Jupyter Notebooks by running them in [Google Colab](http://colab.research.google.com/).
+Interact directly with this repo's Jupyter Notebooks by running them in Google Colab.
 
 Each Notebook will have its own **"Open in Colab"** button: once running on Colab, you'll need to run a quick setup cell in each notebook (this will install prerequisites and download data into your Colab workspace). You can also choose to make a copy of the Notebook in your own Google Drive, if you want to save any changes you make (not required for this workshop).
 
