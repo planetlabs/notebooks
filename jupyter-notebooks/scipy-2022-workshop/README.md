@@ -18,7 +18,6 @@ Clone this repo:
 ```bash
 git clone git@github.com:planetlabs/notebooks.git
 cd notebooks/jupyter-notebooks/scipy-2022-workshop/
-
 **Prerequisites**
 - Install: [rasterio](https://pypi.org/project/rasterio) library
 - Download data: [20170831_172754_101c_3B_AnalyticMS.tif](https://storage.googleapis.com/pdd-stac/disasters/hurricane-harvey/0831/20170831_172754_101c_3B_AnalyticMS.tif) & [20170831_172754_101c_3b_Visual.tif](https://storage.googleapis.com/pdd-stac/disasters/hurricane-harvey/0831/20170831_172754_101c_3b_Visual.tif)
