@@ -1,0 +1,9 @@
+# PSScene Transition
+
+This document is was created for the August 23rd 2022 PSScene Migration Workshop (the recording link will be made available a day or two after the webinar).
+
+The notebook runs through the changes that will occur to the Data, Orders and Subscription API. For each the changes are commented next to the old text. 
+
+To use the notebook either have your API key stored as an environment variable($PL_API_KEY) or paste it as a string to replace to the `os.getenv('PL_API_KEY')`.
+
+Extra info can be found in [this blog post](https://developers.planet.com/docs/apis/data/psscene3-4band-deprecation/) for what the specific asset types and bundle types will be changing to.
