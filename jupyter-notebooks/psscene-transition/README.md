@@ -6,4 +6,4 @@ The notebook runs through the PSScene documentation changes that will occur in t
 
 To use the notebook either have your API key stored as an environment variable($PL_API_KEY) or paste it as a string to replace to the `os.getenv('PL_API_KEY')`.
 
-Extra info can be found in [this blog post](https://developers.planet.com/docs/apis/data/psscene3-4band-deprecation/) for what the specific asset types and bundle types will be changing to.
+Additional information can be found in [our Developer Center PSScene Transition documentation](https://developers.planet.com/docs/apis/data/psscene3-4band-deprecation/) for what the specific asset types and bundle types will be changing to.
