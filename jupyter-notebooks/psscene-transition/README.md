@@ -1,6 +1,6 @@
 # PSScene Transition
 
-This document is was created for the August 23rd 2022 PSScene Migration Workshop (the recording link will be made available a day or two after the webinar).
+This document is was created for the August 23rd 2022 [PSScene Migration Workshop](https://university.planet.com/psscene-workshop), now available on Planet University.
 
 The notebook runs through the PSScene documentation changes that will occur in the usage of the Data, Orders and Subscription APIs. For each, the recommended changes are commented next to the original item and asset types text. 
 
