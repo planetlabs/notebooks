@@ -17,7 +17,7 @@ You can instead choose to open this Notebook in your own local Jupyter instance.
 Clone this repo:
 ```bash
 git clone git@github.com:planetlabs/notebooks.git
-cd notebooks/jupyter-notebooks/scipy-2022-workshop/
+cd notebooks/jupyter-notebooks/sdsc-2022-workshop/
 ```
 
 **Prerequisites**
