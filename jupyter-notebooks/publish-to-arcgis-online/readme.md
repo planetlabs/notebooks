@@ -17,5 +17,5 @@ These scripts specifically work with PlanetScope 8-band surface reflectance anal
 
 ### Multiple Notebook Versions
 
-* Planet to ArcGIS Image using SDKv2 - This notebook uses Planet's new Python SDK for faster and easier access to our API's.  In order to use this, you need to install the SDK: [How to install the Planet SDK for Python v2](https://planet-sdk-for-python-v2.readthedocs.io/en/latest/python/sdk-guide/).
+* Planet to ArcGIS Image using SDKv2 - This notebook uses Planet's new Python SDK for faster and easier access to our API's.  In order to use this, you need to install the SDK: [How to install the Planet SDK for Python v2](https://planet-sdk-for-python-v2.readthedocs.io/en/latest/v2_earlyaccess/).
 * Planet to ArcGIS Image using Requests - This notebook uses the python library Requests to make the API calls to Planet's platform.  It will work when run inside of ArcGIS Notebooks, a hosted Jupyter notebook in ArcGIS Online.
