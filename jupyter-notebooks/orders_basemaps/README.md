@@ -20,13 +20,7 @@ git clone git@github.com:planetlabs/notebooks.git
 cd notebooks/jupyter-notebooks/orders_basemaps/
 ```
 
-**Prerequisites**
-- Install: [rasterio](https://pypi.org/project/rasterio) library
-- Download data: [20170831_172754_101c_3B_AnalyticMS.tif](https://storage.googleapis.com/pdd-stac/disasters/hurricane-harvey/0831/20170831_172754_101c_3B_AnalyticMS.tif) & [20170831_172754_101c_3b_Visual.tif](https://storage.googleapis.com/pdd-stac/disasters/hurricane-harvey/0831/20170831_172754_101c_3b_Visual.tif)
-
-You may need to move the data from your download directory to the `content` directory, or else modify file paths within the Notebooks as needed.
-
 ### About this notebook
 
-These notebooks describe two different ways to download basemaps using the Orders API. The first file demonstrates using the SDK v2 Beta and the second file demonstrates using the Python Requests Library. We recommend using the SDK v2 Beta. It will cut down on time and improve accuracy. 
+These notebooks describe two different ways to download basemaps using the Orders API. The first file demonstrates using the SDK v2 Beta. This is the way we recommend ordering Planet Basemaps. Using the SDK v2 Beta has functions ready-made to make working with the Planet Orders API more efficient and less prone to errors. This means less lines of code and less work for you. The second file demonstrates using the Python Requests Library. We recommend using the SDK v2 Beta. It will cut down on time and improve accuracy. 
 
