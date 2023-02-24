@@ -30,5 +30,3 @@ You may need to move the data from your download directory to the `content` dire
 
 These notebooks describe two different ways to download basemaps using the Orders API. The first file demonstrates using the SDK v2 Beta and the second file demonstrates using the Python Requests Library. We recommend using the SDK v2 Beta. It will cut down on time and improve accuracy. 
 
-
-this is for a check
