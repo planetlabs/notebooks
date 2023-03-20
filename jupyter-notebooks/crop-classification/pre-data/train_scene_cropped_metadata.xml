@@ -13,7 +13,7 @@
 
     <gml:metaDataProperty>
         <ps:EarthObservationMetaData>
-            <eop:identifier>20160831_180231_0e0e_3B_AnalyticMS</eop:identifier>
+            <eop:identifier>20160831_180231_0e0e_3B_Analytic</eop:identifier>
             <eop:acquisitionType>NOMINAL</eop:acquisitionType>
             <eop:productType>L3B</eop:productType>
             <eop:status>ARCHIVED</eop:status>
@@ -80,7 +80,7 @@
             <eop:acquisitionParameters>
                 <ps:Acquisition>
                     <eop:orbitDirection>DESCENDING</eop:orbitDirection>
-                    <eop:incidenceAngle uom="deg">9.242685e-01</eop:incidenceAngle>
+                    <eop:incidenceAngle uom="deg">9.248577e-01</eop:incidenceAngle>
                     <opt:illuminationAzimuthAngle uom="deg">1.289225e+02</opt:illuminationAzimuthAngle>
                     <opt:illuminationElevationAngle uom="deg">4.913498e+01</opt:illuminationElevationAngle>
                     <ps:azimuthAngle uom="deg">1.427321e+01</ps:azimuthAngle>
@@ -96,31 +96,31 @@
             <gml:multiExtentOf>
               <gml:MultiSurface srsName="EPSG:4326">
                  <gml:surfaceMembers>
-                    <gml:Polygon srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-121.405940969458,38.2267494679363 -121.409577082321,38.2267988029835 -121.703302772075,38.2862386685854 -121.678032558651,38.363322785923 -121.387478561015,38.3045173261971 -121.387971677613,38.2822366125683 -121.405940969458,38.2267494679363</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>
+                    <gml:Polygon srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-121.6781497037,38.3629701949004 -121.38127835229,38.3028771361509 -121.405755797707,38.2273070846492 -121.702911795998,38.2874463411393 -121.6781497037,38.3629701949004</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>
                  </gml:surfaceMembers>
               </gml:MultiSurface>
             </gml:multiExtentOf>
             <gml:centerOf>
                 <gml:Point srsName="EPSG:4326">
-                <gml:pos>-121.54262878 38.2947186705</gml:pos>
+                <gml:pos>-121.5420293631 38.2951449399</gml:pos>
                 </gml:Point>
             </gml:centerOf>
             <ps:geographicLocation>
                 <ps:topLeft>
-                    <ps:latitude>38.3633227859</ps:latitude>
-                    <ps:longitude>-121.703302772</ps:longitude>
+                    <ps:latitude>38.3629701949</ps:latitude>
+                    <ps:longitude>-121.7029117960</ps:longitude>
                 </ps:topLeft>
                 <ps:topRight>
-                    <ps:latitude>38.3633227859</ps:latitude>
-                    <ps:longitude>-121.387478561</ps:longitude>
+                    <ps:latitude>38.3629701949</ps:latitude>
+                    <ps:longitude>-121.3812783523</ps:longitude>
                 </ps:topRight>
                 <ps:bottomRight>
-                    <ps:latitude>38.2267494679</ps:latitude>
-                    <ps:longitude>-121.387478561</ps:longitude>
+                    <ps:latitude>38.2273070846</ps:latitude>
+                    <ps:longitude>-121.3812783523</ps:longitude>
                 </ps:bottomRight>
                 <ps:bottomLeft>
-                    <ps:latitude>38.2267494679</ps:latitude>
-                    <ps:longitude>-121.703302772</ps:longitude>
+                    <ps:latitude>38.2273070846</ps:latitude>
+                    <ps:longitude>-121.7029117960</ps:longitude>
                 </ps:bottomLeft>
             </ps:geographicLocation>
         </ps:Footprint>
@@ -131,7 +131,7 @@
             
             <eop:product>
                 <ps:ProductInformation>
-                    <eop:fileName>20160831_180231_0e0e_3B_AnalyticMS.tif</eop:fileName>
+                    <eop:fileName>20160831_180231_0e0e_3B_Analytic.tif</eop:fileName>
                     <ps:productFormat>GeoTIFF</ps:productFormat>
                     <ps:spatialReferenceSystem>
                         <ps:epsgCode>32610</ps:epsgCode>
@@ -140,9 +140,9 @@
                         <ps:projectionZone>10</ps:projectionZone>
                     </ps:spatialReferenceSystem>
                     <ps:resamplingKernel>CC</ps:resamplingKernel>
-                    <ps:numRows>4927</ps:numRows>
-                    <ps:numColumns>9196</ps:numColumns>
-                    <ps:numBands>4</ps:numBands>
+                    <ps:numRows>4894</ps:numRows>
+                    <ps:numColumns>9367</ps:numColumns>
+                    <ps:numBands>3</ps:numBands>
                     <ps:rowGsd>3.0</ps:rowGsd>
                     <ps:columnGsd>3.0</ps:columnGsd>
                     <ps:radiometricCorrectionApplied>true</ps:radiometricCorrectionApplied>
@@ -158,12 +158,12 @@
                 <eop:type>UNUSABLE DATA</eop:type>
                 <eop:format>RASTER</eop:format>
                 <eop:referenceSystemIdentifier codeSpace="EPSG">32610</eop:referenceSystemIdentifier>
-                <eop:fileName>20160831_180231_0e0e_3B_AnalyticMS_DN_udm.tif</eop:fileName>
+                <eop:fileName>NA</eop:fileName>
                 </eop:MaskInformation>
             </eop:mask>
             
 
-            <opt:cloudCoverPercentage uom="percentage">0.01</opt:cloudCoverPercentage>
+            <opt:cloudCoverPercentage uom="percentage">0.0</opt:cloudCoverPercentage>
             <opt:cloudCoverPercentageQuotationMode>AUTOMATIC</opt:cloudCoverPercentageQuotationMode>
             <ps:unusableDataPercentage uom="percentage">0.0</ps:unusableDataPercentage>
                 
@@ -172,7 +172,7 @@
     <!-- Multiply by radiometricScaleFactor to convert DNs to TOA Radiance (watts per steradian per square metre -->
     <ps:radiometricScaleFactor>0.01</ps:radiometricScaleFactor>
     <!-- Multiply by reflectanceCoefficient to convert DNs to TOA Reflectance -->
-    <ps:reflectanceCoefficient>2.22720534111e-05</ps:reflectanceCoefficient>
+    <ps:reflectanceCoefficient>2.617770294902722e-05</ps:reflectanceCoefficient>
 </ps:bandSpecificMetadata>
                 
                 
@@ -181,7 +181,7 @@
     <!-- Multiply by radiometricScaleFactor to convert DNs to TOA Radiance (watts per steradian per square metre -->
     <ps:radiometricScaleFactor>0.01</ps:radiometricScaleFactor>
     <!-- Multiply by reflectanceCoefficient to convert DNs to TOA Reflectance -->
-    <ps:reflectanceCoefficient>2.32869411017e-05</ps:reflectanceCoefficient>
+    <ps:reflectanceCoefficient>2.3286941101653296e-05</ps:reflectanceCoefficient>
 </ps:bandSpecificMetadata>
                 
                 
@@ -190,16 +190,7 @@
     <!-- Multiply by radiometricScaleFactor to convert DNs to TOA Radiance (watts per steradian per square metre -->
     <ps:radiometricScaleFactor>0.01</ps:radiometricScaleFactor>
     <!-- Multiply by reflectanceCoefficient to convert DNs to TOA Reflectance -->
-    <ps:reflectanceCoefficient>2.6177702949e-05</ps:reflectanceCoefficient>
-</ps:bandSpecificMetadata>
-                
-                
-<ps:bandSpecificMetadata>
-    <ps:bandNumber>4</ps:bandNumber>
-    <!-- Multiply by radiometricScaleFactor to convert DNs to TOA Radiance (watts per steradian per square metre -->
-    <ps:radiometricScaleFactor>0.01</ps:radiometricScaleFactor>
-    <!-- Multiply by reflectanceCoefficient to convert DNs to TOA Reflectance -->
-    <ps:reflectanceCoefficient>3.85793404296e-05</ps:reflectanceCoefficient>
+    <ps:reflectanceCoefficient>2.2272053411087134e-05</ps:reflectanceCoefficient>
 </ps:bandSpecificMetadata>
                 
 
