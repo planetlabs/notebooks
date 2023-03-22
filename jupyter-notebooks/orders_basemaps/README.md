@@ -20,7 +20,7 @@ git clone git@github.com:planetlabs/notebooks.git
 cd notebooks/jupyter-notebooks/orders_basemaps/
 ```
 
-### About this notebook
+### About these notebooks
 
 These notebooks describe two different ways to download basemaps using the Orders API. The first file demonstrates using the SDK v2 Beta. This is the way we recommend ordering Planet Basemaps. Using the SDK v2 Beta has functions ready-made to make working with the Planet Orders API more efficient and less prone to errors. This means less lines of code and less work for you. Check out the SDK v2 Beta docs [here](https://planet-sdk-for-python-v2.readthedocs.io/en/latest/python/sdk-guide/). The second file demonstrates using the Python Requests Library. We recommend using the SDK v2 Beta. It will cut down on time and improve accuracy. 
 
