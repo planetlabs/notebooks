@@ -13,22 +13,22 @@
 
     <gml:metaDataProperty>
         <ps:EarthObservationMetaData>
-            <eop:identifier>20230301_183109_17_2438_3B_AnalyticMS</eop:identifier>
+            <eop:identifier>20160831_180231_0e0e_3B_AnalyticMS</eop:identifier>
             <eop:acquisitionType>NOMINAL</eop:acquisitionType>
             <eop:productType>L3B</eop:productType>
             <eop:status>ARCHIVED</eop:status>
             <eop:downlinkedTo>
                 <eop:DownlinkInformation>
                     <eop:acquisitionStation codeSpace="urn:eop:PS:stationLocation">Planet Ground Station Network</eop:acquisitionStation>
-                    <eop:acquisitionDate>2023-03-01T18:31:09+00:00</eop:acquisitionDate>
+                    <eop:acquisitionDate>2016-08-31T18:02:31+00:00</eop:acquisitionDate>
                 </eop:DownlinkInformation>
             </eop:downlinkedTo>
 
             <eop:archivedIn>
                 <eop:ArchivingInformation>
                     <eop:archivingCenter codeSpace="urn:eop:PS:stationLocation">Planet Archive Center</eop:archivingCenter>
-                    <eop:archivingDate>2023-03-01T18:31:09+00:00</eop:archivingDate>
-                    <eop:archivingIdentifier codeSpace="urn:eop:PS:dmsCatalogueId">6323684</eop:archivingIdentifier>
+                    <eop:archivingDate>2016-08-31T18:02:31+00:00</eop:archivingDate>
+                    <eop:archivingIdentifier codeSpace="urn:eop:PS:dmsCatalogueId">232396</eop:archivingIdentifier>
                 </eop:ArchivingInformation>
             </eop:archivedIn>
 
@@ -51,8 +51,8 @@
     </gml:metaDataProperty>
     <gml:validTime>
         <gml:TimePeriod>
-            <gml:beginPosition>2023-03-01T18:31:09+00:00</gml:beginPosition>
-            <gml:endPosition>2023-03-01T18:31:09+00:00</gml:endPosition>
+            <gml:beginPosition>2016-08-31T18:02:31+00:00</gml:beginPosition>
+            <gml:endPosition>2016-08-31T18:02:31+00:00</gml:endPosition>
         </gml:TimePeriod>
     </gml:validTime>
 
@@ -61,13 +61,13 @@
             <eop:platform>
                 <eop:Platform>
                     <eop:shortName>PlanetScope</eop:shortName>
-                    <eop:serialIdentifier>2438</eop:serialIdentifier>
+                    <eop:serialIdentifier>0e0e</eop:serialIdentifier>
                     <eop:orbitType>LEO-SSO</eop:orbitType>
                 </eop:Platform>
             </eop:platform>
             <eop:instrument>
                 <eop:Instrument>
-                    <eop:shortName>PSB.SD</eop:shortName>
+                    <eop:shortName>PS2</eop:shortName>
                 </eop:Instrument>
             </eop:instrument>
             <eop:sensor>
@@ -80,12 +80,12 @@
             <eop:acquisitionParameters>
                 <ps:Acquisition>
                     <eop:orbitDirection>DESCENDING</eop:orbitDirection>
-                    <eop:incidenceAngle uom="deg">2.979304e-01</eop:incidenceAngle>
-                    <opt:illuminationAzimuthAngle uom="deg">1.455352e+02</opt:illuminationAzimuthAngle>
-                    <opt:illuminationElevationAngle uom="deg">3.791793e+01</opt:illuminationElevationAngle>
-                    <ps:azimuthAngle uom="deg">1.237098e+01</ps:azimuthAngle>
-                    <ps:spaceCraftViewAngle uom="deg">2.675465e-01</ps:spaceCraftViewAngle>
-                    <ps:acquisitionDateTime>2023-03-01T18:31:09+00:00</ps:acquisitionDateTime>
+                    <eop:incidenceAngle uom="deg">9.247172e-01</eop:incidenceAngle>
+                    <opt:illuminationAzimuthAngle uom="deg">1.289225e+02</opt:illuminationAzimuthAngle>
+                    <opt:illuminationElevationAngle uom="deg">4.913498e+01</opt:illuminationElevationAngle>
+                    <ps:azimuthAngle uom="deg">1.427321e+01</ps:azimuthAngle>
+                    <ps:spaceCraftViewAngle uom="deg">8.027945e-01</ps:spaceCraftViewAngle>
+                    <ps:acquisitionDateTime>2016-08-31T18:02:31+00:00</ps:acquisitionDateTime>
                 </ps:Acquisition>
             </eop:acquisitionParameters>
         </eop:EarthObservationEquipment>
@@ -96,31 +96,31 @@
             <gml:multiExtentOf>
               <gml:MultiSurface srsName="EPSG:4326">
                  <gml:surfaceMembers>
-                    <gml:Polygon srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-121.675138248633,38.4184375201482 -121.292072413276,38.3516394783012 -121.343145095012,38.1718585258877 -121.724930343737,38.2382365166357 -121.675138248633,38.4184375201482</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>
+                    <gml:Polygon srsName="EPSG:4326"><gml:outerBoundaryIs><gml:LinearRing><gml:coordinates>-121.405544339628,38.227960662458 -121.409206774718,38.2280103671205 -121.702911795998,38.2874463411393 -121.678153899227,38.3629574130559 -121.678082082326,38.3629566032533 -121.387589323862,38.304163418067 -121.3880822743,38.2818884006593 -121.405544339628,38.227960662458</gml:coordinates></gml:LinearRing></gml:outerBoundaryIs></gml:Polygon>
                  </gml:surfaceMembers>
               </gml:MultiSurface>
             </gml:multiExtentOf>
             <gml:centerOf>
                 <gml:Point srsName="EPSG:4326">
-                <gml:pos>-121.5088401439 38.2951010947</gml:pos>
+                <gml:pos>-121.5424983800 38.2951481279</gml:pos>
                 </gml:Point>
             </gml:centerOf>
             <ps:geographicLocation>
                 <ps:topLeft>
-                    <ps:latitude>38.4184375201</ps:latitude>
-                    <ps:longitude>-121.7249303437</ps:longitude>
+                    <ps:latitude>38.3629574131</ps:latitude>
+                    <ps:longitude>-121.7029117960</ps:longitude>
                 </ps:topLeft>
                 <ps:topRight>
-                    <ps:latitude>38.4184375201</ps:latitude>
-                    <ps:longitude>-121.2920724133</ps:longitude>
+                    <ps:latitude>38.3629574131</ps:latitude>
+                    <ps:longitude>-121.3875893239</ps:longitude>
                 </ps:topRight>
                 <ps:bottomRight>
-                    <ps:latitude>38.1718585259</ps:latitude>
-                    <ps:longitude>-121.2920724133</ps:longitude>
+                    <ps:latitude>38.2279606625</ps:latitude>
+                    <ps:longitude>-121.3875893239</ps:longitude>
                 </ps:bottomRight>
                 <ps:bottomLeft>
-                    <ps:latitude>38.1718585259</ps:latitude>
-                    <ps:longitude>-121.7249303437</ps:longitude>
+                    <ps:latitude>38.2279606625</ps:latitude>
+                    <ps:longitude>-121.7029117960</ps:longitude>
                 </ps:bottomLeft>
             </ps:geographicLocation>
         </ps:Footprint>
@@ -131,7 +131,7 @@
             
             <eop:product>
                 <ps:ProductInformation>
-                    <eop:fileName>20230301_183109_17_2438_3B_AnalyticMS.tif</eop:fileName>
+                    <eop:fileName>20160831_180231_0e0e_3B_AnalyticMS.tif</eop:fileName>
                     <ps:productFormat>GeoTIFF</ps:productFormat>
                     <ps:spatialReferenceSystem>
                         <ps:epsgCode>32610</ps:epsgCode>
@@ -140,8 +140,8 @@
                         <ps:projectionZone>10</ps:projectionZone>
                     </ps:spatialReferenceSystem>
                     <ps:resamplingKernel>CC</ps:resamplingKernel>
-                    <ps:numRows>8966</ps:numRows>
-                    <ps:numColumns>12551</ps:numColumns>
+                    <ps:numRows>4868</ps:numRows>
+                    <ps:numColumns>9182</ps:numColumns>
                     <ps:numBands>4</ps:numBands>
                     <ps:rowGsd>3.0</ps:rowGsd>
                     <ps:columnGsd>3.0</ps:columnGsd>
@@ -172,7 +172,7 @@
     <!-- Multiply by radiometricScaleFactor to convert DNs to TOA Radiance (watts per steradian per square metre -->
     <ps:radiometricScaleFactor>0.01</ps:radiometricScaleFactor>
     <!-- Multiply by reflectanceCoefficient to convert DNs to TOA Reflectance -->
-    <ps:reflectanceCoefficient>2.5505085153457047e-05</ps:reflectanceCoefficient>
+    <ps:reflectanceCoefficient>2.2272053411087134e-05</ps:reflectanceCoefficient>
 </ps:bandSpecificMetadata>
                 
                 
@@ -181,7 +181,7 @@
     <!-- Multiply by radiometricScaleFactor to convert DNs to TOA Radiance (watts per steradian per square metre -->
     <ps:radiometricScaleFactor>0.01</ps:radiometricScaleFactor>
     <!-- Multiply by reflectanceCoefficient to convert DNs to TOA Reflectance -->
-    <ps:reflectanceCoefficient>2.7662245806710073e-05</ps:reflectanceCoefficient>
+    <ps:reflectanceCoefficient>2.3286941101653296e-05</ps:reflectanceCoefficient>
 </ps:bandSpecificMetadata>
                 
                 
@@ -190,7 +190,7 @@
     <!-- Multiply by radiometricScaleFactor to convert DNs to TOA Radiance (watts per steradian per square metre -->
     <ps:radiometricScaleFactor>0.01</ps:radiometricScaleFactor>
     <!-- Multiply by reflectanceCoefficient to convert DNs to TOA Reflectance -->
-    <ps:reflectanceCoefficient>3.3295331912839334e-05</ps:reflectanceCoefficient>
+    <ps:reflectanceCoefficient>2.617770294902722e-05</ps:reflectanceCoefficient>
 </ps:bandSpecificMetadata>
                 
                 
@@ -199,7 +199,7 @@
     <!-- Multiply by radiometricScaleFactor to convert DNs to TOA Radiance (watts per steradian per square metre -->
     <ps:radiometricScaleFactor>0.01</ps:radiometricScaleFactor>
     <!-- Multiply by reflectanceCoefficient to convert DNs to TOA Reflectance -->
-    <ps:reflectanceCoefficient>5.269813869438729e-05</ps:reflectanceCoefficient>
+    <ps:reflectanceCoefficient>3.857934042956696e-05</ps:reflectanceCoefficient>
 </ps:bandSpecificMetadata>
                 
 
