@@ -16,8 +16,7 @@ In these notebooks, we demonstrate segmentation and classification of crops usin
       
 * **Crop Classification**
   - [Crop Type Classification: Prepare CDL Data](crop-classification/1-datasets-prepare-cdl.ipynb)
-      - Pixels in a Planet PSScene image are classified as corn, soybean, or neither.
-      - This notebook contains functionality for visualizing and processing a UDM into a mask, preparing classification features from the image bands (including NDVI) and training a CART Classifier.
+      - Prepare the data needed for this crop classification example.
   - [Crop Type Classification: CART](crop-classification/2-classify-cart.ipynb)
       - Pixels in a Planet PSScene image are classified as corn, soybean, or neither.
       - This notebook contains functionality for visualizing and processing a UDM into a mask, preparing classification features from the image bands (including NDVI) and training a CART Classifier.
