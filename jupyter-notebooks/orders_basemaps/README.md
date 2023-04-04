@@ -1,23 +1,12 @@
 # Ordering Basemaps Using SDK v2 Beta and Requests Library
 
-## Preparing your Workspace 
-
-Follow the set up instructions below to run the Jupyter Notebooks for this workshop.
-
-Run local Jupyter instance
-
-You can open this Notebook in your own local Jupyter instance. In that case, you'll need to clone this repository and install/download prerequisites.
-
-Clone this repo:
-```bash
-git clone git@github.com:planetlabs/notebooks.git
-cd notebooks/jupyter-notebooks/orders_basemaps/
-```
-
 ### About these notebooks
 
+#### Method 1 (recommended): 
 
-Method 1: The first [file](SDK_order_basemaps.ipynb), SDK_order_basemaps, demonstrates using the SDK v2 Beta to order Basemaps using both an AOI and quad ID. This is the way we recommend ordering Planet Basemaps. The SDK v2 Beta has functions ready-made to make working with the Planet Orders API more efficient and less prone to errors. This means less lines of code and less work for you. Check out the SDK v2 Beta docs [here](https://planet-sdk-for-python-v2.readthedocs.io/en/latest/python/sdk-guide/). 
+[SDK_order_basemaps](SDK_order_basemaps.ipynb) demonstrates using the SDK v2 Beta to order Basemaps using both an AOI and quad ID. This is the way we recommend ordering Planet Basemaps. The SDK v2 Beta has functions ready-made to make working with the Planet Orders API more efficient and less prone to errors. This means less lines of code and less work for you. Check out the SDK v2 Beta docs [here](https://planet-sdk-for-python-v2.readthedocs.io/en/latest/python/sdk-guide/). 
 
-Method 2: The second [file](requests_order_basemaps.ipynb), requests_order_basemaps, demonstrates using the Python Requests Library to order Basemaps using an AOI and quad IDs.
+#### Method 2: 
+
+[requests_order_basemaps](requests_order_basemaps.ipynb) demonstrates using the Python Requests Library to order Basemaps using an AOI and quad IDs.
 
