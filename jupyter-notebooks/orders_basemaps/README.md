@@ -8,5 +8,5 @@
 
 #### Method 2: 
 
-[requests_order_basemaps](requests_order_basemaps.ipynb) demonstrates using the Python Requests Library to order Basemaps using an AOI and quad IDs.
+[requests_order_basemaps](requests_order_basemaps.ipynb) demonstrates using the [Python Requests library](https://requests.readthedocs.io/en/latest/) to order Basemaps using an AOI and quad IDs.
 
