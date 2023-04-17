@@ -23,6 +23,6 @@ cd notebooks/jupyter-notebooks/coastal-erosion-example/
 **Prerequisites**
 - Install: [rasterio](https://pypi.org/project/rasterio) library
 - Download Hurricane Harvey data: [20170831_172754_101c_3B_AnalyticMS.tif](https://storage.googleapis.com/pdd-stac/disasters/hurricane-harvey/0831/20170831_172754_101c_3B_AnalyticMS.tif) & [20170831_172754_101c_3b_Visual.tif](https://storage.googleapis.com/pdd-stac/disasters/hurricane-harvey/0831/20170831_172754_101c_3b_Visual.tif)
-- Download Coastal Erosion example data: [coastal_erosion_workshop_data.zip](https://hello.planet.com/data/s/bWPN5P64wPD9cMc)
+- Download Coastal Erosion example data: [coastal_erosion_workshop_data.zip](https://hello.planet.com/data/s/HBBK6R2CRqLBQeC)
 
 You may need to move the data from your download directory to the `content` directory, or else modify file paths within the Notebooks as needed.
