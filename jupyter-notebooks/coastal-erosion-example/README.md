@@ -15,7 +15,7 @@ Each Notebook will have its own **"Open in Colab"** button: once running on Cola
 You can instead choose to open this Notebook in your own local Jupyter instance. In that case, you'll need to clone this repository and install/download prerequisites.
 
 Clone this repo:
-```bash
+```console
 git clone git@github.com:planetlabs/notebooks.git
 cd notebooks/jupyter-notebooks/coastal-erosion-example/
 ```
