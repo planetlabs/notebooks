@@ -121,13 +121,13 @@ NOTE: This security token will change every time you start your Docker container
 
 #### Search, activate, download with the Data API   
 * [Explore the Planet Data API with Python](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_data_api_introduction.ipynb)
-* [Search, activate, and download imagery with the Planet Python Client](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_cli_introduction.ipynb)
+* [Search, activate, and download imagery with the Planet Python Client](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_python_client_introduction.ipynb)
 * [Search & Download Quickstart Guide](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/search_and_download_quickstart.ipynb)
 * [Planet Data API reference](https://developers.planet.com/docs/apis/data/)
 
 #### Ordering, delivery, and tools with the Orders API
-* [Ordering and Delivery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/orders/ordering_and_delivery.ipynb)
-* [Tools and Toolchains](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/orders/tools_and_toolchains.ipynb)
+* [Ordering and Delivery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/orders_api_tutorials/ordering_and_delivery.ipynb)
+* [Tools and Toolchains](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/orders_api_tutorials/tools_and_toolchains.ipynb)
 * [Planet Orders API reference](https://developers.planet.com/docs/orders/)
 
 ### Process Planet data
@@ -153,7 +153,7 @@ NOTE: This security token will change every time you start your Docker container
     * [Detect, count, and visualize ships in Planet imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ship-detector/01_ship_detector.ipynb)
     * [Pixel-by-pixel comparison of PlanetScope and Landsat Scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/landsat-ps-comparison/landsat-ps-comparison.ipynb)
     * [Calculate Coverage for a Search Query](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/coverage/calculate_coverage.ipynb)
-    * [Segment and Classify Crops](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/crop-classification)
+    * [Segment and Classify Crops](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/crop-segmentation-and-classification)
     * [Identify Forest Degradation](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/forest-monitoring)
     * [Identify the Temporal Signature of Crops](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/temporal-analysis)
     * [Converting Raster Results to Vector Features](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics-snippets/README.md)
