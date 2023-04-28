@@ -1,0 +1,4 @@
+planet==2.0a5
+rasterio
+rio-tiler
+shapely
