@@ -1,5 +1,7 @@
 # Forest Monitoring - Road Development
 
+***Note***: These notebooks currently use deprecated versions of our Python SDK, as well as `PSOrthoTile`, an item-type that is no longer available. An updated version of these notebooks are currently in progress.
+
 In a region in the Democratic Republic of Congo, road development caused loss
 of forests between September and November 2017. In this notebook project,
 we demonstrate an end-to-end use case where we have an Area Of Interest (AOI)
