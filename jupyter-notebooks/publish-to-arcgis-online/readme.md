@@ -10,7 +10,7 @@ These scripts specifically work with PlanetScope 8-band surface reflectance anal
 
 ### Prerequisites
 
-* Access to Planet APIs (Don't have access? [Sign up for our Developer Trial to get access!](https://developers.planet.com/devtrial/))
+* An account to access Planet APIs (Don't have access? [Contact Us](https://www.planet.com/contact-sales/))
 * Access to ArcGIS Online with an [ArcGIS Image for ArcGIS Online license](https://www.esri.com/en-us/arcgis/products/arcgis-image/options/arcgis-online)
 * A previously placed order for PlanetScope 8-band imagery, either through our [Order's API](https://developers.planet.com/docs/orders/), [ArcGIS Pro Integration](https://developers.planet.com/docs/integrations/arcgis/), or [Explorer](https://www.planet.com/explorer)
 * Edit the config.py file in this notebooks folder which is used to store credentials for ArcGIS Online and Planet's platform.
