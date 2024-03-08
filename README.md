@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/planetlabs/notebooks](https://badges.gitter.im/planetlabs/notebooks.svg)](https://gitter.im/planetlabs/notebooks?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source ([APLv2](LICENSE)) guides are designed to help you explore Planet data, work with our APIs and tools, and learn how to extract information from our massive archive of high-cadence satellite imagery. We hope these guides will inspire you to ask interesting questions of Planet data. Need help? Find a bug? Please [file an issue](https://github.com/planetlabs/notebooks/issues/new) and we'll get back to you.
+In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source ([APLv2](LICENSE)) guides are designed to help youwork with our APIs and tools, explore Planet data, and learn how to extract information from our massive archive of high-cadence satellite imagery. We hope these guides will inspire you to ask interesting questions of Planet data. Need help? Find a bug? Please [file an issue](https://github.com/planetlabs/notebooks/issues/new) and we'll get back to you.
 
 ## Install and use these notebooks
 
@@ -116,8 +116,25 @@ http://localhost:8888/?token=<UNIQUE-TOKEN>
 
 NOTE: This security token will change every time you start your Docker container.
 
-### Available notebooks
-#### NOTE: PSScene3Band and PSScene4Band item type and assets will be deprecated by January 2023. These item types will not be available for new customers provisioned after March 1, 2022. We recommend all customers who are interested in medium resolution imagery use the [PSScene item type](https://developers.planet.com/docs/data/psscene/) as soon as possible.
+## Repository Organization
+
+### jupyter-notebooks
+
+#### exploring_planet_data: Working with our various image products, how to use the udm mask or deliver imagery to our GEE integration
+
+* [How to use the Data and Orders API to create analysis ready data](https://github.com/planetlabs/notebooks/tree/proserve_restructure/jupyter-notebooks/exploring_planet_data/analysis-ready-data)
+* [Converting Raster Results to Vector Features](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics-snippets/README.md)
+* [Introduction to Cloud Native Geospatial Tools](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/cloud-native-geospatial)
+* [Comparing Planet Scope with Landsat 8]()
+* [Deliver data to GEE](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/cloud-native-geospatial)
+* [Start working with sattelite imagery in Python](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/cloud-native-geospatial)
+* [Create labels using Planet imagery](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/cloud-native-geospatial)
+* [Pixel-by-pixel comparison of PlanetScope and Landsat Scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/landsat-ps-comparison/landsat-ps-comparison.ipynb)
+* [Visualize and convert a UDM to a binary mask](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/udm/udm.ipynb)
+* [Work with the Usable Data Mask (UDM2)](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/udm2)
+
+
+
 
 #### Search, activate, download with the Data API   
 * [Explore the Planet Data API with Python](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/data-api-tutorials/planet_data_api_introduction.ipynb)
@@ -134,8 +151,7 @@ NOTE: This security token will change every time you start your Docker container
 * [Create a mosaic from multiple PlanetScope scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/mosaicing/basic_compositing_demo.ipynb)
 * [Calculate a vegetation index from 4-band satellite imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ndvi/ndvi_planetscope.ipynb)
 * [Convert PlanetScope metadata from radiance to reflectance](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/toar/toar_planetscope.ipynb)
-* [Visualize and convert a UDM to a binary mask](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/udm/udm.ipynb)
-* [Work with the Usable Data Mask (UDM2)](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/udm2)
+
 
 ### Analyze and visualize Planet data
 
@@ -156,9 +172,9 @@ NOTE: This security token will change every time you start your Docker container
     * [Segment and Classify Crops](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/crop-segmentation-and-classification)
     * [Identify Forest Degradation](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/forest-monitoring)
     * [Identify the Temporal Signature of Crops](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/temporal-analysis)
-    * [Converting Raster Results to Vector Features](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics-snippets/README.md)
+
     * [Creating a Heatmap of Vector Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/change_detection_heatmap.ipynb)
-    * [Introduction to Cloud Native Geospatial Tools](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/cloud-native-geospatial)
+
 
 Soon we hope to add notebooks from the researchers, technologists, geographers, and entrepreneurs who are already using Planet data to ask interesting and innovative questions about our changing Earth. If you're working with our imagery and have a notebook (or just an idea for a notebook) that you'd like to share, please [file an issue](https://github.com/planetlabs/notebooks/issues) and let us know.
 
