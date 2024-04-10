@@ -1,7 +1,10 @@
 // Setup function defining the input/output settings
+
+var allowedDates = []//["2023-08-01", "2023-08-06", "2023-08-09", "2023-08-16", "2023-08-19"];  // added from python
+
 function setup() {
     return {
-        input: ["red", "nir", "dataMask"],  // Use B08 for NIR and B04 for Red
+        input: ["red", "nir", "dataMask"],
         output: [{
             id: "default",
             bands: 4
@@ -13,7 +16,6 @@ function setup() {
 
 // Preprocess the scenes to filter based on allowed dates
 function preProcessScenes(collections) {
-    var allowedDates = ["2023-08-01", "2023-08-06", "2023-08-09", "2023-08-16", "2023-08-19"];  // Modify as needed
     collections.scenes.orbits = collections.scenes.orbits.filter(function (orbit) {
         var orbitDateFrom = orbit.dateFrom.split("T")[0];
         return allowedDates.includes(orbitDateFrom);
@@ -39,7 +41,7 @@ function evaluatePixel(samples) {
 
     for (let i = 0; i < samples.length; i++) {
         let sample = samples[i];
-        if (sample.dataMask === 1) {  // Consider only pixels within the data mask
+        if (sample.dataMask === 1) { 
             let ndvi = calculateNDVI(sample.nir, sample.red);
             ndviValues.push(ndvi);
         }
@@ -48,7 +50,7 @@ function evaluatePixel(samples) {
     // Calculate the median NDVI
     let medianNDVI = getMedian(ndviValues);
 
-    // Classify the median NDVI into ranges and assign colors
+
     return colorBlend(medianNDVI,
         [0.0, 0.5, 1.0],
         [
