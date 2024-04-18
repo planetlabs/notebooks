@@ -125,7 +125,7 @@ NOTE: This security token will change every time you start your Docker container
 * [Introduction to Cloud Native Geospatial Tools](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/cloud-native-geospatial)
 * [Comparing Planet Scope with Landsat 8]()
 * [Deliver data to GEE](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/cloud-native-geospatial)
-* [Start working with sattelite imagery in Python](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/cloud-native-geospatial)
+* [Start working with satellite imagery in Python](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/cloud-native-geospatial)
 * [Create labels using Planet imagery](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/cloud-native-geospatial)
 * [Pixel-by-pixel comparison of PlanetScope and Landsat Scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/landsat-ps-comparison/landsat-ps-comparison.ipynb)
 * [Visualize and convert a UDM to a binary mask](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/udm/udm.ipynb)
