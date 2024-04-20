@@ -87,4 +87,5 @@ celerybeat-schedule
 venv/
 ENV/
 
-
+#DSPstore
+*.DS_Store
