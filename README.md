@@ -118,22 +118,26 @@ NOTE: This security token will change every time you start your Docker container
 
 ### jupyter-notebooks
 
-#### Analytics-API: How to use Planets analytics API
+#### Analytics-API
 
 * Analytics quickstart:
-    1. [Summarizing Feeds and Subscriptions](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/01_checking_available_feeds_and_subscriptions.ipynb)
-    2. [Getting Analytic Feed Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/02_fetching_feed_results.ipynb)
-    3. [Visualizing Raster Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/03_visualizing_raster_results.ipynb)
+    1. [Summarizing Feeds and Subscriptions](https://github.com/planetlabs/notebooks/blob/readme_edits/jupyter-notebooks/Analytics-API/quickstart/01_checking_available_feeds_and_subscriptions.ipynb)
+    2. [Getting Analytic Feed Results](https://github.com/planetlabs/notebooks/blob/readme_edits/jupyter-notebooks/Analytics-API/quickstart/02_fetching_feed_results.ipynb)
+    3. [Visualizing Raster Results](https://github.com/planetlabs/notebooks/blob/readme_edits/jupyter-notebooks/Analytics-API/quickstart/03_visualizing_raster_results.ipynb)
 * Analytics user guide:
-    1. [Getting Started with Planet Analytics API](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/01_getting_started_with_the_planet_analytics_api.ipynb)
-    2. [Planet Analytic Feeds Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/02_analytic_feeds_results.ipynb)
-    3. [Change Detection](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/03_change_detection.ipynb)
-    4. [Summary Statistics - Buildings](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/04_summary_statistics_buildings.ipynb)
-    5. [Summary Statistics - Ships and Clouds](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/05_summary_statistics_ships_and_clouds.ipynb)
+    1. [Getting Started with Planet Analytics API](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/Analytics-API/user-guide/01_getting_started_with_the_planet_analytics_api.ipynb)
+    2. [Planet Analytic Feeds Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/Analytics-API/user-guide/02_analytic_feeds_results.ipynb)
+    3. [Change Detection](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/Analytics-API/user-guide/03_change_detection.ipynb)
+    4. [Summary Statistics - Buildings](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/Analytics-API/user-guide/04_summary_statistics_buildings.ipynb)
+    5. [Summary Statistics - Ships and Clouds](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/Analytics-API/user-guide/05_summary_statistics_ships_and_clouds.ipynb)
 * Applying analytics
-    1. [Case Study of Syrian IDP camps](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/Analytics-API/case_study_syria_idp_camps.ipynb)
-    2. [Creating a Heatmap of Vector Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/Analytics-API/change_detection_heatmap.ipynb)
+    * [Case Study of Syrian IDP camps](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/Analytics-API/case_study_syria_idp_camps.ipynb)
+    * [Creating a Heatmap of Vector Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/Analytics-API/change_detection_heatmap.ipynb)
 
+
+#### Basemaps-API
+* [Finding a Basemaps Contributing Scenes](https://github.com/planetlabs/notebooks/blob/readme_edits/jupyter-notebooks/Basemaps-API/basemaps_contributing_scene_metadata.ipynb)
+* [download]
 
 
 
