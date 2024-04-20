@@ -1,6 +1,6 @@
 ## Planet Interactive Guides
 
-In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source ([APLv2](LICENSE)) guides are designed to help youwork with our APIs and tools, explore Planet data, and learn how to extract information from our massive archive of high-cadence satellite imagery. We hope these guides will inspire you to ask interesting questions of Planet data. Need help? Find a bug? Please [file an issue](https://github.com/planetlabs/notebooks/issues/new) and we'll get back to you.
+In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source ([APLv2](LICENSE)) guides are designed to help you work with our APIs and tools, explore Planet data, and learn how to extract information from our massive archive of high-cadence satellite imagery. We hope these guides will inspire you to ask interesting questions of Planet data. Need help? Find a bug? Please [file an issue](https://github.com/planetlabs/notebooks/issues/new) and we'll get back to you.
 
 ## Install and use these notebooks
 
@@ -118,7 +118,25 @@ NOTE: This security token will change every time you start your Docker container
 
 ### jupyter-notebooks
 
-#### exploring_planet_data: Working with our various image products, how to use the udm mask or deliver imagery to our GEE integration
+#### Analytics-API: How to use Planets analytics API
+
+* Analytics quickstart:
+    1. [Summarizing Feeds and Subscriptions](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/01_checking_available_feeds_and_subscriptions.ipynb)
+    2. [Getting Analytic Feed Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/02_fetching_feed_results.ipynb)
+    3. [Visualizing Raster Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/03_visualizing_raster_results.ipynb)
+* Analytics user guide:
+    1. [Getting Started with Planet Analytics API](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/01_getting_started_with_the_planet_analytics_api.ipynb)
+    2. [Planet Analytic Feeds Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/02_analytic_feeds_results.ipynb)
+    3. [Change Detection](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/03_change_detection.ipynb)
+    4. [Summary Statistics - Buildings](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/04_summary_statistics_buildings.ipynb)
+    5. [Summary Statistics - Ships and Clouds](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/05_summary_statistics_ships_and_clouds.ipynb)
+* Applying analytics
+    1. [Case Study of Syrian IDP camps](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/Analytics-API/case_study_syria_idp_camps.ipynb)
+    2. [Creating a Heatmap of Vector Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/Analytics-API/change_detection_heatmap.ipynb)
+
+
+
+
 
 * [How to use the Data and Orders API to create analysis ready data](https://github.com/planetlabs/notebooks/tree/proserve_restructure/jupyter-notebooks/exploring_planet_data/analysis-ready-data)
 * [Converting Raster Results to Vector Features](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics-snippets/README.md)
@@ -153,16 +171,7 @@ NOTE: This security token will change every time you start your Docker container
 
 ### Analyze and visualize Planet data
 
-* Analytics quickstart:
-    1. [Summarizing Feeds and Subscriptions](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/01_checking_available_feeds_and_subscriptions.ipynb)
-    2. [Getting Analytic Feed Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/02_fetching_feed_results.ipynb)
-    3. [Visualizing Raster Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/quickstart/03_visualizing_raster_results.ipynb)
-* Analytics user guide:
-    1. [Getting Started with Planet Analytics API](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/01_getting_started_with_the_planet_analytics_api.ipynb)
-    2. [Planet Analytic Feeds Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/02_analytic_feeds_results.ipynb)
-    3. [Change Detection](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/03_change_detection.ipynb)
-    4. [Summary Statistics - Buildings](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/04_summary_statistics_buildings.ipynb)
-    5. [Summary Statistics - Ships and Clouds](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/user-guide/05_summary_statistics_ships_and_clouds.ipynb)
+
 * Other analytics notebooks:
     * [Detect, count, and visualize ships in Planet imagery](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/ship-detector/01_ship_detector.ipynb)
     * [Pixel-by-pixel comparison of PlanetScope and Landsat Scenes](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/landsat-ps-comparison/landsat-ps-comparison.ipynb)
@@ -171,7 +180,7 @@ NOTE: This security token will change every time you start your Docker container
     * [Identify Forest Degradation](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/forest-monitoring)
     * [Identify the Temporal Signature of Crops](https://github.com/planetlabs/notebooks/tree/master/jupyter-notebooks/temporal-analysis)
 
-    * [Creating a Heatmap of Vector Results](https://github.com/planetlabs/notebooks/blob/master/jupyter-notebooks/analytics/change_detection_heatmap.ipynb)
+   
 
 
 Soon we hope to add notebooks from the researchers, technologists, geographers, and entrepreneurs who are already using Planet data to ask interesting and innovative questions about our changing Earth. If you're working with our imagery and have a notebook (or just an idea for a notebook) that you'd like to share, please [file an issue](https://github.com/planetlabs/notebooks/issues) and let us know.
