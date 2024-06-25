@@ -53,6 +53,26 @@ PLANET_API_KEY = os.getenv('PL_API_KEY')
 
 Now, your Planet API Key is stored in the variable ```PLANET_API_KEY``` and is ready to use in your Python code.
 
+### Sentinel Hub Python SDK
+Some Notebooks in this repository use the [Sentinel Hub Python SDK](https://sentinelhub-py.readthedocs.io/en/latest/index.html).  Currently, this SDK uses a different method of authenticating than what is used with the Planet APIs and SDK for Python. 
+
+For the Sentinel Hub Python SDK, you must provide a ```client_id``` and a ```client_secret``` which can be obtained from the [Dashboard](https://apps.sentinel-hub.com/dashboard/) app. You can find full instructions on setting up the client credentials in this SDK from the [SDK documentation](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
+
+```python
+
+config = SHConfig()
+
+if not config.sh_client_id or not config.sh_client_secret:
+    print("No credentials found, please provide the OAuth client ID and secret.")
+    config.sh_client_id = getpass.getpass("sh_client_id: ")
+    config.sh_client_secret = getpass.getpass("sh_client_secret: ")
+    config.save()
+    print(f"Credentials saved to {SHConfig.get_config_location()}")
+else:
+    print(f"Using credentials stored here: {SHConfig.get_config_location()}")
+
+```
+
 ## Run Planet Notebooks in Docker
 Planet Notebooks rely on a complex stack of technologies that are not always easy to install and properly 
 configure. To ease this complexity we provide a docker container for running the notebook on docker compatible 
