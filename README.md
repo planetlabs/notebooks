@@ -59,6 +59,8 @@ Some Notebooks in this repository use the [Sentinel Hub Python SDK](https://sent
 For the Sentinel Hub Python SDK, you must provide a ```client_id``` and a ```client_secret``` which can be obtained from the [Dashboard](https://apps.sentinel-hub.com/dashboard/) app. You can find full instructions on setting up the client credentials in this SDK from the [SDK documentation](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
 
 ```python
+from sentinelhub import SHConfig 
+import getpass
 
 config = SHConfig()
 
@@ -70,7 +72,6 @@ if not config.sh_client_id or not config.sh_client_secret:
     print(f"Credentials saved to {SHConfig.get_config_location()}")
 else:
     print(f"Using credentials stored here: {SHConfig.get_config_location()}")
-
 ```
 
 ## Run Planet Notebooks in Docker
