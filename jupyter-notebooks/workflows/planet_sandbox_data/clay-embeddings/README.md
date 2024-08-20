@@ -3,10 +3,8 @@
 First clone the clay model repository:
 
 ```
-git clone https://github.com/jonasViehweger/model.git
+git clone https://github.com/Clay-foundation/model.git
 ```
-
-(Needs to be replaced with official clay repo once [!319](https://github.com/Clay-foundation/model/pull/319) is merged)
 
 Then install mamba, micromamba or conda. I'll show how to do it with [micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html), but everything should work the same:
 
