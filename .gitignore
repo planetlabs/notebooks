@@ -89,3 +89,6 @@ ENV/
 
 #DSPstore
 *.DS_Store
+
+# GDAL local cache directories
+gdalwmscache
