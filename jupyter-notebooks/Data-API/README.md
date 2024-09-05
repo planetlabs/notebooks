@@ -7,6 +7,7 @@ The first notebook uses the Python `requests` library and a few lines of helper 
 * [Introduction to the Planet Data API using Python](planet_data_api_introduction.ipynb)
 * [Introduction to the Planet Python Client](planet_cli_introduction.ipynb)
 * [Quickstart Guide: Search & Download Imagery](search_and_download_quickstart.ipynb)
+* [Quickstart Guide: Search & Map Imagery](search_and_preview_quickstart.ipynb)
 
 ### Read the docs
 * [Python Client for Planet API](https://planetlabs.github.io/planet-client-python/index.html)
