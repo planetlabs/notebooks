@@ -1,8 +1,7 @@
 # changes here should be reflected in 
-#    ../development-notebooks/imports_test.ipynb
 # please keep this in alphabetical order
 fiona
-#gdal
+gdal
 geojson
 geojsonio
 geopandas
@@ -21,5 +20,6 @@ rasterio
 requests
 scikit-image
 scikit-learn
+sentinelhub
 shapely
 tqdm
