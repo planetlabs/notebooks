@@ -14,6 +14,63 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 
+# GDAL XYZ XML templates for full-bit-depth streaming.
+FULL_BIT_DEPTH_XML = """
+<GDAL_WMS>
+        <Service name="TMS">
+        <ServerUrl>{tileserver}?api_key={api_key}{extra}&amp;format=geotiff&amp;proc=off</ServerUrl>
+        </Service>
+        <DataWindow>
+            <UpperLeftX>-20037508.34</UpperLeftX>
+            <UpperLeftY>20037508.34</UpperLeftY>
+            <LowerRightX>20037508.34</LowerRightX>
+            <LowerRightY>-20037508.34</LowerRightY>
+            <TileLevel>{level}</TileLevel>
+            <TileCountX>1</TileCountX>
+            <TileCountY>1</TileCountY>
+            <YOrigin>top</YOrigin>
+        </DataWindow>
+        <Projection>EPSG:3857</Projection>
+        <BlockSizeX>256</BlockSizeX>
+        <BlockSizeY>256</BlockSizeY>
+        <BandsCount>{nbands}</BandsCount>
+        <ZeroBlockHttpCodes>404</ZeroBlockHttpCodes>
+        <ZeroBlockOnServerException>true</ZeroBlockOnServerException>
+        <DataValues NoData="{nodata}" min="{mins}" max="{maxs}" />
+        <DataType>{datatype}</DataType>
+        <Cache/>
+</GDAL_WMS>
+""".lstrip()
+
+
+FULL_BIT_DEPTH_PROC_XML = """
+<GDAL_WMS>
+        <Service name="TMS">
+        <ServerUrl>{tileserver}?api_key={api_key}{extra}&amp;format=geotiff&amp;proc={proc}</ServerUrl>
+        </Service>
+        <DataWindow>
+                <UpperLeftX>-20037508.34</UpperLeftX>
+                <UpperLeftY>20037508.34</UpperLeftY>
+                <LowerRightX>20037508.34</LowerRightX>
+                <LowerRightY>-20037508.34</LowerRightY>
+                <TileLevel>{level}</TileLevel>
+                <TileCountX>1</TileCountX>
+                <TileCountY>1</TileCountY>
+                <YOrigin>top</YOrigin>
+        </DataWindow>
+        <Projection>EPSG:3857</Projection>
+        <BlockSizeX>256</BlockSizeX>
+        <BlockSizeY>256</BlockSizeY>
+        <BandsCount>1</BandsCount>
+        <ZeroBlockHttpCodes>404</ZeroBlockHttpCodes>
+        <ZeroBlockOnServerException>true</ZeroBlockOnServerException>
+        <DataValues min="-1" max="1" />
+        <DataType>Float32</DataType>
+        <Cache/>
+</GDAL_WMS>
+""".lstrip()
+
+
 def _get_client(client):
     if client is None:
         client = BasemapsClient()
@@ -329,6 +386,7 @@ class Mosaic(object):
         self.name = info['name']
         self.level = info['level']
         self.item_types = info['item_types']
+        self.datatype = info['datatype']
         self.info = info
         self.links = self.info.pop('_links', {})
 
@@ -421,6 +479,85 @@ class Mosaic(object):
             for group in groups:
                 for path in executor.map(download, group):
                     yield path
+
+    @property
+    def nbands(self):
+        """
+        Inferred number of bands (including alpha!) in the mosaic data. May be
+        incorrect due to API limitations.
+        """
+        # This will often be incorrect due to a deficiency in the API. Instead
+        # of using metadata, we have to guess based on datatype, and it _will_
+        # be wrong some of the time.
+        if self.datatype == 'byte':
+            # Assume RGB + alpha. Incorrect in many cases.
+            return 4
+        elif '_8b_' in self.name:
+            # Dangerous name-based heuristics, but usually reliable.
+            return 9
+        else:
+            # Sometimes incorrect, but assume it's BGRN + alpha otherwise
+            return 5
+
+    def tileserver_xml(self, proc=None, level=None, band_count=None):
+        """
+        An XML description of the full bit depth streamed data that can be
+        opened by gdal/etc.
+
+        :param str proc:
+            Processing to apply (e.g. NDVI, etc)
+        :param int level:
+            Base level to use. Defaults to the base zoom level of the mosaic.
+            It is sometimes useful to deliberately use downsampled data for
+            regional analysis, in which case you may want a lower zoom level.
+        :param int band_count:
+            Override guessed band count. Note that the API does not include
+            information on band count currently, so this parameter is needed
+            when working with 8-band or similar basemaps.
+
+        :retruns str xml:
+            XML formatted description. Note that this is directly openable by
+            rasterio and gdal without being written to a file.
+        """
+        extra = '&amp;empty=404'
+        maxs, mins, nodata = None, None, None
+
+        if level is None:
+            level = self.level
+
+        if band_count is None:
+            band_count = self.nbands
+
+        base = 'https://tiles.planet.com/basemaps/v1'
+        url = f'{base}/planet-tiles/{self.name}/gmap/${{z}}/${{x}}/${{y}}.tif'
+
+        if proc:
+            template = FULL_BIT_DEPTH_PROC_XML
+
+        else:
+            template = FULL_BIT_DEPTH_XML
+
+            # Again, assuming SR data, which is possibly not correct
+            max_val = "255" if self.datatype == "byte" else "10000"
+            max_alpha = "255" if self.datatype == "byte" else "65535"
+            maxs = ' '.join((band_count - 1) * [max_val] + [max_alpha])
+            mins = ' '.join(band_count * ['0'])
+
+            # Not really, but can't represent an alpha band in this xml format
+            nodata = ' '.join(band_count * ['0'])
+
+        return template.format(
+                api_key=self.client.api_key,
+                datatype=self.datatype,
+                extra=extra,
+                level=level,
+                maxs=maxs,
+                mins=mins,
+                nbands=band_count,
+                nodata=nodata,
+                proc=proc,
+                tileserver=url,
+        )
 
 
 class MosaicQuad(object):
