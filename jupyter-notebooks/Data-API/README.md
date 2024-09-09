@@ -6,8 +6,8 @@ These guides are designed for users who want to learn how to programmatically ac
 The first notebook uses the Python `requests` library and a few lines of helper code to explore the full functionality of the Data API. The second guide uses Planet's Python command-line interface to quickly step through a common workflow of searching, activating, and downloading imagery. 
 * [Introduction to the Planet Data API using Python](planet_data_api_introduction.ipynb)
 * [Introduction to the Planet Python Client](planet_cli_introduction.ipynb)
+* [Quickstart Guide: Search & Preview Imagery on a Map](search_and_preview_quickstart.ipynb)
 * [Quickstart Guide: Search & Download Imagery](search_and_download_quickstart.ipynb)
-* [Quickstart Guide: Search & Map Imagery](search_and_preview_quickstart.ipynb)
 
 ### Read the docs
 * [Python Client for Planet API](https://planetlabs.github.io/planet-client-python/index.html)
