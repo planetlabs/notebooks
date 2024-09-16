@@ -10,4 +10,4 @@ in-class-exercises/   # Do not successfully run automatically
 label-data/           # Require custom docker image to run
 crop-classification/segment-knn-tuning.ipynb  # does not run successfully automatically
 crop-classification/datasets-prepare-cdl.ipynb # does not run successfully automatically
-
+Sentinel Hub APIs/BatchV2 API # requires user's AWS credentials & buckets
