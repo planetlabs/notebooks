@@ -18,7 +18,7 @@ from urllib3.util.retry import Retry
 FULL_BIT_DEPTH_XML = """
 <GDAL_WMS>
         <Service name="TMS">
-        <ServerUrl>{tileserver}?api_key={api_key}{extra}&amp;format=geotiff&amp;proc=off</ServerUrl>
+        <ServerUrl>{tileserver}?api_key={api_key}{extra}&amp;format=geotiff&amp;empty=404&amp;proc=off</ServerUrl>
         </Service>
         <DataWindow>
             <UpperLeftX>-20037508.34</UpperLeftX>
@@ -46,7 +46,7 @@ FULL_BIT_DEPTH_XML = """
 FULL_BIT_DEPTH_PROC_XML = """
 <GDAL_WMS>
         <Service name="TMS">
-        <ServerUrl>{tileserver}?api_key={api_key}{extra}&amp;format=geotiff&amp;proc={proc}</ServerUrl>
+        <ServerUrl>{tileserver}?api_key={api_key}{extra}&amp;format=geotiff&amp;empty=404&amp;proc={proc}</ServerUrl>
         </Service>
         <DataWindow>
                 <UpperLeftX>-20037508.34</UpperLeftX>
@@ -92,7 +92,7 @@ def _chunks(iterable, chunksize):
             yield v
         else:
             return
-
+&amp;empty=404
 
 class BasemapsClient(object):
     """Demo client for working with the Planet basemaps API"""
