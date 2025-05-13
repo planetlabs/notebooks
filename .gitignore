@@ -92,3 +92,6 @@ ENV/
 
 # GDAL local cache directories
 gdalwmscache
+
+# IDE environments
+.idea/*
