@@ -1,5 +1,6 @@
 # changes here should be reflected in 
 # please keep this in alphabetical order
+cartopy
 fiona
 gdal
 geojson
