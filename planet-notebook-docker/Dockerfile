@@ -2,7 +2,7 @@
 # https://github.com/jupyter/docker-stacks/wiki/minimal-notebook-414b5d749704
 FROM quay.io/jupyter/minimal-notebook:8515ad39f045
 
-# install dependencies
+# Copy requirements file for package installation
 COPY requirements.txt /tmp/requirements.txt
 
 # libgl Required for opencv
@@ -18,14 +18,8 @@ USER $NB_UID
 RUN conda config --set channel_priority strict && \
     conda install -y -c conda-forge --file /tmp/requirements.txt
 
-# install the following libraries w/ pip to support analytics/user-guide nb's
-# build fails due to long conda solves when these dependencies are added to requirements.txt
-# see https://github.com/planetlabs/notebooks/issues/135 for more details
-# python -m pip as per https://github.com/pypa/pip/issues/5599
-RUN python -m pip install descartes geoviews
-
 # Attempts to avoid having to hardcode this failed.
 # ref: https://github.com/planetlabs/notebooks/issues/101
 ENV PROJ_LIB=/opt/conda/share/proj
 
-WORKDIR work
+WORKDIR /home/jovyan/work
