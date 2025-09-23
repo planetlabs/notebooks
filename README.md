@@ -1,4 +1,4 @@
-# Planet Interactive Notebook Guides
+# Planet Jupyter Notebook Guides
 
 In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source ([APLv2](LICENSE)) guides are designed to help you work with our APIs and tools, explore Planet data, and learn how to extract information from our massive archive of high-cadence satellite imagery. We hope these guides will inspire you to ask interesting questions of Planet data. Need help? Find a bug? Please [file an issue](https://github.com/planetlabs/notebooks/issues/new) and we'll get back to you.
 
@@ -9,7 +9,7 @@ In this repository, you'll find a collection of [Jupyter notebooks](http://jupyt
 * [Planet Account](https://insights.planet.com/sign-up)
 * [Planet API Key](https://www.planet.com/account/)
 
-### Clone or update repo
+### Clone or Update Repo
 
 If you've never cloned the Planet notebooks repo, run the following:
 
@@ -88,7 +88,7 @@ This will build and install the Docker image on your system, making it available
 > [!IMPORTANT]
 > You may need to rebuild the Docker image if this repository changes or if you need to use newer versions of the Planet SDK for Python.  
 
-### Run the container
+### Run the Container
 To run the container after building it, add your Planet API key to the command below and run it from the cloned `planetlabs/notebooks` repository root directory in Unix bash, Windows PowerShell, Git Bash, or WSL.
 
 ```bash
@@ -106,7 +106,7 @@ This does several things:
 4. **Starts interactive terminal** - Accessible through the web browser
 5. **Auto-cleanup** - Removes container when you exit (`--rm`)
 
-### Open Jupyter notebooks
+### Open Jupyter Notebooks
 Once the Docker container is running, the CLI output will display a URL that you will use to access Jupyter notebooks
 with your browser.
 ```
