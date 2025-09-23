@@ -18,6 +18,9 @@ USER $NB_UID
 RUN conda config --set channel_priority strict && \
     conda install -y -c conda-forge --file /tmp/requirements.txt
 
+# This fails to install under conda
+RUN pip install tslearn
+
 # Attempts to avoid having to hardcode this failed.
 # ref: https://github.com/planetlabs/notebooks/issues/101
 ENV PROJ_LIB=/opt/conda/share/proj

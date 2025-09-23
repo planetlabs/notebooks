@@ -24,4 +24,3 @@ scikit-learn
 sentinelhub
 shapely
 tqdm
-tslearn
