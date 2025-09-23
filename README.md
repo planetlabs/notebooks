@@ -1,17 +1,15 @@
-## Planet Interactive Guides
+# Planet Interactive Notebook Guides
 
 In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source ([APLv2](LICENSE)) guides are designed to help you work with our APIs and tools, explore Planet data, and learn how to extract information from our massive archive of high-cadence satellite imagery. We hope these guides will inspire you to ask interesting questions of Planet data. Need help? Find a bug? Please [file an issue](https://github.com/planetlabs/notebooks/issues/new) and we'll get back to you.
 
-## Install and use these notebooks
+## Install and Use Planet Jupyter Notebooks
 
 ### System Prerequisites
-* [Docker](https://store.docker.com/search?type=edition&offering=community)
-* [Planet Account](https://www.planet.com/explorer/?signup=1)
+* [Docker](https://docs.docker.com/get-started/get-docker/)
+* [Planet Account](https://insights.planet.com/sign-up)
 * [Planet API Key](https://www.planet.com/account/)
 
-NOTE: After installing Docker, Windows users should install WSL2 Backend when prompted.
-
-### Clone or update repo:
+### Clone or update repo
 
 If you've never cloned the Planet notebooks repo, run the following:
 
@@ -29,7 +27,7 @@ git pull
 
 ## Authentication
 
-## Access your Planet API Key in Python
+## Access Your Planet API Key in Python
 
 Authentication with Planet's API Key can be achieved by using a valid Planet API Key.
 
@@ -53,7 +51,7 @@ PLANET_API_KEY = os.getenv('PL_API_KEY')
 
 Now, your Planet API Key is stored in the variable ```PLANET_API_KEY``` and is ready to use in your Python code.
 
-### Sentinel Hub Python SDK
+## Sentinel Hub Python SDK
 Some Notebooks in this repository use the [Sentinel Hub Python SDK](https://sentinelhub-py.readthedocs.io/en/latest/index.html).  Currently, this SDK uses a different method of authenticating than what is used with the Planet APIs and SDK for Python. 
 
 For the Sentinel Hub Python SDK, you must provide a ```client_id``` and a ```client_secret``` which can be obtained from the [Dashboard](https://apps.sentinel-hub.com/dashboard/) app. You can find full instructions on setting up the client credentials in this SDK from the [SDK documentation](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
@@ -75,32 +73,30 @@ else:
 ```
 
 ## Run Planet Notebooks in Docker
-Planet Notebooks rely on a complex stack of technologies that are not always easy to install and properly 
-configure. To ease this complexity we provide a docker container for running the notebook on docker compatible 
-systems. To install docker on your system please see docker's [documentation](https://docs.docker.com/engine/installation/)
-for your operating system.
+Planet Notebooks rely on a complex stack of technologies that are not always easy to install and properly configure. To ease this complexity we provide a Docker container for running the notebook on Docker compatible systems. To install Docker on your system please see [Docker documentation](https://docs.docker.com/get-started/get-docker/) for your operating system.
 
 ### Build the Docker image
 
-First you must build the docker image. Note, this only has to be done the first time you use it. After checking out the
-repository, you run:
+First you must build the docker image. After checking out the repository, you run:
+
 ```bash
 docker build -t planet-notebooks planet-notebook-docker/
 ```
 
-This will build and install the Docker image on your system, making it available to run. This may take some 
-time (from 10 minutes to an hour) depending on your network connection and how long Anaconda takes to configure
-its environment.
+This will build and install the Docker image on your system, making it available to run. This may take some time (from 10 minutes to an hour) depending on your network connection and how long Anaconda takes to configure its environment.
+
+> [!IMPORTANT]
+> You may need to rebuild the Docker image if this repository changes or if you need to use newer versions of the Planet SDK for Python.  
 
 ### Run the container
-To run the container (after building or downloading it), add your Planet API key below and issue the following command from the git repository root directory:
+To run the container after building it, add your Planet API key to the command below and run it from the cloned `planetlabs/notebooks` repository root directory in Unix bash, Windows PowerShell, Git Bash, or WSL.
 
 ```bash
 docker run -it --rm -p 8888:8888 -v "$(pwd)/jupyter-notebooks:/home/jovyan/work" -e PL_API_KEY='your-key' planet-notebooks
-
-# If you get a permissions error running the above, you should add sudo to the front:
-# sudo docker run -it --rm -p 8888:8888 -v $PWD:/home/jovyan/work -e PL_API_KEY='[YOUR-API-KEY]' planet-notebooks
 ```
+
+> [!TIP]
+> If you get permission errors: Add sudo to the front (Linux/Mac) or run PowerShell as Administrator (Windows).
 
 This does several things:  
 
@@ -117,4 +113,5 @@ with your browser.
 http://localhost:8888/?token=<UNIQUE-TOKEN>
 ```
 
-NOTE: This security token will change every time you start your Docker container.
+> [!NOTE]  
+> This security token will change every time you start your Docker container.
