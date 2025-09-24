@@ -16,7 +16,11 @@ USER $NB_UID
 # without channel set to strict, a conflicting version of gdal
 # is sometimes installed from the default channel
 RUN conda config --set channel_priority strict && \
-    conda install -y -c conda-forge --file /tmp/requirements.txt
+    conda install -y -c conda-forge --file /tmp/requirements.txt && \
+    conda clean --all -f -y
+
+# This fails to install under conda
+RUN pip install --no-cache-dir tslearn
 
 # Attempts to avoid having to hardcode this failed.
 # ref: https://github.com/planetlabs/notebooks/issues/101
