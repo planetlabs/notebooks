@@ -92,3 +92,8 @@ ENV/
 
 # GDAL local cache directories
 gdalwmscache
+
+# IDE environments
+.idea/*
+
+jupyter-notebooks/workflows/planet_sandbox_data/forest-carbon-dilligence/fcd_statistics.csv

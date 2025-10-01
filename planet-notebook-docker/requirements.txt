@@ -1,16 +1,17 @@
-# changes here should be reflected in 
 # please keep this in alphabetical order
+cartopy
+descartes
 fiona
 gdal
 geojson
 geojsonio
 geopandas
+geoviews
 ipyleaflet
 ipywidgets
 matplotlib
 mercantile
 numpy
-# for pip, use opencv-python
 opencv
 pandas
 planet
