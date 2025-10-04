@@ -19,8 +19,10 @@ pyproj
 pytest
 rasterio
 requests
+rioxarray
 scikit-image
 scikit-learn
 sentinelhub
 shapely
 tqdm
+xarray
