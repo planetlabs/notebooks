@@ -95,3 +95,6 @@ gdalwmscache
 
 # IDE environments
 .idea/*
+
+# local download folders
+**/**/planet_downloads/
