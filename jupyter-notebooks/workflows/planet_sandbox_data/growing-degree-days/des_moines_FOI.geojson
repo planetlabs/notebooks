@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "des_moines_FOI",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -93.936496, 41.250814 ], [ -93.936474, 41.254275 ], [ -93.931721, 41.254307 ], [ -93.931732, 41.250798 ], [ -93.936496, 41.250814 ] ] ] } }
-]
-}
