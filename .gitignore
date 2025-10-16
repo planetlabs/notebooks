@@ -96,4 +96,6 @@ gdalwmscache
 # IDE environments
 .idea/*
 
+# local download folders
+**/**/planet_downloads/
 jupyter-notebooks/workflows/planet_sandbox_data/forest-carbon-dilligence/fcd_statistics.csv
