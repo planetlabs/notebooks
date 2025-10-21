@@ -35,26 +35,13 @@ You can find a [table of contents here](/jupyter-notebooks/).
 
 ## Authentication
 
-To use these notebooks, which interact with [Planet's APIs](https://docs.planet.com/develop/apis), you will need to have an account to authenticate. You can find our  [authentication documentation here](https://docs.planet.com/develop/authentication/).
+To use these notebooks, which interact with [Planet's APIs](https://docs.planet.com/develop/apis), you will need to have an account to authenticate. You can find our [authentication documentation here](https://docs.planet.com/develop/authentication/). 
 
-For the quickest way to get started, you can log in with the CLI using the follow command:
-
-```bash
-planet auth login
-```
-
-Or from a Python environment with access to a web browser, you can run the following:
-
-```python
-import planet
-auth = planet.Auth.from_profile('planet-user', save_state_to_storage=True)
-if not auth.is_initialized():
-    auth.user_login(allow_open_browser=True, allow_tty_prompt=True)
-```
+Some notebooks authenticate with your Planet Account directly. You will be prompted to login via a web link and confirm your authorization. If you would like to know more, refer to the authentication documentation linked above.
 
 ### Access Your Planet API Key in Python
 
-You can also autenticate with your API Key. To find your API key, you can go to your [account settings page](https://insights.planet.com/account/#/settings).
+Other notebooks authenticate using your Planet API Key. To find your API key, you can go to your [account settings page](https://insights.planet.com/account/#/settings).
 
 You can export your API Key as an environment variable on your system:
 
@@ -76,10 +63,10 @@ PLANET_API_KEY = os.getenv('PL_API_KEY')
 
 Now, your Planet API Key is stored in the variable ```PLANET_API_KEY``` and is ready to use in your Python code.
 
-## Sentinel Hub Python SDK
+### Sentinel Hub Python SDK
 Some Notebooks in this repository use the [Sentinel Hub Python SDK](https://sentinelhub-py.readthedocs.io/en/latest/index.html).  Currently, this SDK uses a different method of authenticating than what is used with the Planet APIs and SDK for Python. 
 
-For the Sentinel Hub Python SDK, you must provide a ```client_id``` and a ```client_secret``` which can be obtained from the [account manager application](https://insights.planet.com/account/#/). You can find full instructions on setting up the client credentials in this SDK from the [SDK documentation](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
+For the Sentinel Hub Python SDK, you must provide a ```client_id``` and a ```client_secret``` which can be obtained from the [account manager application](https://insights.planet.com/account/#/). You can find full instructions on setting up the client credentials for this SDK in the [SDK documentation](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
 
 ```python
 from sentinelhub import SHConfig 
