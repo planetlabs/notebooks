@@ -10,13 +10,17 @@ If you are contributing a notebook, we've gathered these style guide requirement
 
 Notebook filenames should not have spaces. Please use underscores with `snake_case` instead for all files in the repository.
 
+Your filename should align to the title of the notebook. For example, a notebook titled **Generate Agriculture Index Time Series** should be `generate_agriculture_index_time_series.ipynb`.
+
 ### HTML and Markdown
 
 For maximum portability, accessibility, and ease of use, notebooks in this repository should not use a custom style or theme. Please stick to standard markdown features so that it works across all environments.
 
 ### Dependencies
 
-When a new notebook has a dependency that is not yet supported by the Docker image, please add the dependency to the [Docker setup requirements](planet-notebook-docker/requirements.txt).
+When a new notebook has a dependency that is not yet supported by the Docker image, please add the dependency to the [Docker setup requirements file](planet-notebook-docker/requirements.txt).
+
+Alternatively, you can choose to add package installation instructions in your Notebook, particularly if the notebook you are adding has any heavy, unique, or tricky dependencies. If you do this, make sure to include comments in the notebooks.
 
 ### Ordering Notebooks
 
@@ -24,7 +28,7 @@ If you are working on a multi-part guide that has several notebooks, prefix the 
 
 ### Optimize Cell Outputs for Viewing in the Browser
 
-If you have a cell that prints a very large json repsonse, consider alternative ways to view the data. Could it be viewed in a table or on a map? Very large json repsonses make notebooks difficult to read in GitHub. 
+If you have a cell that prints a very large json repsonse, consider alternative ways to view the data. Could it be viewed in a table or on a map? Very large json repsonses make notebooks difficult to read. 
 
 ### Use Colab
 
@@ -35,6 +39,8 @@ For example:
 ```
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/planet_sandbox_data/agriculture-index-time-series/agriculture-index-time-series.ipynb)
 ```
+
+If your notebook includes Colab link, make sure that the packages used within it are either a) default colab packages or b) imported using a magic command `%pip install planet`.
 
 ### Introduction
 
