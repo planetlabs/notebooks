@@ -1,6 +1,6 @@
 # Planet Jupyter Notebooks Examples
 
-This folder contains a collection Jupyter notebooks that teach you how to use Planet Insights Platform. They are divided into three sections:
+This repository contains a collection Jupyter notebooks that teach you how to use Planet Insights Platform. They are divided into three folders:
 
 1. `api_guides` - Here, you will find notebooks that introduce you to the essential functionality of different APIs with quickstarts to guides focused on specific functionality.
 2. `use_cases` - In the use cases section, we've built notebooks around common applications of satellite data to demonstrate how to answer questions or create insights from Earth observation data.

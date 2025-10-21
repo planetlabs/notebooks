@@ -27,11 +27,34 @@ cd notebooks
 git pull
 ``` 
 
+## Notebooks Table of Contents
+
+This repository contains a collection Jupyter notebooks that teach you how to use Planet Insights Platform. 
+
+You can find a [table of contents here](/jupyter-notebooks/).
+
 ## Authentication
 
-## Access Your Planet API Key in Python
+To use these notebooks, which interact with [Planet's APIs](https://docs.planet.com/develop/apis), you will need to have an account to authenticate. You can find our  [authentication documentation here](https://docs.planet.com/develop/authentication/).
 
-Authentication with Planet's API Key can be achieved by using a valid Planet API Key.
+For the quickest way to get started, you can log in with the CLI using the follow command:
+
+```bash
+planet auth login
+```
+
+Or from a Python environment with access to a web browser, you can run the following:
+
+```python
+import planet
+auth = planet.Auth.from_profile('planet-user', save_state_to_storage=True)
+if not auth.is_initialized():
+    auth.user_login(allow_open_browser=True, allow_tty_prompt=True)
+```
+
+### Access Your Planet API Key in Python
+
+You can also autenticate with your API Key. To find your API key, you can go to your [account settings page](https://insights.planet.com/account/#/settings).
 
 You can export your API Key as an environment variable on your system:
 
