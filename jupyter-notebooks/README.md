@@ -52,11 +52,11 @@ This repository contains a collection Jupyter notebooks that teach you how to us
 | ------ | ----------- |
 | [Analysis Ready Data](workflows/analysis_ready_data) | Use Planet APIs to create Analysis Ready Data (ARD) for time-series analysis. |
 | [Analytics Snippets](workflows/analytics_snippets) | Convert Analytics Feed building footprint rasters to vector datasets. |
-| [Band Math Generate Ndvi](workflows/band_math_generate_ndvi) | Derives a vegetation index from 4-band satellite data. |
-| [Band Math Generate Ndvi - Ndvi](workflows/band_math_generate_ndvi/ndvi) | Uses NDVI to measure vegetation from PlanetScope imagery. |
-| [Band Math Generate Ndvi - Ndvi From Sr](workflows/band_math_generate_ndvi/ndvi_from_sr) | Uses NDVI to measure vegetation for environmental monitoring. |
-| [Cloud Native Geospatial - Intro To Cogs](workflows/cloud_native_geospatial/intro_to_cogs) | Convert GeoTIFFs to COGs and upload to Google Cloud Storage. |
-| [Cloud Native Geospatial - Intro To Stac](workflows/cloud_native_geospatial/intro_to_stac) | Overview of STAC specification and components. |
+| [Band Math Generate NDVI](workflows/band_math_generate_ndvi) | Derives a vegetation index from 4-band satellite data. |
+| [Band Math Generate NDVI - NDVI](workflows/band_math_generate_ndvi/ndvi) | Uses NDVI to measure vegetation from PlanetScope imagery. |
+| [Band Math Generate NDVI - NDVI From Surfance Reflectance](workflows/band_math_generate_ndvi/ndvi_from_sr) | Uses NDVI to measure vegetation for environmental monitoring. |
+| [Cloud Native Geospatial - Intro To COGS](workflows/cloud_native_geospatial/intro_to_cogs) | Convert GeoTIFFs to COGs and upload to Google Cloud Storage. |
+| [Cloud Native Geospatial - Intro To STAC](workflows/cloud_native_geospatial/intro_to_stac) | Overview of STAC specification and components. |
 | [Convert Radiance To Reflectance](workflows/convert_radiance_to_reflectance) | Convert PlanetScope imagery from radiance to reflectance using provided coefficients. |
 | [Coverage](workflows/coverage) | Calculate AOI coverage using UTM or WGS84. |
 | [Crossovers](workflows/crossovers) | Uses a Python notebook to find crossovers between PSScene and Landsat 8 images, filtering for time difference and cloudiness. |
@@ -66,5 +66,5 @@ This repository contains a collection Jupyter notebooks that teach you how to us
 | [Introduction To Evalscripts](workflows/introduction_to_evalscripts) | Use evalscripts for interactive overview of various analysis. |
 | [Landsat Planetscope Comparison](workflows/landsat_planetscope_comparison) | Compares Landsat and PlanetScope scenes for crop type differentiation. |
 | [Mosaicking And Masking](workflows/mosaicking_and_masking) | Uses rasterio and fiona to create a composite image from multiple PlanetScope scenes. |
-| [Publish To Arcgis Online](workflows/publish_to_arcgis_online) | Publish PlanetScope imagery as image services in ArcGIS Image for ArcGIS Online. |
+| [Publish To ArcGIS Online](workflows/publish_to_arcgis_online) | Publish PlanetScope imagery as image services in ArcGIS Image for ArcGIS Online. |
 | [Working With Usable Data Mask](workflows/working_with_usable_data_mask) | Use UDM to identify and mask pixels with quality issues in satellite imagery. |
