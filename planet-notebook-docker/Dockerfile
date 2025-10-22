@@ -9,7 +9,7 @@ COPY requirements.txt /tmp/requirements.txt
 # https://github.com/conda-forge/pygridgen-feedstock/issues/10#issuecomment-365914605
 USER root
 RUN apt-get update && apt-get install -yq --no-install-recommends \
-    libgl1-foobar libglx-mesa0 \
+    libgl1 libglx-mesa0 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 USER $NB_UID
 
