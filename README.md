@@ -115,4 +115,3 @@ http://localhost:8888/?token=<UNIQUE-TOKEN>
 
 > [!NOTE]  
 > This security token will change every time you start your Docker container.
-
