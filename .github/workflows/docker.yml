@@ -1,9 +1,7 @@
 name: docker
 
 on:
-  pull_request:
-    paths:
-      - planet-notebook-docker/**
+  pull_request
 
 jobs:
   build:
