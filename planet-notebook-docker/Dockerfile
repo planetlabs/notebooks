@@ -1,5 +1,5 @@
 # 2025-09-15 build
-# https://github.com/jupyter/docker-stacks/wiki/minimal-notebook-414b5d749704
+# https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook
 FROM quay.io/jupyter/minimal-notebook:8515ad39f045
 
 # Copy requirements file for package installation
