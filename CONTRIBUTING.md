@@ -1,118 +1,126 @@
 # Contributing to Notebooks
 
-# Notebooks
+Contributions are welcome to this repository. Please open a PR if you would like to contribute a notebook and we will review. Alternatively, if you have a request or an idea, you can [open an issue](https://github.com/planetlabs/notebooks/issues/new/choose).
 
-## Names
+## Notebook Style
 
-Notebook filenames cannot have spaces. Use underscores instead. This is
-because pytest does not like spaces in command line arguments.
+If you are contributing a notebook, we've gathered these style guide requirements.
 
-## Style
+### Filemames
 
-For maximum portability, accessibility, and ease of use, Notebooks in this
-repository should not use a custom style or theme. 
+Notebook filenames should not have spaces. Please use underscores with `snake_case` instead for all files in the repository.
 
+Your filename should align to the title of the notebook. For example, a notebook titled **Generate Agriculture Index Time Series** should be `generate_agriculture_index_time_series.ipynb`.
 
-## Dependencies
+### HTML and Markdown
 
-When a new notebook has a dependency that is not yet supported by the Docker image,
-a new Docker image must be built. Additionally, add the new dependency to the 
-[imports_test notebook](dev/imports_test.ipynb).
+For maximum portability, accessibility, and ease of use, notebooks in this repository should not use a custom style or theme. Please stick to standard markdown features so that it works across all environments.
 
-## Planet Data
+### Dependencies
 
-It is the intention of this notebook repository that a user be able to easily
-determine the permissions needed within the Planet ecosystem to be able to run
-all notebooks successfully. Therefore, we standardize and track Planet data 
-that are used across all notebooks within this repository. Right now, this applies
-to Planet Imagery in the form of Areas of Interest and to Planet 
-Analytic Feeds in the form of suscription IDs.
+When a new notebook has a dependency that is not yet supported by the Docker image, please add the dependency to the [Docker setup requirements file](planet-notebook-docker/requirements.txt).
 
-### Imagery - Area of Interest
+Alternatively, you can choose to add package installation instructions in your Notebook, particularly if the notebook you are adding has any heavy, unique, or tricky dependencies. If you do this, make sure to include comments in the notebooks.
 
-The first choice of area of interest (AOI) for any notebook is an AOI that is 
-already used in this repository. The geojson description of these AOIs is given
-in [aois.geojson](dev/imports_test.ipynb) (it is easy to visualize these
-aois directly in GitHub or by copy/pasting into [geojson.io](geojson.io).
-These AOIs are also given in the 
-[repository_aois notebook](dev/repository_aois.ipynb). It is good practice
-to add your notebook to the list of notebooks using each AOI.
+### Ordering Notebooks
 
-If the AOI for a notebook cannot be satisfied by the the AOIs already in use
-in the repository, then email <devrel@planet.com> so that we can consider
-expanding our demo data coverage to include a new AOI. If the new AOI is included,
-add the AOI to the 
-[repository_aois notebook](dev/repository_aois.ipynb). Run that notebook
-through to the end to update [aois.geojson](dev/imports_test.ipynb).
+If you are working on a multi-part guide that has several notebooks, prefix the notebooks with `1_`, `2_`, `3_`, and so on to indicate the order.
 
-### Analytics Feed - Subscription ID
+### Optimize Cell Outputs for Viewing in the Browser
 
-The fist choice of Analytics Feed subscription id for any notebooks is a 
-subscription ID that is already used in this repository. The subscription IDs
-used in this repository are maintained in the
-[analygics_feeds notebook](analytics_feeds.ipynb). This notebook also helpfully
-pulls the feed information from these subscription IDs. It is good practice
-to add your notebook to the list of notebooks using each subscription ID.
+If you have a cell that prints a very large json repsonse, consider alternative ways to view the data. Could it be viewed in a table or on a map? Very large json repsonses make notebooks difficult to read. 
 
-Currently, subscription IDs are not being tracked in any demo permissions program.
-However, this may change in the future. If the subscription ID for a notebook
-cannot be satisfied by the subscription IDs already in the repository, add
-the subscription ID to the notebook and email <devrel@planet.com> to notify us
-of the change. (**NOTE**: this is likely to change to a request when demo 
-permissions for the analytics feed are established).
+### Use Colab
 
-## Notebook Validation
+When possible, add the option to open the notebook in Colab. This should be added as the very first line in the first cell of the Jupyter Notebook file so that it appears at the very top. 
 
-To enable validation of the Docker image, every notebook should run successfully
-when run from the command line. For notebooks where that just is not possible, 
-the notebooks can be excluded from automated running by adding its path to 
-[tests/skip_notebooks](tests/skip_notebooks). Excluding a notebook from automated running
-means that it is excluded from Docker Image validation. **If a notebook is
-skipped, it will not be guaranteed to be supported by the Docker image.**
+For example:
 
-# Docker Image
-
-## Validation
-
-**Every time** the Docker image is changed, at the very least ensure that the 
-python packages still import without error by running the
-[imports_test notebook](dev/imports_test.ipynb).
-
-It is also strongly recommended that you ensure the Docker image can run all
-of the notebooks in the repository. This can be accomplished by automatically
-running all of the notebooks using the supplied test script. To run the test script,
-run the notebook in interactive mode, achieved by adding `/bin/bash` to 
-the container run command, e.g.
-```bash
-docker run -it --rm -p 8888:8888 \
-    -v $PWD:/home/jovyan/work \
-    -e PL_API_KEY='[YOUR-API-KEY]' \
-    planet-notebooks /bin/bash
+```
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github//planetlabs/notebooks/blob/master/jupyter-notebooks/workflows/planet_sandbox_data/agriculture-index-time-series/agriculture-index-time-series.ipynb)
 ```
 
-From the root directory within the docker container, run one of the following:
+If your notebook includes Colab link, make sure that the packages used within it are either a) default colab packages or b) imported using a magic command `%pip install planet`.
 
-1. To run all notebooks
-    ```bash
-    $> pytest tests/test_notebooks.py
-    ```
-1. run only notebooks in a subdirectory using
-    ```bash
-    $> pytest tests/test_notebooks.py --path <subdirectory>
-    ```
-1. run one or more notebooks (separated by spaces)
-    ```bash
-    $> pytest tests/test_notebooks.py --notebooks <notebook1> <notebook2> <...>
-    ```
-1. run only notebooks that have a given dependency, <package>
-    ```bash
-    $> pytest tests/test_notebooks.py --notebooks "$(grep -rl import <package> jupyter-notebooks/)"
-   ```
+### Introduction
 
-## Skipping Notebooks
+For a notebook, please make sure to include context and description at the top using this format:
 
-Some notebooks are purposefully skipped in the validation process because they
-do not run successfully from the command line. These notebooks are specified in
-[tests/skip_notebooks](tests/skip_notebooks). Skipping of notebooks within
-`skip_notebooks` can be disabled by adding the `--no-skip` option to the pytest
-command.
+```
+<colab link>
+# Notebook Title
+
+Information about the notebook
+
+## Requirements
+
+Any special requirements, set up instructions, permissions, pre-steps, etc.
+```
+
+### Authentication
+
+Most Notebooks will likely require authenticating with Planet APIs. In order to use consistent authentication and schemes across all of the notebooks, we've provided 3 authentication snippets that we recommend you use:
+
+#### For Notebooks that use the Planet SDK for Python
+
+```
+import planet
+
+# If you are not already logged in, this will prompt you to open a web browser to log in.
+auth = planet.Auth.from_profile('planet-user', save_state_to_storage=True)
+if not auth.is_initialized():
+    auth.user_login(allow_open_browser=False, allow_tty_prompt=True)
+
+session = planet.Session(auth)
+pl = planet.Planet(session)
+```
+
+#### For Notebooks that use the Sentinel Hub Python SDK
+
+```
+from sentinelhub import SHConfig
+
+# Authenticate with the Sentinel Hub Python SDK; See docs: https://sentinelhub-py.readthedocs.io/en/latest/configure.html and https://docs.planet.com/develop/authentication
+# If no default configuration detected, enter a client ID and secret to authenticate. These can be obtained by creating an OAuth client here: https://insights.planet.com/account
+config = SHConfig()
+if not config.sh_client_id or not config.sh_client_secret:
+    from getpass import getpass
+    print('No credentials found, please provide the OAuth client ID and secret.')
+    config.sh_client_id = getpass('Client ID: ')
+    config.sh_client_secret = getpass('Client Secret: ')
+    # config.save() ## Uncomment these lines to locally save your credentials to a configuration file
+    # print(f'Credentials saved to {SHConfig.get_config_location()}')
+else:
+    print(f'Using credentials stored here: {SHConfig.get_config_location()}')
+```
+
+#### For Notebooks that use API key authentication
+
+If a notebook is using `requests` instead of the SDK, you will need to use API key authentication.
+
+```
+import os
+import requests
+
+# Authenticate with the Planet SDK for Python using your API key; See docs: https://docs.planet.com/develop/authentication
+# Check for PL_API_KEY environment variable, otherwise type in your API key.
+pl_api_key = os.getenv('PL_API_KEY')
+if not pl_api_key:
+    import getpass
+    pl_api_key = getpass.getpass('Planet API Key: ')
+    os.environ['PL_API_KEY'] = pl_api_key
+
+session = requests.Session()
+session.auth = (pl_api_key, '')
+```
+
+And if in the same notebook, you also need to use the SDK, you can use the following:
+
+```
+import planet
+
+## Authenticate with the Planet SDK for Python with your API key
+auth = planet.Auth.from_key(key=pl_api_key)
+pl_session = planet.Session(auth)
+pl = planet.Planet(session)
+```
