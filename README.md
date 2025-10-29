@@ -1,13 +1,15 @@
 # Planet Jupyter Notebook Guides
 
-In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source ([APLv2](LICENSE)) guides are designed to help you work with our APIs and tools, explore Planet data, and learn how to extract information from our massive archive of high-cadence satellite imagery. We hope these guides will inspire you to ask interesting questions of Planet data. Need help? Find a bug? Please [file an issue](https://github.com/planetlabs/notebooks/issues/new) and we'll get back to you.
+In this repository, you'll find a collection of [Jupyter notebooks](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html) from the software developers, data scientists, and developer advocates at [Planet](https://www.planet.com/). These interactive, open-source ([APLv2](LICENSE)) guides are designed to help you work with our APIs and tools, explore Planet data, and learn how to extract information from our massive archive of high-cadence satellite imagery. We hope these guides will inspire you to ask interesting questions of Planet data. 
+
+Need help? Find a bug? Please [file an issue](https://github.com/planetlabs/notebooks/issues/new) and we'll get back to you.
 
 ## Install and Use Planet Jupyter Notebooks
 
 ### System Prerequisites
-* [Docker](https://docs.docker.com/get-started/get-docker/)
 * [Planet Account](https://insights.planet.com/sign-up)
 * [Planet API Key](https://www.planet.com/account/)
+* (optional) [Docker](https://docs.docker.com/get-started/get-docker/)
 
 ### Clone or Update Repo
 
@@ -25,11 +27,21 @@ cd notebooks
 git pull
 ``` 
 
+## Notebooks Table of Contents
+
+This repository contains a collection Jupyter notebooks that teach you how to use Planet Insights Platform. 
+
+You can find a [table of contents here](/jupyter-notebooks/).
+
 ## Authentication
 
-## Access Your Planet API Key in Python
+To use these notebooks, which interact with [Planet's APIs](https://docs.planet.com/develop/apis), you will need to have an account to authenticate. You can find our [authentication documentation here](https://docs.planet.com/develop/authentication/). 
 
-Authentication with Planet's API Key can be achieved by using a valid Planet API Key.
+Some notebooks authenticate with your Planet Account directly. You will be prompted to login via a web link and confirm your authorization. If you would like to know more, refer to the authentication documentation linked above.
+
+### Access Your Planet API Key in Python
+
+Other notebooks authenticate using your Planet API Key. To find your API key, you can go to your [account settings page](https://insights.planet.com/account/#/settings).
 
 You can export your API Key as an environment variable on your system:
 
@@ -51,10 +63,10 @@ PLANET_API_KEY = os.getenv('PL_API_KEY')
 
 Now, your Planet API Key is stored in the variable ```PLANET_API_KEY``` and is ready to use in your Python code.
 
-## Sentinel Hub Python SDK
+### Sentinel Hub Python SDK
 Some Notebooks in this repository use the [Sentinel Hub Python SDK](https://sentinelhub-py.readthedocs.io/en/latest/index.html).  Currently, this SDK uses a different method of authenticating than what is used with the Planet APIs and SDK for Python. 
 
-For the Sentinel Hub Python SDK, you must provide a ```client_id``` and a ```client_secret``` which can be obtained from the [Dashboard](https://apps.sentinel-hub.com/dashboard/) app. You can find full instructions on setting up the client credentials in this SDK from the [SDK documentation](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
+For the Sentinel Hub Python SDK, you must provide a ```client_id``` and a ```client_secret``` which can be obtained from the [account manager application](https://insights.planet.com/account/#/). You can find full instructions on setting up the client credentials for this SDK in the [SDK documentation](https://sentinelhub-py.readthedocs.io/en/latest/configure.html).
 
 ```python
 from sentinelhub import SHConfig 
