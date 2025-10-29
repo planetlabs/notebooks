@@ -51,7 +51,7 @@ Several Notebooks in this directory provide examples on how to use Planet APIs w
 | [Crop Phenometrics](use_cases/crop_phenometrics) | Uses Planetary Variables to analyze agricultural fields over time. |
 | [Crop Segmentation](use_cases/crop_segmentation) | Use KNN classification to identify crops in Planet imagery for georeferenced geojson features. |
 | [Forest Carbon Dilligence](use_cases/forest_carbon_dilligence) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1) | Maps forest cover changes between two dates using the Forest Carbon Diligence product. |
-| [Forest Monitoring](use_cases/forest_monitoring) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1) | Demonstrates an end-to-end use case to detect deforestation due to road development. |
+| [Forest Monitoring](use_cases/forest_monitoring) | Demonstrates an end-to-end use case to detect deforestation due to road development. |
 | [Growing Degree Days](use_cases/growing_degree_days) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1) | Calculates Growing Degree Days (GDD) from Land Surface Temperature using Planet's Statistical API and Sandbox Data. |
 | [Land Surface Temperature](use_cases/land_surface_temperature) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1) | Analyze heat waves and urban heat island intensity using Land Surface Temperature data. |
 | [Ship Detector](use_cases/ship_detector) | Use scikit-image to detect and count ships in satellite imagery. |
