@@ -68,8 +68,7 @@ import planet
 
 # If you are not already logged in, this will prompt you to open a web browser to log in.
 auth = planet.Auth.from_profile('planet-user', save_state_to_storage=True)
-if not auth.is_initialized():
-    auth.user_login(allow_open_browser=False, allow_tty_prompt=True)
+auth.ensure_initialized(allow_open_browser=False, allow_tty_prompt=True)
 
 session = planet.Session(auth)
 pl = planet.Planet(session)
