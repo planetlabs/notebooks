@@ -66,6 +66,7 @@ Several Notebooks in this directory provide examples on how to use Planet APIs w
 | [Band Math Generate NDVI](workflows/band_math_generate_ndvi) | Derives a vegetation index from 4-band satellite data. |
 | [Band Math Generate NDVI - NDVI](workflows/band_math_generate_ndvi/ndvi) | Uses NDVI to measure vegetation from PlanetScope imagery. |
 | [Band Math Generate NDVI - NDVI From Surfance Reflectance](workflows/band_math_generate_ndvi/ndvi_from_sr) | Uses NDVI to measure vegetation for environmental monitoring. |
+| [BYOC Metadata](workflows/byoc_metadata) | Use a combination of Statistical, Catalog, and BYOC APIs to read ARPS TIFF header metadata and map it to QA Band indices | 
 | [Cloud Native Geospatial - Intro To COGS](workflows/cloud_native_geospatial/intro_to_cogs) | Convert GeoTIFFs to COGs and upload to Google Cloud Storage. |
 | [Cloud Native Geospatial - Intro To STAC](workflows/cloud_native_geospatial/intro_to_stac) | Overview of STAC specification and components. |
 | [Convert Radiance To Reflectance](workflows/convert_radiance_to_reflectance) | Convert PlanetScope imagery from radiance to reflectance using provided coefficients. |
