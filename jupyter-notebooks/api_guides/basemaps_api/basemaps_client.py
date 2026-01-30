@@ -513,7 +513,7 @@ class Mosaic(object):
         :param int band_count:
             Override guessed band count. Note that the API does not include
             information on band count currently, so this parameter is needed
-            when working with 8-band or similar basemaps.
+            when working with 8-band or similar mosaics.
 
         :retruns str xml:
             XML formatted description. Note that this is directly openable by
