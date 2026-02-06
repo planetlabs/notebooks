@@ -26,17 +26,17 @@ Several Notebooks in this directory provide examples on how to use Planet APIs w
 | [Analytics API](api_guides/analytics_api) | Use Planet Analytics API to map flood and displacement in Syria. |
 | [Analytics API - Quickstart](api_guides/analytics_api/quickstart) | Describes available Analytics Feeds and Subscriptions with the Planet Analytics API. |
 | [Analytics API - User-Guide](api_guides/analytics_api/user-guide) | Accessing Planet Analytics API to build applications. |
-| [Basemaps API](api_guides/basemaps_api) | Utilize the Basemaps API to access and download basemap data and metadata. |
+| [Basemaps API](api_guides/basemaps_api) | Utilize the Basemaps API to access and download mosaic data and metadata. |
 | [Batch Processing API](api_guides/batch_processing_api) | BatchV2 API Demo for Planet Labs |
 | [Data API](api_guides/data_api) | Access sub-regions of interest within Planet assets. |
 | [Features API](api_guides/features_api) | Introduces Planet Features API for creating and using AOI references across Planet APIs. |
 | [Orders API](api_guides/orders_api) | Uses Planet's Orders API with the official Python client. |
-| [Orders API - Orders Basemaps](api_guides/orders_api/orders_basemaps) | Order Planet Basemaps using SDK and Requests Library. |
+| [Orders API - Order Mosaics](api_guides/orders_api/orders_mosaics) | Order PlanetScope Mosaics using SDK and Requests Library. |
 | [Statistical API](api_guides/statistical_api) | Use Statistical API to analyze satellite imagery and derived statistics. |
 | [Subscriptions API](api_guides/subscriptions_api) | Uses Subscriptions API to order Planetary Variables, deliver PlanetScope imagery to a data collection for NDVI time series analysis, and more. |
 | [Subscriptions API - Crop Biomass](api_guides/subscriptions_api/crop_biomass) | Use Subscriptions API to retrieve and analyze Crop Biomass data for agricultural insights. |
 | [Tasking API](api_guides/tasking_api) | Use Tasking API to create, manage, and monitor tasking orders. |
-| [Tile Services](api_guides/tile_services) | Render Planet Basemaps via XYZ Tile Services with Bokeh or Leaflet. |
+| [Tile Services](api_guides/tile_services) | Render PlanetScope Mosaics via XYZ Tile Services with Bokeh or Leaflet. |
 
 ### Use Cases
 
@@ -44,7 +44,7 @@ Several Notebooks in this directory provide examples on how to use Planet APIs w
 | ------ | ----------- |
 | [Agriculture Index Time Series](use_cases/agriculture_index_time_series) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1)  | Generate, process, and analyze agricultural index time series data. |
 | [Bare Soil Detector](use_cases/bare_soil_detector) | Uses satellite data to identify bare soil periods in agricultural fields. |
-| [Burned Area Delineation](use_cases/burned_area_delineation) | Uses Planet basemaps to map the extent of the Park Fire (2024) burn scar via NDVI and BAI differences. |
+| [Burned Area Delineation](use_cases/burned_area_delineation) | Uses PlanetScope Mosaics to map the extent of the Park Fire (2024) burn scar via NDVI and BAI differences. |
 | [Calculate Water Extent Analysis Ready Planetscope](use_cases/calculate_water_extent_analysis_ready_planetscope) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1) | Use Analysis-Ready PlanetScope (ARPS) to observe changing water levels in a reservoir. |
 | [Coastal Erosion Example](use_cases/coastal_erosion_example) | Use Rasterio to read satellite data. |
 | [Crop Classification](use_cases/crop_classification) | Classify crop type with PlanetScope 4-band Orthotiles using CART. |
