@@ -79,4 +79,5 @@ Several Notebooks in this directory provide examples on how to use Planet APIs w
 | [Landsat Planetscope Comparison](workflows/landsat_planetscope_comparison) | Compares Landsat and PlanetScope scenes for crop type differentiation. |
 | [Mosaicking And Masking](workflows/mosaicking_and_masking) | Uses rasterio and fiona to create a composite image from multiple PlanetScope scenes. |
 | [Publish To ArcGIS Online](workflows/publish_to_arcgis_online) | Publish PlanetScope imagery as image services in ArcGIS Image for ArcGIS Online. |
+| [Planet SuperRes](workflows/superres_scenes) ![Sandbox Data](https://img.shields.io/badge/Planet%20Sandbox%20Data-009db1)| Learn to apply the SuperRes model to PlanetScope scenes through the Processing and Batch Processing APIs. |
 | [Working With Usable Data Mask](workflows/working_with_usable_data_mask) | Use UDM to identify and mask pixels with quality issues in satellite imagery. |
